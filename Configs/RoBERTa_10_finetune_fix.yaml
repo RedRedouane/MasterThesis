@@ -1,0 +1,47 @@
+# @package _group_
+common:
+  fp16: true
+  log_format: json
+  log_interval: 200
+  wandb_project: "RoBERTa"
+
+checkpoint:
+  restore_file: "/home/dahmanir/lisa/Models/RoBERTa_10_finetune.pt"
+  no_epoch_checkpoints: false
+#  reset_optimizer: true
+#  reset_dataloader: true
+#  reset_meters: true
+
+task:
+  _name: masked_lm
+  data: /home/dahmanir/lisa/Datasets/10_percent
+  sample_break_mode: complete
+  tokens_per_sample: 512
+
+criterion: masked_lm
+
+dataset:
+  batch_size: 8 #Decrease
+  ignore_unused_valid_subsets: true
+
+optimizer:
+  _name: adam
+  weight_decay: 0.01
+  adam_betas: (0.9,0.98)
+  adam_eps: 1e-06
+
+lr_scheduler:
+  _name: polynomial_decay
+
+optimization:
+  max_epoch: 10
+  clip_norm: 0
+  lr: [0.00001] #Seems fine, maybe decrease
+  max_update: 125000
+  update_freq: [32] #increase
+
+model:
+  _name: roberta
+  max_positions: 512
+  dropout: 0.1 #Might increase
+  attention_dropout: 0.1

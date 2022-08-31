@@ -1,0 +1,1145 @@
+2022-06-27 19:34:50 | INFO | fairseq.distributed.utils | distributed init (rank 1): tcp://localhost:11698
+2022-06-27 19:34:50 | INFO | fairseq.distributed.utils | distributed init (rank 0): tcp://localhost:11698
+2022-06-27 19:34:50 | INFO | torch.distributed.distributed_c10d | Added key: store_based_barrier_key:1 to store for rank: 1
+2022-06-27 19:34:50 | INFO | torch.distributed.distributed_c10d | Added key: store_based_barrier_key:1 to store for rank: 0
+2022-06-27 19:34:50 | INFO | torch.distributed.distributed_c10d | Rank 1: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+2022-06-27 19:34:50 | INFO | torch.distributed.distributed_c10d | Rank 0: Completed store-based barrier for key:store_based_barrier_key:1 with 2 nodes.
+2022-06-27 19:34:50 | INFO | fairseq.distributed.utils | initialized host r31n2.lisa.surfsara.nl as rank 1
+2022-06-27 19:34:50 | INFO | fairseq.distributed.utils | initialized host r31n2.lisa.surfsara.nl as rank 0
+2022-06-27 19:34:54 | INFO | fairseq_cli.train | {'_name': None, 'common': {'_name': None, 'no_progress_bar': False, 'log_interval': 200, 'log_format': 'json', 'log_file': None, 'tensorboard_logdir': None, 'wandb_project': 'BART', 'azureml_logging': False, 'seed': 4, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': True, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 128, 'fp16_scale_window': None, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': None, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': None, 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'_name': None, 'path': None, 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None}, 'distributed_training': {'_name': None, 'distributed_world_size': 2, 'distributed_num_procs': 2, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': 'tcp://localhost:11698', 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': 'pytorch_ddp', 'ddp_comm_hook': 'none', 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': False, 'gradient_as_bucket_view': False, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_base_algorithm': 'localsgd', 'localsgd_frequency': 3, 'nprocs_per_node': 2, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': 'never', 'zero_sharding': 'none', 'fp16': True, 'memory_efficient_fp16': False, 'tpu': False, 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False, 'not_fsdp_flatten_parameters': False}, 'dataset': {'_name': None, 'num_workers': 1, 'skip_invalid_size_inputs_valid_test': True, 'max_tokens': 3200, 'batch_size': None, 'required_batch_size_multiple': 8, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 1, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': 3200, 'batch_size_valid': None, 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0, 'grouped_shuffling': False, 'update_epoch_batch_itr': False, 'update_ordered_indices_seed': False}, 'optimization': {'_name': None, 'max_epoch': 0, 'max_update': 500000, 'stop_time_hours': 0.0, 'clip_norm': 0.1, 'sentence_avg': False, 'update_freq': [32], 'lr': [0.0004], 'stop_min_lr': -1.0, 'use_bmuf': False, 'skip_remainder_batch': False}, 'checkpoint': {'_name': None, 'save_dir': 'checkpoints', 'restore_file': '/home/dahmanir/lisa/Models/bart.pt', 'continue_once': None, 'finetune_from_model': None, 'reset_dataloader': False, 'reset_lr_scheduler': False, 'reset_meters': False, 'reset_optimizer': False, 'optimizer_overrides': '{}', 'save_interval': 1, 'save_interval_updates': 0, 'keep_interval_updates': -1, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': -1, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': False, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'loss', 'maximize_best_checkpoint_metric': False, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': 1}, 'bmuf': {'_name': None, 'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': 2}, 'generation': {'_name': None, 'beam': 5, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False}, 'eval_lm': {'_name': None, 'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'_name': None, 'buffer_size': 0, 'input': '-'}, 'model': Namespace(no_progress_bar=False, log_interval=200, log_format='json', log_file=None, tensorboard_logdir=None, wandb_project='BART', azureml_logging=False, seed=4, cpu=False, tpu=False, bf16=False, memory_efficient_bf16=False, fp16=True, memory_efficient_fp16=False, fp16_no_flatten_grads=False, fp16_init_scale=128, fp16_scale_window=None, fp16_scale_tolerance=0.0, on_cpu_convert_precision=False, min_loss_scale=0.0001, threshold_loss_scale=None, amp=False, amp_batch_retries=2, amp_init_scale=128, amp_scale_window=None, user_dir=None, empty_cache_freq=0, all_gather_list_size=16384, model_parallel_size=1, quantization_config_path=None, profile=False, reset_logging=False, suppress_crashes=False, use_plasma_view=False, plasma_path='/tmp/plasma', criterion='cross_entropy', tokenizer=None, bpe=None, optimizer='adam', lr_scheduler='polynomial_decay', simul_type=None, scoring='bleu', task='denoising', num_workers=1, skip_invalid_size_inputs_valid_test=True, max_tokens=3200, batch_size=None, required_batch_size_multiple=8, required_seq_len_multiple=1, dataset_impl=None, data_buffer_size=10, train_subset='train', valid_subset='valid', combine_valid_subsets=None, ignore_unused_valid_subsets=False, validate_interval=1, validate_interval_updates=0, validate_after_updates=0, fixed_validation_seed=None, disable_validation=False, max_tokens_valid=3200, batch_size_valid=None, max_valid_steps=None, curriculum=0, gen_subset='test', num_shards=1, shard_id=0, grouped_shuffling=False, update_epoch_batch_itr=False, update_ordered_indices_seed=False, distributed_world_size=2, distributed_num_procs=2, distributed_rank=0, distributed_backend='nccl', distributed_init_method=None, distributed_port=-1, device_id=0, distributed_no_spawn=False, ddp_backend='pytorch_ddp', ddp_comm_hook='none', bucket_cap_mb=25, fix_batches_to_gpus=False, find_unused_parameters=False, gradient_as_bucket_view=False, fast_stat_sync=False, heartbeat_timeout=-1, broadcast_buffers=False, slowmo_momentum=None, slowmo_base_algorithm='localsgd', localsgd_frequency=3, nprocs_per_node=2, pipeline_model_parallel=False, pipeline_balance=None, pipeline_devices=None, pipeline_chunks=0, pipeline_encoder_balance=None, pipeline_encoder_devices=None, pipeline_decoder_balance=None, pipeline_decoder_devices=None, pipeline_checkpoint='never', zero_sharding='none', no_reshard_after_forward=False, fp32_reduce_scatter=False, cpu_offload=False, use_sharded_state=False, not_fsdp_flatten_parameters=False, arch='bart_base', max_epoch=0, max_update=500000, stop_time_hours=0, clip_norm=0.1, sentence_avg=False, update_freq=[32], lr=[0.0004], stop_min_lr=-1.0, use_bmuf=False, skip_remainder_batch=False, save_dir='checkpoints', restore_file='/home/dahmanir/lisa/Models/bart.pt', continue_once=None, finetune_from_model=None, reset_dataloader=False, reset_lr_scheduler=False, reset_meters=False, reset_optimizer=False, optimizer_overrides='{}', save_interval=1, save_interval_updates=0, keep_interval_updates=-1, keep_interval_updates_pattern=-1, keep_last_epochs=-1, keep_best_checkpoints=-1, no_save=False, no_epoch_checkpoints=False, no_last_checkpoints=False, no_save_optimizer_state=False, best_checkpoint_metric='loss', maximize_best_checkpoint_metric=False, patience=-1, checkpoint_suffix='', checkpoint_shard_count=1, load_checkpoint_on_all_dp_ranks=False, write_checkpoints_asynchronously=False, store_ema=False, ema_decay=0.9999, ema_start_update=0, ema_seed_model=None, ema_update_freq=1, ema_fp32=False, data='/home/dahmanir/lisa/Datasets/25_percent', tokens_per_sample=512, sample_break_mode='complete_doc', mask=0.3, mask_random=0.1, insert=0.0, permute=0.0, rotate=0.0, poisson_lambda=3.5, permute_sentences=1.0, mask_length='span-poisson', replace_length=1, shorten_method='none', shorten_data_split_list='', adam_betas=(0.9, 0.999), adam_eps=1e-08, weight_decay=0.01, use_old_adam=False, fp16_adam_stats=False, warmup_updates=500, force_anneal=None, end_learning_rate=0.0, power=1.0, total_num_update='500000', pad=1, eos=2, unk=3, dropout=0.1, attention_dropout=0.1, no_seed_provided=False, encoder_embed_dim=768, encoder_ffn_embed_dim=3072, encoder_layers=6, encoder_attention_heads=12, decoder_layers=6, decoder_attention_heads=12, encoder_embed_path=None, encoder_normalize_before=False, encoder_learned_pos=True, decoder_embed_path=None, decoder_embed_dim=768, decoder_ffn_embed_dim=3072, decoder_normalize_before=False, decoder_learned_pos=True, relu_dropout=0.0, max_target_positions=1024, max_source_positions=1024, adaptive_softmax_cutoff=None, adaptive_softmax_dropout=0, share_decoder_input_output_embed=True, share_all_embeddings=True, decoder_output_dim=768, decoder_input_dim=768, no_scale_embedding=True, layernorm_embedding=True, activation_fn='gelu', pooler_activation_fn='tanh', pooler_dropout=0.0, _name='bart_base'), 'task': Namespace(no_progress_bar=False, log_interval=200, log_format='json', log_file=None, tensorboard_logdir=None, wandb_project='BART', azureml_logging=False, seed=4, cpu=False, tpu=False, bf16=False, memory_efficient_bf16=False, fp16=True, memory_efficient_fp16=False, fp16_no_flatten_grads=False, fp16_init_scale=128, fp16_scale_window=None, fp16_scale_tolerance=0.0, on_cpu_convert_precision=False, min_loss_scale=0.0001, threshold_loss_scale=None, amp=False, amp_batch_retries=2, amp_init_scale=128, amp_scale_window=None, user_dir=None, empty_cache_freq=0, all_gather_list_size=16384, model_parallel_size=1, quantization_config_path=None, profile=False, reset_logging=False, suppress_crashes=False, use_plasma_view=False, plasma_path='/tmp/plasma', criterion='cross_entropy', tokenizer=None, bpe=None, optimizer='adam', lr_scheduler='polynomial_decay', simul_type=None, scoring='bleu', task='denoising', num_workers=1, skip_invalid_size_inputs_valid_test=True, max_tokens=3200, batch_size=None, required_batch_size_multiple=8, required_seq_len_multiple=1, dataset_impl=None, data_buffer_size=10, train_subset='train', valid_subset='valid', combine_valid_subsets=None, ignore_unused_valid_subsets=False, validate_interval=1, validate_interval_updates=0, validate_after_updates=0, fixed_validation_seed=None, disable_validation=False, max_tokens_valid=3200, batch_size_valid=None, max_valid_steps=None, curriculum=0, gen_subset='test', num_shards=1, shard_id=0, grouped_shuffling=False, update_epoch_batch_itr=False, update_ordered_indices_seed=False, distributed_world_size=2, distributed_num_procs=2, distributed_rank=0, distributed_backend='nccl', distributed_init_method=None, distributed_port=-1, device_id=0, distributed_no_spawn=False, ddp_backend='pytorch_ddp', ddp_comm_hook='none', bucket_cap_mb=25, fix_batches_to_gpus=False, find_unused_parameters=False, gradient_as_bucket_view=False, fast_stat_sync=False, heartbeat_timeout=-1, broadcast_buffers=False, slowmo_momentum=None, slowmo_base_algorithm='localsgd', localsgd_frequency=3, nprocs_per_node=2, pipeline_model_parallel=False, pipeline_balance=None, pipeline_devices=None, pipeline_chunks=0, pipeline_encoder_balance=None, pipeline_encoder_devices=None, pipeline_decoder_balance=None, pipeline_decoder_devices=None, pipeline_checkpoint='never', zero_sharding='none', no_reshard_after_forward=False, fp32_reduce_scatter=False, cpu_offload=False, use_sharded_state=False, not_fsdp_flatten_parameters=False, arch='bart_base', max_epoch=0, max_update=500000, stop_time_hours=0, clip_norm=0.1, sentence_avg=False, update_freq=[32], lr=[0.0004], stop_min_lr=-1.0, use_bmuf=False, skip_remainder_batch=False, save_dir='checkpoints', restore_file='/home/dahmanir/lisa/Models/bart.pt', continue_once=None, finetune_from_model=None, reset_dataloader=False, reset_lr_scheduler=False, reset_meters=False, reset_optimizer=False, optimizer_overrides='{}', save_interval=1, save_interval_updates=0, keep_interval_updates=-1, keep_interval_updates_pattern=-1, keep_last_epochs=-1, keep_best_checkpoints=-1, no_save=False, no_epoch_checkpoints=False, no_last_checkpoints=False, no_save_optimizer_state=False, best_checkpoint_metric='loss', maximize_best_checkpoint_metric=False, patience=-1, checkpoint_suffix='', checkpoint_shard_count=1, load_checkpoint_on_all_dp_ranks=False, write_checkpoints_asynchronously=False, store_ema=False, ema_decay=0.9999, ema_start_update=0, ema_seed_model=None, ema_update_freq=1, ema_fp32=False, data='/home/dahmanir/lisa/Datasets/25_percent', tokens_per_sample=512, sample_break_mode='complete_doc', mask=0.3, mask_random=0.1, insert=0.0, permute=0.0, rotate=0.0, poisson_lambda=3.5, permute_sentences=1.0, mask_length='span-poisson', replace_length=1, shorten_method='none', shorten_data_split_list='', adam_betas=(0.9, 0.999), adam_eps=1e-08, weight_decay=0.01, use_old_adam=False, fp16_adam_stats=False, warmup_updates=500, force_anneal=None, end_learning_rate=0.0, power=1.0, total_num_update='500000', pad=1, eos=2, unk=3, dropout=0.1, attention_dropout=0.1, no_seed_provided=False, encoder_embed_dim=768, encoder_ffn_embed_dim=3072, encoder_layers=6, encoder_attention_heads=12, decoder_layers=6, decoder_attention_heads=12, encoder_embed_path=None, encoder_normalize_before=False, encoder_learned_pos=True, decoder_embed_path=None, decoder_embed_dim=768, decoder_ffn_embed_dim=3072, decoder_normalize_before=False, decoder_learned_pos=True, relu_dropout=0.0, max_target_positions=1024, max_source_positions=1024, adaptive_softmax_cutoff=None, adaptive_softmax_dropout=0, share_decoder_input_output_embed=True, share_all_embeddings=True, decoder_output_dim=768, decoder_input_dim=768, no_scale_embedding=True, layernorm_embedding=True, activation_fn='gelu', pooler_activation_fn='tanh', pooler_dropout=0.0, _name='denoising'), 'criterion': {'_name': 'cross_entropy', 'sentence_avg': False}, 'optimizer': {'_name': 'adam', 'adam_betas': [0.9, 0.999], 'adam_eps': 1e-08, 'weight_decay': 0.01, 'use_old_adam': False, 'fp16_adam_stats': False, 'tpu': False, 'lr': [0.0004]}, 'lr_scheduler': {'_name': 'polynomial_decay', 'warmup_updates': 500, 'force_anneal': None, 'end_learning_rate': 0.0, 'power': 1.0, 'total_num_update': 500000.0, 'lr': [0.0004]}, 'scoring': {'_name': 'bleu', 'pad': 1, 'eos': 2, 'unk': 3}, 'bpe': None, 'tokenizer': None, 'ema': {'_name': None, 'store_ema': False, 'ema_decay': 0.9999, 'ema_start_update': 0, 'ema_seed_model': None, 'ema_update_freq': 1, 'ema_fp32': False}, 'simul_type': None}
+2022-06-27 19:34:54 | INFO | fairseq.tasks.denoising | dictionary: 39984 types
+encoder.embed_tokens.weight True torch.Size([39985, 768])
+encoder.embed_positions.weight False torch.Size([1026, 768])
+encoder.layernorm_embedding.weight False torch.Size([768])
+encoder.layernorm_embedding.bias False torch.Size([768])
+encoder.layers.0.self_attn.k_proj.weight False torch.Size([768, 768])
+encoder.layers.0.self_attn.k_proj.bias False torch.Size([768])
+encoder.layers.0.self_attn.v_proj.weight False torch.Size([768, 768])
+encoder.layers.0.self_attn.v_proj.bias False torch.Size([768])
+encoder.layers.0.self_attn.q_proj.weight False torch.Size([768, 768])
+encoder.layers.0.self_attn.q_proj.bias False torch.Size([768])
+encoder.layers.0.self_attn.out_proj.weight False torch.Size([768, 768])
+encoder.layers.0.self_attn.out_proj.bias False torch.Size([768])
+encoder.layers.0.self_attn_layer_norm.weight False torch.Size([768])
+encoder.layers.0.self_attn_layer_norm.bias False torch.Size([768])
+encoder.layers.0.fc1.weight False torch.Size([3072, 768])
+encoder.layers.0.fc1.bias False torch.Size([3072])
+encoder.layers.0.fc2.weight False torch.Size([768, 3072])
+encoder.layers.0.fc2.bias False torch.Size([768])
+encoder.layers.0.final_layer_norm.weight False torch.Size([768])
+encoder.layers.0.final_layer_norm.bias False torch.Size([768])
+encoder.layers.1.self_attn.k_proj.weight False torch.Size([768, 768])
+encoder.layers.1.self_attn.k_proj.bias False torch.Size([768])
+encoder.layers.1.self_attn.v_proj.weight False torch.Size([768, 768])
+encoder.layers.1.self_attn.v_proj.bias False torch.Size([768])
+encoder.layers.1.self_attn.q_proj.weight False torch.Size([768, 768])
+encoder.layers.1.self_attn.q_proj.bias False torch.Size([768])
+encoder.layers.1.self_attn.out_proj.weight False torch.Size([768, 768])
+encoder.layers.1.self_attn.out_proj.bias False torch.Size([768])
+encoder.layers.1.self_attn_layer_norm.weight False torch.Size([768])
+encoder.layers.1.self_attn_layer_norm.bias False torch.Size([768])
+encoder.layers.1.fc1.weight False torch.Size([3072, 768])
+encoder.layers.1.fc1.bias False torch.Size([3072])
+encoder.layers.1.fc2.weight False torch.Size([768, 3072])
+encoder.layers.1.fc2.bias False torch.Size([768])
+encoder.layers.1.final_layer_norm.weight False torch.Size([768])
+encoder.layers.1.final_layer_norm.bias False torch.Size([768])
+encoder.layers.2.self_attn.k_proj.weight False torch.Size([768, 768])
+encoder.layers.2.self_attn.k_proj.bias False torch.Size([768])
+encoder.layers.2.self_attn.v_proj.weight False torch.Size([768, 768])
+encoder.layers.2.self_attn.v_proj.bias False torch.Size([768])
+encoder.layers.2.self_attn.q_proj.weight False torch.Size([768, 768])
+encoder.layers.2.self_attn.q_proj.bias False torch.Size([768])
+encoder.layers.2.self_attn.out_proj.weight False torch.Size([768, 768])
+encoder.layers.2.self_attn.out_proj.bias False torch.Size([768])
+encoder.layers.2.self_attn_layer_norm.weight False torch.Size([768])
+encoder.layers.2.self_attn_layer_norm.bias False torch.Size([768])
+encoder.layers.2.fc1.weight False torch.Size([3072, 768])
+encoder.layers.2.fc1.bias False torch.Size([3072])
+encoder.layers.2.fc2.weight False torch.Size([768, 3072])
+encoder.layers.2.fc2.bias False torch.Size([768])
+encoder.layers.2.final_layer_norm.weight False torch.Size([768])
+encoder.layers.2.final_layer_norm.bias False torch.Size([768])
+encoder.layers.3.self_attn.k_proj.weight False torch.Size([768, 768])
+encoder.layers.3.self_attn.k_proj.bias False torch.Size([768])
+encoder.layers.3.self_attn.v_proj.weight False torch.Size([768, 768])
+encoder.layers.3.self_attn.v_proj.bias False torch.Size([768])
+encoder.layers.3.self_attn.q_proj.weight False torch.Size([768, 768])
+encoder.layers.3.self_attn.q_proj.bias False torch.Size([768])
+encoder.layers.3.self_attn.out_proj.weight False torch.Size([768, 768])
+encoder.layers.3.self_attn.out_proj.bias False torch.Size([768])
+encoder.layers.3.self_attn_layer_norm.weight False torch.Size([768])
+encoder.layers.3.self_attn_layer_norm.bias False torch.Size([768])
+encoder.layers.3.fc1.weight False torch.Size([3072, 768])
+encoder.layers.3.fc1.bias False torch.Size([3072])
+encoder.layers.3.fc2.weight False torch.Size([768, 3072])
+encoder.layers.3.fc2.bias False torch.Size([768])
+encoder.layers.3.final_layer_norm.weight False torch.Size([768])
+encoder.layers.3.final_layer_norm.bias False torch.Size([768])
+encoder.layers.4.self_attn.k_proj.weight False torch.Size([768, 768])
+encoder.layers.4.self_attn.k_proj.bias False torch.Size([768])
+encoder.layers.4.self_attn.v_proj.weight False torch.Size([768, 768])
+encoder.layers.4.self_attn.v_proj.bias False torch.Size([768])
+encoder.layers.4.self_attn.q_proj.weight False torch.Size([768, 768])
+encoder.layers.4.self_attn.q_proj.bias False torch.Size([768])
+encoder.layers.4.self_attn.out_proj.weight False torch.Size([768, 768])
+encoder.layers.4.self_attn.out_proj.bias False torch.Size([768])
+encoder.layers.4.self_attn_layer_norm.weight False torch.Size([768])
+encoder.layers.4.self_attn_layer_norm.bias False torch.Size([768])
+encoder.layers.4.fc1.weight False torch.Size([3072, 768])
+encoder.layers.4.fc1.bias False torch.Size([3072])
+encoder.layers.4.fc2.weight False torch.Size([768, 3072])
+encoder.layers.4.fc2.bias False torch.Size([768])
+encoder.layers.4.final_layer_norm.weight False torch.Size([768])
+encoder.layers.4.final_layer_norm.bias False torch.Size([768])
+encoder.layers.5.self_attn.k_proj.weight False torch.Size([768, 768])
+encoder.layers.5.self_attn.k_proj.bias False torch.Size([768])
+encoder.layers.5.self_attn.v_proj.weight False torch.Size([768, 768])
+encoder.layers.5.self_attn.v_proj.bias False torch.Size([768])
+encoder.layers.5.self_attn.q_proj.weight False torch.Size([768, 768])
+encoder.layers.5.self_attn.q_proj.bias False torch.Size([768])
+encoder.layers.5.self_attn.out_proj.weight False torch.Size([768, 768])
+encoder.layers.5.self_attn.out_proj.bias False torch.Size([768])
+encoder.layers.5.self_attn_layer_norm.weight False torch.Size([768])
+encoder.layers.5.self_attn_layer_norm.bias False torch.Size([768])
+encoder.layers.5.fc1.weight False torch.Size([3072, 768])
+encoder.layers.5.fc1.bias False torch.Size([3072])
+encoder.layers.5.fc2.weight False torch.Size([768, 3072])
+encoder.layers.5.fc2.bias False torch.Size([768])
+encoder.layers.5.final_layer_norm.weight False torch.Size([768])
+encoder.layers.5.final_layer_norm.bias False torch.Size([768])
+decoder.embed_positions.weight False torch.Size([1026, 768])
+decoder.layernorm_embedding.weight False torch.Size([768])
+decoder.layernorm_embedding.bias False torch.Size([768])
+decoder.layers.0.self_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.0.self_attn.k_proj.bias False torch.Size([768])
+decoder.layers.0.self_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.0.self_attn.v_proj.bias False torch.Size([768])
+decoder.layers.0.self_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.0.self_attn.q_proj.bias False torch.Size([768])
+decoder.layers.0.self_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.0.self_attn.out_proj.bias False torch.Size([768])
+decoder.layers.0.self_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.0.self_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.0.encoder_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.0.encoder_attn.k_proj.bias False torch.Size([768])
+decoder.layers.0.encoder_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.0.encoder_attn.v_proj.bias False torch.Size([768])
+decoder.layers.0.encoder_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.0.encoder_attn.q_proj.bias False torch.Size([768])
+decoder.layers.0.encoder_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.0.encoder_attn.out_proj.bias False torch.Size([768])
+decoder.layers.0.encoder_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.0.encoder_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.0.fc1.weight False torch.Size([3072, 768])
+decoder.layers.0.fc1.bias False torch.Size([3072])
+decoder.layers.0.fc2.weight False torch.Size([768, 3072])
+decoder.layers.0.fc2.bias False torch.Size([768])
+decoder.layers.0.final_layer_norm.weight False torch.Size([768])
+decoder.layers.0.final_layer_norm.bias False torch.Size([768])
+decoder.layers.1.self_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.1.self_attn.k_proj.bias False torch.Size([768])
+decoder.layers.1.self_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.1.self_attn.v_proj.bias False torch.Size([768])
+decoder.layers.1.self_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.1.self_attn.q_proj.bias False torch.Size([768])
+decoder.layers.1.self_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.1.self_attn.out_proj.bias False torch.Size([768])
+decoder.layers.1.self_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.1.self_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.1.encoder_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.1.encoder_attn.k_proj.bias False torch.Size([768])
+decoder.layers.1.encoder_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.1.encoder_attn.v_proj.bias False torch.Size([768])
+decoder.layers.1.encoder_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.1.encoder_attn.q_proj.bias False torch.Size([768])
+decoder.layers.1.encoder_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.1.encoder_attn.out_proj.bias False torch.Size([768])
+decoder.layers.1.encoder_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.1.encoder_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.1.fc1.weight False torch.Size([3072, 768])
+decoder.layers.1.fc1.bias False torch.Size([3072])
+decoder.layers.1.fc2.weight False torch.Size([768, 3072])
+decoder.layers.1.fc2.bias False torch.Size([768])
+decoder.layers.1.final_layer_norm.weight False torch.Size([768])
+decoder.layers.1.final_layer_norm.bias False torch.Size([768])
+decoder.layers.2.self_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.2.self_attn.k_proj.bias False torch.Size([768])
+decoder.layers.2.self_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.2.self_attn.v_proj.bias False torch.Size([768])
+decoder.layers.2.self_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.2.self_attn.q_proj.bias False torch.Size([768])
+decoder.layers.2.self_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.2.self_attn.out_proj.bias False torch.Size([768])
+decoder.layers.2.self_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.2.self_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.2.encoder_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.2.encoder_attn.k_proj.bias False torch.Size([768])
+decoder.layers.2.encoder_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.2.encoder_attn.v_proj.bias False torch.Size([768])
+decoder.layers.2.encoder_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.2.encoder_attn.q_proj.bias False torch.Size([768])
+decoder.layers.2.encoder_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.2.encoder_attn.out_proj.bias False torch.Size([768])
+decoder.layers.2.encoder_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.2.encoder_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.2.fc1.weight False torch.Size([3072, 768])
+decoder.layers.2.fc1.bias False torch.Size([3072])
+decoder.layers.2.fc2.weight False torch.Size([768, 3072])
+decoder.layers.2.fc2.bias False torch.Size([768])
+decoder.layers.2.final_layer_norm.weight False torch.Size([768])
+decoder.layers.2.final_layer_norm.bias False torch.Size([768])
+decoder.layers.3.self_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.3.self_attn.k_proj.bias False torch.Size([768])
+decoder.layers.3.self_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.3.self_attn.v_proj.bias False torch.Size([768])
+decoder.layers.3.self_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.3.self_attn.q_proj.bias False torch.Size([768])
+decoder.layers.3.self_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.3.self_attn.out_proj.bias False torch.Size([768])
+decoder.layers.3.self_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.3.self_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.3.encoder_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.3.encoder_attn.k_proj.bias False torch.Size([768])
+decoder.layers.3.encoder_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.3.encoder_attn.v_proj.bias False torch.Size([768])
+decoder.layers.3.encoder_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.3.encoder_attn.q_proj.bias False torch.Size([768])
+decoder.layers.3.encoder_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.3.encoder_attn.out_proj.bias False torch.Size([768])
+decoder.layers.3.encoder_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.3.encoder_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.3.fc1.weight False torch.Size([3072, 768])
+decoder.layers.3.fc1.bias False torch.Size([3072])
+decoder.layers.3.fc2.weight False torch.Size([768, 3072])
+decoder.layers.3.fc2.bias False torch.Size([768])
+decoder.layers.3.final_layer_norm.weight False torch.Size([768])
+decoder.layers.3.final_layer_norm.bias False torch.Size([768])
+decoder.layers.4.self_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.4.self_attn.k_proj.bias False torch.Size([768])
+decoder.layers.4.self_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.4.self_attn.v_proj.bias False torch.Size([768])
+decoder.layers.4.self_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.4.self_attn.q_proj.bias False torch.Size([768])
+decoder.layers.4.self_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.4.self_attn.out_proj.bias False torch.Size([768])
+decoder.layers.4.self_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.4.self_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.4.encoder_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.4.encoder_attn.k_proj.bias False torch.Size([768])
+decoder.layers.4.encoder_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.4.encoder_attn.v_proj.bias False torch.Size([768])
+decoder.layers.4.encoder_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.4.encoder_attn.q_proj.bias False torch.Size([768])
+decoder.layers.4.encoder_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.4.encoder_attn.out_proj.bias False torch.Size([768])
+decoder.layers.4.encoder_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.4.encoder_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.4.fc1.weight False torch.Size([3072, 768])
+decoder.layers.4.fc1.bias False torch.Size([3072])
+decoder.layers.4.fc2.weight False torch.Size([768, 3072])
+decoder.layers.4.fc2.bias False torch.Size([768])
+decoder.layers.4.final_layer_norm.weight False torch.Size([768])
+decoder.layers.4.final_layer_norm.bias False torch.Size([768])
+decoder.layers.5.self_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.5.self_attn.k_proj.bias False torch.Size([768])
+decoder.layers.5.self_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.5.self_attn.v_proj.bias False torch.Size([768])
+decoder.layers.5.self_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.5.self_attn.q_proj.bias False torch.Size([768])
+decoder.layers.5.self_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.5.self_attn.out_proj.bias False torch.Size([768])
+decoder.layers.5.self_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.5.self_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.5.encoder_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.5.encoder_attn.k_proj.bias False torch.Size([768])
+decoder.layers.5.encoder_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.5.encoder_attn.v_proj.bias False torch.Size([768])
+decoder.layers.5.encoder_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.5.encoder_attn.q_proj.bias False torch.Size([768])
+decoder.layers.5.encoder_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.5.encoder_attn.out_proj.bias False torch.Size([768])
+decoder.layers.5.encoder_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.5.encoder_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.5.fc1.weight False torch.Size([3072, 768])
+decoder.layers.5.fc1.bias False torch.Size([3072])
+decoder.layers.5.fc2.weight False torch.Size([768, 3072])
+decoder.layers.5.fc2.bias False torch.Size([768])
+decoder.layers.5.final_layer_norm.weight False torch.Size([768])
+decoder.layers.5.final_layer_norm.bias False torch.Size([768])
+2022-06-27 19:34:59 | INFO | fairseq_cli.train | BARTModel(
+  (encoder): TransformerEncoderBase(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(39985, 768, padding_idx=1)
+    (embed_positions): LearnedPositionalEmbedding(1026, 768, padding_idx=1)
+    (layernorm_embedding): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    (layers): ModuleList(
+      (0): TransformerEncoderLayerBase(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerEncoderLayerBase(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerEncoderLayerBase(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerEncoderLayerBase(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (4): TransformerEncoderLayerBase(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): TransformerEncoderLayerBase(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+  )
+  (decoder): TransformerDecoderBase(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(39985, 768, padding_idx=1)
+    (embed_positions): LearnedPositionalEmbedding(1026, 768, padding_idx=1)
+    (layernorm_embedding): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    (layers): ModuleList(
+      (0): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (4): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (output_projection): Linear(in_features=768, out_features=39985, bias=False)
+  )
+  (classification_heads): ModuleDict()
+)
+2022-06-27 19:34:59 | INFO | fairseq_cli.train | task: DenoisingTask
+2022-06-27 19:34:59 | INFO | fairseq_cli.train | model: BARTModel
+2022-06-27 19:34:59 | INFO | fairseq_cli.train | criterion: CrossEntropyCriterion
+2022-06-27 19:34:59 | INFO | fairseq_cli.train | num. shared model params: 131,525,376 (num. trained: 30,708,480)
+2022-06-27 19:34:59 | INFO | fairseq_cli.train | num. expert model params: 0 (num. trained: 0)
+2022-06-27 19:34:59 | INFO | fairseq.data.data_utils | loaded 10,000 examples from: /home/dahmanir/lisa/Datasets/25_percent/valid
+2022-06-27 19:34:59 | INFO | fairseq.tasks.denoising | loaded 1445 blocks from: /home/dahmanir/lisa/Datasets/25_percent/valid
+2022-06-27 19:34:59 | INFO | fairseq.tasks.denoising | Split: valid, Loaded 1445 samples of denoising_dataset
+2022-06-27 19:35:02 | INFO | torch.distributed.distributed_c10d | Added key: store_based_barrier_key:2 to store for rank: 0
+2022-06-27 19:35:03 | INFO | torch.distributed.distributed_c10d | Rank 0: Completed store-based barrier for key:store_based_barrier_key:2 with 2 nodes.
+2022-06-27 19:35:03 | INFO | fairseq.trainer | detected shared parameter: encoder.embed_tokens.weight <- decoder.embed_tokens.weight
+2022-06-27 19:35:03 | INFO | fairseq.trainer | detected shared parameter: encoder.embed_tokens.weight <- decoder.output_projection.weight
+2022-06-27 19:35:03 | INFO | fairseq.utils | ***********************CUDA enviroments for all 2 workers***********************
+2022-06-27 19:35:03 | INFO | fairseq.utils | rank   0: capabilities =  6.1  ; total memory = 10.917 GB ; name = NVIDIA GeForce GTX 1080 Ti              
+2022-06-27 19:35:03 | INFO | fairseq.utils | rank   1: capabilities =  6.1  ; total memory = 10.917 GB ; name = NVIDIA GeForce GTX 1080 Ti              
+2022-06-27 19:35:03 | INFO | fairseq.utils | ***********************CUDA enviroments for all 2 workers***********************
+2022-06-27 19:35:03 | INFO | fairseq_cli.train | training on 2 devices (GPUs/TPUs)
+2022-06-27 19:35:03 | INFO | fairseq_cli.train | max tokens per device = 3200 and max sentences per device = None
+2022-06-27 19:35:03 | INFO | fairseq.trainer | Preparing to load checkpoint /home/dahmanir/lisa/Models/bart.pt
+2022-06-27 19:35:09 | INFO | fairseq.trainer | NOTE: your device does NOT support faster training with --fp16 or --amp, please switch to FP32 which is likely to be faster
+2022-06-27 19:35:09 | INFO | fairseq.trainer | Loaded checkpoint /home/dahmanir/lisa/Models/bart.pt (epoch 14 @ 0 updates)
+2022-06-27 19:35:09 | INFO | fairseq.trainer | loading train data for epoch 14
+2022-06-27 19:35:12 | INFO | fairseq.data.data_utils | loaded 31,386,387 examples from: /home/dahmanir/lisa/Datasets/25_percent/train
+2022-06-27 19:35:15 | INFO | fairseq.tasks.denoising | loaded 4502935 blocks from: /home/dahmanir/lisa/Datasets/25_percent/train
+2022-06-27 19:35:15 | INFO | fairseq.tasks.denoising | Split: train, Loaded 4502935 samples of denoising_dataset
+encoder.embed_tokens.weight True torch.Size([39985, 768])
+encoder.embed_positions.weight False torch.Size([1026, 768])
+encoder.layernorm_embedding.weight False torch.Size([768])
+encoder.layernorm_embedding.bias False torch.Size([768])
+encoder.layers.0.self_attn.k_proj.weight False torch.Size([768, 768])
+encoder.layers.0.self_attn.k_proj.bias False torch.Size([768])
+encoder.layers.0.self_attn.v_proj.weight False torch.Size([768, 768])
+encoder.layers.0.self_attn.v_proj.bias False torch.Size([768])
+encoder.layers.0.self_attn.q_proj.weight False torch.Size([768, 768])
+encoder.layers.0.self_attn.q_proj.bias False torch.Size([768])
+encoder.layers.0.self_attn.out_proj.weight False torch.Size([768, 768])
+encoder.layers.0.self_attn.out_proj.bias False torch.Size([768])
+encoder.layers.0.self_attn_layer_norm.weight False torch.Size([768])
+encoder.layers.0.self_attn_layer_norm.bias False torch.Size([768])
+encoder.layers.0.fc1.weight False torch.Size([3072, 768])
+encoder.layers.0.fc1.bias False torch.Size([3072])
+encoder.layers.0.fc2.weight False torch.Size([768, 3072])
+encoder.layers.0.fc2.bias False torch.Size([768])
+encoder.layers.0.final_layer_norm.weight False torch.Size([768])
+encoder.layers.0.final_layer_norm.bias False torch.Size([768])
+encoder.layers.1.self_attn.k_proj.weight False torch.Size([768, 768])
+encoder.layers.1.self_attn.k_proj.bias False torch.Size([768])
+encoder.layers.1.self_attn.v_proj.weight False torch.Size([768, 768])
+encoder.layers.1.self_attn.v_proj.bias False torch.Size([768])
+encoder.layers.1.self_attn.q_proj.weight False torch.Size([768, 768])
+encoder.layers.1.self_attn.q_proj.bias False torch.Size([768])
+encoder.layers.1.self_attn.out_proj.weight False torch.Size([768, 768])
+encoder.layers.1.self_attn.out_proj.bias False torch.Size([768])
+encoder.layers.1.self_attn_layer_norm.weight False torch.Size([768])
+encoder.layers.1.self_attn_layer_norm.bias False torch.Size([768])
+encoder.layers.1.fc1.weight False torch.Size([3072, 768])
+encoder.layers.1.fc1.bias False torch.Size([3072])
+encoder.layers.1.fc2.weight False torch.Size([768, 3072])
+encoder.layers.1.fc2.bias False torch.Size([768])
+encoder.layers.1.final_layer_norm.weight False torch.Size([768])
+encoder.layers.1.final_layer_norm.bias False torch.Size([768])
+encoder.layers.2.self_attn.k_proj.weight False torch.Size([768, 768])
+encoder.layers.2.self_attn.k_proj.bias False torch.Size([768])
+encoder.layers.2.self_attn.v_proj.weight False torch.Size([768, 768])
+encoder.layers.2.self_attn.v_proj.bias False torch.Size([768])
+encoder.layers.2.self_attn.q_proj.weight False torch.Size([768, 768])
+encoder.layers.2.self_attn.q_proj.bias False torch.Size([768])
+encoder.layers.2.self_attn.out_proj.weight False torch.Size([768, 768])
+encoder.layers.2.self_attn.out_proj.bias False torch.Size([768])
+encoder.layers.2.self_attn_layer_norm.weight False torch.Size([768])
+encoder.layers.2.self_attn_layer_norm.bias False torch.Size([768])
+encoder.layers.2.fc1.weight False torch.Size([3072, 768])
+encoder.layers.2.fc1.bias False torch.Size([3072])
+encoder.layers.2.fc2.weight False torch.Size([768, 3072])
+encoder.layers.2.fc2.bias False torch.Size([768])
+encoder.layers.2.final_layer_norm.weight False torch.Size([768])
+encoder.layers.2.final_layer_norm.bias False torch.Size([768])
+encoder.layers.3.self_attn.k_proj.weight False torch.Size([768, 768])
+encoder.layers.3.self_attn.k_proj.bias False torch.Size([768])
+encoder.layers.3.self_attn.v_proj.weight False torch.Size([768, 768])
+encoder.layers.3.self_attn.v_proj.bias False torch.Size([768])
+encoder.layers.3.self_attn.q_proj.weight False torch.Size([768, 768])
+encoder.layers.3.self_attn.q_proj.bias False torch.Size([768])
+encoder.layers.3.self_attn.out_proj.weight False torch.Size([768, 768])
+encoder.layers.3.self_attn.out_proj.bias False torch.Size([768])
+encoder.layers.3.self_attn_layer_norm.weight False torch.Size([768])
+encoder.layers.3.self_attn_layer_norm.bias False torch.Size([768])
+encoder.layers.3.fc1.weight False torch.Size([3072, 768])
+encoder.layers.3.fc1.bias False torch.Size([3072])
+encoder.layers.3.fc2.weight False torch.Size([768, 3072])
+encoder.layers.3.fc2.bias False torch.Size([768])
+encoder.layers.3.final_layer_norm.weight False torch.Size([768])
+encoder.layers.3.final_layer_norm.bias False torch.Size([768])
+encoder.layers.4.self_attn.k_proj.weight False torch.Size([768, 768])
+encoder.layers.4.self_attn.k_proj.bias False torch.Size([768])
+encoder.layers.4.self_attn.v_proj.weight False torch.Size([768, 768])
+encoder.layers.4.self_attn.v_proj.bias False torch.Size([768])
+encoder.layers.4.self_attn.q_proj.weight False torch.Size([768, 768])
+encoder.layers.4.self_attn.q_proj.bias False torch.Size([768])
+encoder.layers.4.self_attn.out_proj.weight False torch.Size([768, 768])
+encoder.layers.4.self_attn.out_proj.bias False torch.Size([768])
+encoder.layers.4.self_attn_layer_norm.weight False torch.Size([768])
+encoder.layers.4.self_attn_layer_norm.bias False torch.Size([768])
+encoder.layers.4.fc1.weight False torch.Size([3072, 768])
+encoder.layers.4.fc1.bias False torch.Size([3072])
+encoder.layers.4.fc2.weight False torch.Size([768, 3072])
+encoder.layers.4.fc2.bias False torch.Size([768])
+encoder.layers.4.final_layer_norm.weight False torch.Size([768])
+encoder.layers.4.final_layer_norm.bias False torch.Size([768])
+encoder.layers.5.self_attn.k_proj.weight False torch.Size([768, 768])
+encoder.layers.5.self_attn.k_proj.bias False torch.Size([768])
+encoder.layers.5.self_attn.v_proj.weight False torch.Size([768, 768])
+encoder.layers.5.self_attn.v_proj.bias False torch.Size([768])
+encoder.layers.5.self_attn.q_proj.weight False torch.Size([768, 768])
+encoder.layers.5.self_attn.q_proj.bias False torch.Size([768])
+encoder.layers.5.self_attn.out_proj.weight False torch.Size([768, 768])
+encoder.layers.5.self_attn.out_proj.bias False torch.Size([768])
+encoder.layers.5.self_attn_layer_norm.weight False torch.Size([768])
+encoder.layers.5.self_attn_layer_norm.bias False torch.Size([768])
+encoder.layers.5.fc1.weight False torch.Size([3072, 768])
+encoder.layers.5.fc1.bias False torch.Size([3072])
+encoder.layers.5.fc2.weight False torch.Size([768, 3072])
+encoder.layers.5.fc2.bias False torch.Size([768])
+encoder.layers.5.final_layer_norm.weight False torch.Size([768])
+encoder.layers.5.final_layer_norm.bias False torch.Size([768])
+decoder.embed_positions.weight False torch.Size([1026, 768])
+decoder.layernorm_embedding.weight False torch.Size([768])
+decoder.layernorm_embedding.bias False torch.Size([768])
+decoder.layers.0.self_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.0.self_attn.k_proj.bias False torch.Size([768])
+decoder.layers.0.self_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.0.self_attn.v_proj.bias False torch.Size([768])
+decoder.layers.0.self_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.0.self_attn.q_proj.bias False torch.Size([768])
+decoder.layers.0.self_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.0.self_attn.out_proj.bias False torch.Size([768])
+decoder.layers.0.self_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.0.self_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.0.encoder_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.0.encoder_attn.k_proj.bias False torch.Size([768])
+decoder.layers.0.encoder_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.0.encoder_attn.v_proj.bias False torch.Size([768])
+decoder.layers.0.encoder_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.0.encoder_attn.q_proj.bias False torch.Size([768])
+decoder.layers.0.encoder_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.0.encoder_attn.out_proj.bias False torch.Size([768])
+decoder.layers.0.encoder_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.0.encoder_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.0.fc1.weight False torch.Size([3072, 768])
+decoder.layers.0.fc1.bias False torch.Size([3072])
+decoder.layers.0.fc2.weight False torch.Size([768, 3072])
+decoder.layers.0.fc2.bias False torch.Size([768])
+decoder.layers.0.final_layer_norm.weight False torch.Size([768])
+decoder.layers.0.final_layer_norm.bias False torch.Size([768])
+decoder.layers.1.self_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.1.self_attn.k_proj.bias False torch.Size([768])
+decoder.layers.1.self_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.1.self_attn.v_proj.bias False torch.Size([768])
+decoder.layers.1.self_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.1.self_attn.q_proj.bias False torch.Size([768])
+decoder.layers.1.self_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.1.self_attn.out_proj.bias False torch.Size([768])
+decoder.layers.1.self_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.1.self_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.1.encoder_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.1.encoder_attn.k_proj.bias False torch.Size([768])
+decoder.layers.1.encoder_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.1.encoder_attn.v_proj.bias False torch.Size([768])
+decoder.layers.1.encoder_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.1.encoder_attn.q_proj.bias False torch.Size([768])
+decoder.layers.1.encoder_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.1.encoder_attn.out_proj.bias False torch.Size([768])
+decoder.layers.1.encoder_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.1.encoder_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.1.fc1.weight False torch.Size([3072, 768])
+decoder.layers.1.fc1.bias False torch.Size([3072])
+decoder.layers.1.fc2.weight False torch.Size([768, 3072])
+decoder.layers.1.fc2.bias False torch.Size([768])
+decoder.layers.1.final_layer_norm.weight False torch.Size([768])
+decoder.layers.1.final_layer_norm.bias False torch.Size([768])
+decoder.layers.2.self_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.2.self_attn.k_proj.bias False torch.Size([768])
+decoder.layers.2.self_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.2.self_attn.v_proj.bias False torch.Size([768])
+decoder.layers.2.self_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.2.self_attn.q_proj.bias False torch.Size([768])
+decoder.layers.2.self_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.2.self_attn.out_proj.bias False torch.Size([768])
+decoder.layers.2.self_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.2.self_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.2.encoder_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.2.encoder_attn.k_proj.bias False torch.Size([768])
+decoder.layers.2.encoder_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.2.encoder_attn.v_proj.bias False torch.Size([768])
+decoder.layers.2.encoder_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.2.encoder_attn.q_proj.bias False torch.Size([768])
+decoder.layers.2.encoder_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.2.encoder_attn.out_proj.bias False torch.Size([768])
+decoder.layers.2.encoder_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.2.encoder_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.2.fc1.weight False torch.Size([3072, 768])
+decoder.layers.2.fc1.bias False torch.Size([3072])
+decoder.layers.2.fc2.weight False torch.Size([768, 3072])
+decoder.layers.2.fc2.bias False torch.Size([768])
+decoder.layers.2.final_layer_norm.weight False torch.Size([768])
+decoder.layers.2.final_layer_norm.bias False torch.Size([768])
+decoder.layers.3.self_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.3.self_attn.k_proj.bias False torch.Size([768])
+decoder.layers.3.self_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.3.self_attn.v_proj.bias False torch.Size([768])
+decoder.layers.3.self_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.3.self_attn.q_proj.bias False torch.Size([768])
+decoder.layers.3.self_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.3.self_attn.out_proj.bias False torch.Size([768])
+decoder.layers.3.self_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.3.self_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.3.encoder_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.3.encoder_attn.k_proj.bias False torch.Size([768])
+decoder.layers.3.encoder_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.3.encoder_attn.v_proj.bias False torch.Size([768])
+decoder.layers.3.encoder_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.3.encoder_attn.q_proj.bias False torch.Size([768])
+decoder.layers.3.encoder_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.3.encoder_attn.out_proj.bias False torch.Size([768])
+decoder.layers.3.encoder_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.3.encoder_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.3.fc1.weight False torch.Size([3072, 768])
+decoder.layers.3.fc1.bias False torch.Size([3072])
+decoder.layers.3.fc2.weight False torch.Size([768, 3072])
+decoder.layers.3.fc2.bias False torch.Size([768])
+decoder.layers.3.final_layer_norm.weight False torch.Size([768])
+decoder.layers.3.final_layer_norm.bias False torch.Size([768])
+decoder.layers.4.self_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.4.self_attn.k_proj.bias False torch.Size([768])
+decoder.layers.4.self_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.4.self_attn.v_proj.bias False torch.Size([768])
+decoder.layers.4.self_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.4.self_attn.q_proj.bias False torch.Size([768])
+decoder.layers.4.self_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.4.self_attn.out_proj.bias False torch.Size([768])
+decoder.layers.4.self_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.4.self_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.4.encoder_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.4.encoder_attn.k_proj.bias False torch.Size([768])
+decoder.layers.4.encoder_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.4.encoder_attn.v_proj.bias False torch.Size([768])
+decoder.layers.4.encoder_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.4.encoder_attn.q_proj.bias False torch.Size([768])
+decoder.layers.4.encoder_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.4.encoder_attn.out_proj.bias False torch.Size([768])
+decoder.layers.4.encoder_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.4.encoder_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.4.fc1.weight False torch.Size([3072, 768])
+decoder.layers.4.fc1.bias False torch.Size([3072])
+decoder.layers.4.fc2.weight False torch.Size([768, 3072])
+decoder.layers.4.fc2.bias False torch.Size([768])
+decoder.layers.4.final_layer_norm.weight False torch.Size([768])
+decoder.layers.4.final_layer_norm.bias False torch.Size([768])
+decoder.layers.5.self_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.5.self_attn.k_proj.bias False torch.Size([768])
+decoder.layers.5.self_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.5.self_attn.v_proj.bias False torch.Size([768])
+decoder.layers.5.self_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.5.self_attn.q_proj.bias False torch.Size([768])
+decoder.layers.5.self_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.5.self_attn.out_proj.bias False torch.Size([768])
+decoder.layers.5.self_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.5.self_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.5.encoder_attn.k_proj.weight False torch.Size([768, 768])
+decoder.layers.5.encoder_attn.k_proj.bias False torch.Size([768])
+decoder.layers.5.encoder_attn.v_proj.weight False torch.Size([768, 768])
+decoder.layers.5.encoder_attn.v_proj.bias False torch.Size([768])
+decoder.layers.5.encoder_attn.q_proj.weight False torch.Size([768, 768])
+decoder.layers.5.encoder_attn.q_proj.bias False torch.Size([768])
+decoder.layers.5.encoder_attn.out_proj.weight False torch.Size([768, 768])
+decoder.layers.5.encoder_attn.out_proj.bias False torch.Size([768])
+decoder.layers.5.encoder_attn_layer_norm.weight False torch.Size([768])
+decoder.layers.5.encoder_attn_layer_norm.bias False torch.Size([768])
+decoder.layers.5.fc1.weight False torch.Size([3072, 768])
+decoder.layers.5.fc1.bias False torch.Size([3072])
+decoder.layers.5.fc2.weight False torch.Size([768, 3072])
+decoder.layers.5.fc2.bias False torch.Size([768])
+decoder.layers.5.final_layer_norm.weight False torch.Size([768])
+decoder.layers.5.final_layer_norm.bias False torch.Size([768])
+2022-06-27 19:35:58 | INFO | fairseq.data.iterators | grouped total_num_itrs = 11017
+wandb: Currently logged in as: redredouane. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.12.19
+wandb: Run data is saved locally in /home/dahmanir/wandb/run-20220627_193605-256vstis
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run checkpoints
+wandb:  View project at https://wandb.ai/redredouane/BART
+wandb:  View run at https://wandb.ai/redredouane/BART/runs/256vstis
+2022-06-27 19:36:10 | INFO | fairseq.trainer | begin training epoch 14
+2022-06-27 19:36:10 | INFO | fairseq_cli.train | Start iterating over samples
+2022-06-27 19:36:33 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 64.0
+2022-06-27 19:36:34 | INFO | root | Reducer buckets have been rebuilt in this iteration.
+2022-06-27 19:36:53 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 32.0
+2022-06-27 19:37:14 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-06-27 19:37:34 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-06-27 19:37:54 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-06-27 19:38:14 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 2.0
+2022-06-27 19:49:24 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.0
+2022-06-27 19:56:59 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 0.5
+2022-06-27 20:01:44 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 0.25
+2022-06-27 20:16:51 | INFO | train_inner | {"epoch": 14, "update": 13.076, "loss": "12.774", "ppl": "7002.89", "wps": "14780.4", "ups": "0.08", "wpb": "185339", "bsz": "408.3", "num_updates": "200", "lr": "0.00016", "gnorm": "1.516", "clip": "100", "loss_scale": "0", "train_wall": "2340", "gb_free": "6.7", "wall": "0"}
+2022-06-27 20:39:53 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 0.125
+2022-06-27 20:54:48 | INFO | train_inner | {"epoch": 14, "update": 13.094, "loss": "7.965", "ppl": "249.89", "wps": "16254.2", "ups": "0.09", "wpb": "185106", "bsz": "409.4", "num_updates": "400", "lr": "0.00032", "gnorm": "0.531", "clip": "100", "loss_scale": "0", "train_wall": "2188", "gb_free": "6.7", "wall": "0"}
+2022-06-27 21:32:31 | INFO | train_inner | {"epoch": 14, "update": 13.112, "loss": "2.808", "ppl": "7", "wps": "16378.4", "ups": "0.09", "wpb": "185330", "bsz": "408.6", "num_updates": "600", "lr": "0.00039992", "gnorm": "0.135", "clip": "74", "loss_scale": "0", "train_wall": "2174", "gb_free": "6.7", "wall": "0"}
+2022-06-27 22:10:16 | INFO | train_inner | {"epoch": 14, "update": 13.131, "loss": "2.373", "ppl": "5.18", "wps": "16373.8", "ups": "0.09", "wpb": "185429", "bsz": "409.1", "num_updates": "800", "lr": "0.00039976", "gnorm": "0.085", "clip": "3", "loss_scale": "0", "train_wall": "2175", "gb_free": "6.7", "wall": "0"}
+2022-06-27 22:47:57 | INFO | train_inner | {"epoch": 14, "update": 13.149, "loss": "2.238", "ppl": "4.72", "wps": "16381.3", "ups": "0.09", "wpb": "185155", "bsz": "408.5", "num_updates": "1000", "lr": "0.0003996", "gnorm": "0.077", "clip": "2.5", "loss_scale": "0", "train_wall": "2171", "gb_free": "6.7", "wall": "0"}
+2022-06-27 23:25:37 | INFO | train_inner | {"epoch": 14, "update": 13.167, "loss": "2.151", "ppl": "4.44", "wps": "16393.9", "ups": "0.09", "wpb": "185252", "bsz": "408.7", "num_updates": "1200", "lr": "0.000399439", "gnorm": "0.071", "clip": "0", "loss_scale": "1", "train_wall": "2170", "gb_free": "6.7", "wall": "0"}
+2022-06-28 00:03:20 | INFO | train_inner | {"epoch": 14, "update": 13.185, "loss": "2.09", "ppl": "4.26", "wps": "16363.4", "ups": "0.09", "wpb": "185192", "bsz": "408.8", "num_updates": "1400", "lr": "0.000399279", "gnorm": "0.069", "clip": "1.5", "loss_scale": "2", "train_wall": "2173", "gb_free": "6.7", "wall": "0"}
+2022-06-28 00:41:05 | INFO | train_inner | {"epoch": 14, "update": 13.203, "loss": "2.036", "ppl": "4.1", "wps": "16374.3", "ups": "0.09", "wpb": "185365", "bsz": "408.3", "num_updates": "1600", "lr": "0.000399119", "gnorm": "0.065", "clip": "0", "loss_scale": "2", "train_wall": "2174", "gb_free": "6.7", "wall": "0"}
+2022-06-28 00:52:36 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 2.0
+2022-06-28 01:19:01 | INFO | train_inner | {"epoch": 14, "update": 13.221, "loss": "1.992", "ppl": "3.98", "wps": "16275", "ups": "0.09", "wpb": "185255", "bsz": "408.5", "num_updates": "1800", "lr": "0.000398959", "gnorm": "0.064", "clip": "0.5", "loss_scale": "2", "train_wall": "2186", "gb_free": "6.7", "wall": "0"}
+2022-06-28 01:56:44 | INFO | train_inner | {"epoch": 14, "update": 13.24, "loss": "1.952", "ppl": "3.87", "wps": "16365.4", "ups": "0.09", "wpb": "185204", "bsz": "408.8", "num_updates": "2000", "lr": "0.000398799", "gnorm": "0.062", "clip": "0.5", "loss_scale": "4", "train_wall": "2173", "gb_free": "6.6", "wall": "0"}
+2022-06-28 02:34:30 | INFO | train_inner | {"epoch": 14, "update": 13.258, "loss": "1.91", "ppl": "3.76", "wps": "16360.6", "ups": "0.09", "wpb": "185318", "bsz": "409.1", "num_updates": "2200", "lr": "0.000398639", "gnorm": "0.06", "clip": "0", "loss_scale": "8", "train_wall": "2174", "gb_free": "6.7", "wall": "0"}
+2022-06-28 03:12:14 | INFO | train_inner | {"epoch": 14, "update": 13.276, "loss": "1.875", "ppl": "3.67", "wps": "16376.4", "ups": "0.09", "wpb": "185423", "bsz": "409", "num_updates": "2400", "lr": "0.000398478", "gnorm": "0.059", "clip": "0", "loss_scale": "8", "train_wall": "2174", "gb_free": "6.7", "wall": "0"}
+2022-06-28 03:26:33 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-06-28 03:50:10 | INFO | train_inner | {"epoch": 14, "update": 13.294, "loss": "1.838", "ppl": "3.58", "wps": "16275.5", "ups": "0.09", "wpb": "185196", "bsz": "408.6", "num_updates": "2600", "lr": "0.000398318", "gnorm": "0.057", "clip": "0", "loss_scale": "8", "train_wall": "2184", "gb_free": "6.7", "wall": "0"}
+2022-06-28 04:04:31 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-06-28 04:06:36 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 2.0
+2022-06-28 04:28:16 | INFO | train_inner | {"epoch": 14, "update": 13.313, "loss": "1.804", "ppl": "3.49", "wps": "16201.6", "ups": "0.09", "wpb": "185138", "bsz": "408.3", "num_updates": "2800", "lr": "0.000398158", "gnorm": "0.057", "clip": "0", "loss_scale": "2", "train_wall": "2194", "gb_free": "6.7", "wall": "0"}
+2022-06-28 05:06:01 | INFO | train_inner | {"epoch": 14, "update": 13.331, "loss": "1.773", "ppl": "3.42", "wps": "16359.1", "ups": "0.09", "wpb": "185298", "bsz": "408.5", "num_updates": "3000", "lr": "0.000397998", "gnorm": "0.056", "clip": "0.5", "loss_scale": "4", "train_wall": "2175", "gb_free": "6.7", "wall": "0"}
+2022-06-28 05:43:44 | INFO | train_inner | {"epoch": 14, "update": 13.349, "loss": "1.747", "ppl": "3.36", "wps": "16377.4", "ups": "0.09", "wpb": "185293", "bsz": "408.8", "num_updates": "3200", "lr": "0.000397838", "gnorm": "0.055", "clip": "0", "loss_scale": "8", "train_wall": "2172", "gb_free": "6.7", "wall": "0"}
+2022-06-28 06:03:45 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-06-28 06:21:39 | INFO | train_inner | {"epoch": 14, "update": 13.367, "loss": "1.721", "ppl": "3.3", "wps": "16291.7", "ups": "0.09", "wpb": "185309", "bsz": "409.3", "num_updates": "3400", "lr": "0.000397678", "gnorm": "0.054", "clip": "0", "loss_scale": "4", "train_wall": "2184", "gb_free": "6.7", "wall": "0"}
+2022-06-28 06:59:23 | INFO | train_inner | {"epoch": 14, "update": 13.385, "loss": "1.696", "ppl": "3.24", "wps": "16354.8", "ups": "0.09", "wpb": "185181", "bsz": "408.7", "num_updates": "3600", "lr": "0.000397518", "gnorm": "0.053", "clip": "0", "loss_scale": "8", "train_wall": "2173", "gb_free": "6.7", "wall": "0"}
+2022-06-28 07:04:51 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-06-28 07:37:19 | INFO | train_inner | {"epoch": 14, "update": 13.403, "loss": "1.679", "ppl": "3.2", "wps": "16287.7", "ups": "0.09", "wpb": "185358", "bsz": "407.4", "num_updates": "3800", "lr": "0.000397357", "gnorm": "0.052", "clip": "0", "loss_scale": "4", "train_wall": "2185", "gb_free": "6.7", "wall": "0"}
+2022-06-28 08:15:02 | INFO | train_inner | {"epoch": 14, "update": 13.422, "loss": "1.658", "ppl": "3.15", "wps": "16384.2", "ups": "0.09", "wpb": "185362", "bsz": "408.4", "num_updates": "4000", "lr": "0.000397197", "gnorm": "0.052", "clip": "0", "loss_scale": "8", "train_wall": "2172", "gb_free": "6.7", "wall": "0"}
+2022-06-28 08:33:54 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-06-28 08:52:58 | INFO | train_inner | {"epoch": 14, "update": 13.44, "loss": "1.642", "ppl": "3.12", "wps": "16273", "ups": "0.09", "wpb": "185157", "bsz": "408.4", "num_updates": "4200", "lr": "0.000397037", "gnorm": "0.052", "clip": "0", "loss_scale": "4", "train_wall": "2184", "gb_free": "6.7", "wall": "0"}
+2022-06-28 09:30:41 | INFO | train_inner | {"epoch": 14, "update": 13.458, "loss": "1.63", "ppl": "3.09", "wps": "16372", "ups": "0.09", "wpb": "185290", "bsz": "408.8", "num_updates": "4400", "lr": "0.000396877", "gnorm": "0.051", "clip": "0", "loss_scale": "8", "train_wall": "2172", "gb_free": "6.7", "wall": "0"}
+2022-06-28 10:08:23 | INFO | train_inner | {"epoch": 14, "update": 13.476, "loss": "1.619", "ppl": "3.07", "wps": "16378.7", "ups": "0.09", "wpb": "185268", "bsz": "409.1", "num_updates": "4600", "lr": "0.000396717", "gnorm": "0.051", "clip": "0", "loss_scale": "8", "train_wall": "2171", "gb_free": "6.7", "wall": "0"}
+2022-06-28 10:33:09 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-06-28 10:35:47 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-06-28 10:46:32 | INFO | train_inner | {"epoch": 14, "update": 13.495, "loss": "1.605", "ppl": "3.04", "wps": "16202.8", "ups": "0.09", "wpb": "185387", "bsz": "408.2", "num_updates": "4800", "lr": "0.000396557", "gnorm": "0.05", "clip": "0", "loss_scale": "4", "train_wall": "2197", "gb_free": "6.7", "wall": "0"}
+2022-06-28 11:24:12 | INFO | train_inner | {"epoch": 14, "update": 13.513, "loss": "1.596", "ppl": "3.02", "wps": "16382.7", "ups": "0.09", "wpb": "185122", "bsz": "408.6", "num_updates": "5000", "lr": "0.000396396", "gnorm": "0.05", "clip": "0", "loss_scale": "8", "train_wall": "2169", "gb_free": "6.7", "wall": "0"}
+2022-06-28 11:58:32 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-06-28 12:02:06 | INFO | train_inner | {"epoch": 14, "update": 13.531, "loss": "1.586", "ppl": "3", "wps": "16294.6", "ups": "0.09", "wpb": "185297", "bsz": "408.6", "num_updates": "5200", "lr": "0.000396236", "gnorm": "0.05", "clip": "0", "loss_scale": "4", "train_wall": "2184", "gb_free": "6.7", "wall": "0"}
+2022-06-28 12:06:48 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 2.0
+2022-06-28 12:39:57 | INFO | train_inner | {"epoch": 14, "update": 13.549, "loss": "1.579", "ppl": "2.99", "wps": "16311.2", "ups": "0.09", "wpb": "185179", "bsz": "409", "num_updates": "5400", "lr": "0.000396076", "gnorm": "0.05", "clip": "0", "loss_scale": "2", "train_wall": "2179", "gb_free": "6.7", "wall": "0"}
+2022-06-28 13:17:38 | INFO | train_inner | {"epoch": 14, "update": 13.567, "loss": "1.568", "ppl": "2.97", "wps": "16372.8", "ups": "0.09", "wpb": "185114", "bsz": "408.7", "num_updates": "5600", "lr": "0.000395916", "gnorm": "0.05", "clip": "0.5", "loss_scale": "4", "train_wall": "2168", "gb_free": "6.7", "wall": "0"}
+2022-06-28 13:55:21 | INFO | train_inner | {"epoch": 14, "update": 13.585, "loss": "1.562", "ppl": "2.95", "wps": "16370.5", "ups": "0.09", "wpb": "185210", "bsz": "409.3", "num_updates": "5800", "lr": "0.000395756", "gnorm": "0.05", "clip": "0.5", "loss_scale": "8", "train_wall": "2170", "gb_free": "6.7", "wall": "0"}
+2022-06-28 14:33:10 | INFO | train_inner | {"epoch": 14, "update": 13.604, "loss": "1.557", "ppl": "2.94", "wps": "16333", "ups": "0.09", "wpb": "185349", "bsz": "407.8", "num_updates": "6000", "lr": "0.000395596", "gnorm": "0.049", "clip": "0", "loss_scale": "16", "train_wall": "2176", "gb_free": "6.7", "wall": "0"}
+2022-06-28 15:10:56 | INFO | train_inner | {"epoch": 14, "update": 13.622, "loss": "1.549", "ppl": "2.93", "wps": "16349.4", "ups": "0.09", "wpb": "185223", "bsz": "409.7", "num_updates": "6200", "lr": "0.000395435", "gnorm": "0.049", "clip": "0", "loss_scale": "16", "train_wall": "2171", "gb_free": "6.7", "wall": "0"}
+2022-06-28 15:33:58 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-06-28 15:48:54 | INFO | train_inner | {"epoch": 14, "update": 13.64, "loss": "1.545", "ppl": "2.92", "wps": "16271.1", "ups": "0.09", "wpb": "185300", "bsz": "408.9", "num_updates": "6400", "lr": "0.000395275", "gnorm": "0.049", "clip": "0", "loss_scale": "16", "train_wall": "2184", "gb_free": "6.7", "wall": "0"}
+2022-06-28 16:24:34 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-06-28 16:26:50 | INFO | train_inner | {"epoch": 14, "update": 13.658, "loss": "1.541", "ppl": "2.91", "wps": "16271.9", "ups": "0.09", "wpb": "185232", "bsz": "408.9", "num_updates": "6600", "lr": "0.000395115", "gnorm": "0.049", "clip": "0", "loss_scale": "16", "train_wall": "2182", "gb_free": "6.7", "wall": "0"}
+2022-06-28 17:04:35 | INFO | train_inner | {"epoch": 14, "update": 13.676, "loss": "1.537", "ppl": "2.9", "wps": "16362.3", "ups": "0.09", "wpb": "185278", "bsz": "408.9", "num_updates": "6800", "lr": "0.000394955", "gnorm": "0.049", "clip": "0", "loss_scale": "16", "train_wall": "2171", "gb_free": "6.7", "wall": "0"}
+2022-06-28 17:42:18 | INFO | train_inner | {"epoch": 14, "update": 13.695, "loss": "1.53", "ppl": "2.89", "wps": "16358.9", "ups": "0.09", "wpb": "185078", "bsz": "408.1", "num_updates": "7000", "lr": "0.000394795", "gnorm": "0.049", "clip": "0", "loss_scale": "32", "train_wall": "2169", "gb_free": "6.7", "wall": "0"}
+2022-06-28 17:46:38 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-06-28 18:20:16 | INFO | train_inner | {"epoch": 14, "update": 13.713, "loss": "1.527", "ppl": "2.88", "wps": "16276.5", "ups": "0.09", "wpb": "185380", "bsz": "409.3", "num_updates": "7200", "lr": "0.000394635", "gnorm": "0.049", "clip": "0", "loss_scale": "16", "train_wall": "2184", "gb_free": "6.7", "wall": "0"}
+2022-06-28 18:41:58 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-06-28 18:58:09 | INFO | train_inner | {"epoch": 14, "update": 13.731, "loss": "1.523", "ppl": "2.87", "wps": "16276.5", "ups": "0.09", "wpb": "185047", "bsz": "409.7", "num_updates": "7400", "lr": "0.000394474", "gnorm": "0.049", "clip": "0", "loss_scale": "16", "train_wall": "2179", "gb_free": "6.7", "wall": "0"}
+2022-06-28 19:35:57 | INFO | train_inner | {"epoch": 14, "update": 13.749, "loss": "1.519", "ppl": "2.87", "wps": "16334.4", "ups": "0.09", "wpb": "185205", "bsz": "408.9", "num_updates": "7600", "lr": "0.000394314", "gnorm": "0.048", "clip": "0", "loss_scale": "32", "train_wall": "2174", "gb_free": "6.7", "wall": "0"}
+2022-06-28 20:13:46 | INFO | train_inner | {"epoch": 14, "update": 13.767, "loss": "1.517", "ppl": "2.86", "wps": "16337.8", "ups": "0.09", "wpb": "185312", "bsz": "408", "num_updates": "7800", "lr": "0.000394154", "gnorm": "0.048", "clip": "0", "loss_scale": "32", "train_wall": "2174", "gb_free": "6.7", "wall": "0"}
+2022-06-28 20:26:15 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 32.0
+2022-06-28 20:51:44 | INFO | train_inner | {"epoch": 14, "update": 13.786, "loss": "1.512", "ppl": "2.85", "wps": "16259.4", "ups": "0.09", "wpb": "185201", "bsz": "409.3", "num_updates": "8000", "lr": "0.000393994", "gnorm": "0.048", "clip": "0", "loss_scale": "32", "train_wall": "2184", "gb_free": "6.8", "wall": "0"}
+2022-06-28 20:54:57 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-06-28 21:29:40 | INFO | train_inner | {"epoch": 14, "update": 13.804, "loss": "1.51", "ppl": "2.85", "wps": "16267.6", "ups": "0.09", "wpb": "185147", "bsz": "408.8", "num_updates": "8200", "lr": "0.000393834", "gnorm": "0.048", "clip": "0", "loss_scale": "16", "train_wall": "2182", "gb_free": "6.7", "wall": "0"}
+2022-06-28 22:07:22 | INFO | train_inner | {"epoch": 14, "update": 13.822, "loss": "1.506", "ppl": "2.84", "wps": "16372.9", "ups": "0.09", "wpb": "185138", "bsz": "409.4", "num_updates": "8400", "lr": "0.000393674", "gnorm": "0.048", "clip": "0", "loss_scale": "32", "train_wall": "2168", "gb_free": "6.7", "wall": "0"}
+2022-06-28 22:37:57 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 32.0
+2022-06-28 22:38:42 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-06-28 22:45:31 | INFO | train_inner | {"epoch": 14, "update": 13.84, "loss": "1.505", "ppl": "2.84", "wps": "16192.8", "ups": "0.09", "wpb": "185352", "bsz": "408.6", "num_updates": "8600", "lr": "0.000393514", "gnorm": "0.048", "clip": "0", "loss_scale": "16", "train_wall": "2194", "gb_free": "6.7", "wall": "0"}
+2022-06-28 23:21:38 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-06-28 23:23:30 | INFO | train_inner | {"epoch": 14, "update": 13.859, "loss": "1.502", "ppl": "2.83", "wps": "16261.9", "ups": "0.09", "wpb": "185349", "bsz": "408.6", "num_updates": "8800", "lr": "0.000393353", "gnorm": "0.048", "clip": "0", "loss_scale": "8", "train_wall": "2184", "gb_free": "6.7", "wall": "0"}
+2022-06-29 00:01:15 | INFO | train_inner | {"epoch": 14, "update": 13.877, "loss": "1.5", "ppl": "2.83", "wps": "16361.3", "ups": "0.09", "wpb": "185286", "bsz": "408.6", "num_updates": "9000", "lr": "0.000393193", "gnorm": "0.048", "clip": "0", "loss_scale": "8", "train_wall": "2171", "gb_free": "6.8", "wall": "0"}
+2022-06-29 00:35:35 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-06-29 00:39:10 | INFO | train_inner | {"epoch": 14, "update": 13.895, "loss": "1.497", "ppl": "2.82", "wps": "16279.5", "ups": "0.09", "wpb": "185140", "bsz": "409.7", "num_updates": "9200", "lr": "0.000393033", "gnorm": "0.048", "clip": "0", "loss_scale": "8", "train_wall": "2180", "gb_free": "6.7", "wall": "0"}
+2022-06-29 01:16:54 | INFO | train_inner | {"epoch": 14, "update": 13.913, "loss": "1.494", "ppl": "2.82", "wps": "16365.1", "ups": "0.09", "wpb": "185240", "bsz": "408.7", "num_updates": "9400", "lr": "0.000392873", "gnorm": "0.048", "clip": "0", "loss_scale": "8", "train_wall": "2171", "gb_free": "6.7", "wall": "0"}
+2022-06-29 01:31:13 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-06-29 01:54:49 | INFO | train_inner | {"epoch": 14, "update": 13.931, "loss": "1.493", "ppl": "2.82", "wps": "16280.6", "ups": "0.09", "wpb": "185247", "bsz": "408.8", "num_updates": "9600", "lr": "0.000392713", "gnorm": "0.048", "clip": "0", "loss_scale": "8", "train_wall": "2181", "gb_free": "6.7", "wall": "0"}
+2022-06-29 02:18:25 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-06-29 02:32:45 | INFO | train_inner | {"epoch": 14, "update": 13.95, "loss": "1.492", "ppl": "2.81", "wps": "16275.7", "ups": "0.09", "wpb": "185207", "bsz": "409", "num_updates": "9800", "lr": "0.000392553", "gnorm": "0.048", "clip": "0", "loss_scale": "4", "train_wall": "2181", "gb_free": "6.7", "wall": "0"}
+2022-06-29 03:10:29 | INFO | train_inner | {"epoch": 14, "update": 13.968, "loss": "1.49", "ppl": "2.81", "wps": "16359.3", "ups": "0.09", "wpb": "185129", "bsz": "408.6", "num_updates": "10000", "lr": "0.000392392", "gnorm": "0.048", "clip": "0", "loss_scale": "8", "train_wall": "2169", "gb_free": "6.8", "wall": "0"}
+2022-06-29 03:48:15 | INFO | train_inner | {"epoch": 14, "update": 13.986, "loss": "1.489", "ppl": "2.81", "wps": "16352.8", "ups": "0.09", "wpb": "185313", "bsz": "409.2", "num_updates": "10200", "lr": "0.000392232", "gnorm": "0.048", "clip": "0", "loss_scale": "8", "train_wall": "2172", "gb_free": "6.7", "wall": "0"}
+2022-06-29 04:17:28 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-06-29 04:17:50 | INFO | valid | {"epoch": 14, "valid_loss": "1.449", "valid_ppl": "2.73", "valid_wps": "36391", "valid_wpb": "5748.7", "valid_bsz": "12.7", "valid_num_updates": "10355", "valid_best_loss": "0.85"}
+2022-06-29 04:17:50 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 14 @ 10355 updates
+2022-06-29 04:17:50 | INFO | fairseq.trainer | Saving checkpoint to /home/dahmanir/checkpoints/checkpoint14.pt
+2022-06-29 04:17:53 | INFO | fairseq.trainer | Finished saving checkpoint to /home/dahmanir/checkpoints/checkpoint14.pt
+2022-06-29 04:17:53 | INFO | fairseq.checkpoint_utils | Saved checkpoint checkpoints/checkpoint14.pt (epoch 14 @ 10355 updates, score 1.449) (writing took 3.0306930439546704 seconds)
+2022-06-29 04:17:53 | INFO | fairseq_cli.train | end of epoch 14 (average epoch stats below)
+2022-06-29 04:17:53 | INFO | train | {"epoch": 14, "train_loss": "1.027", "train_ppl": "2.04", "train_wps": "294893", "train_ups": "0.35", "train_wpb": "847986", "train_bsz": "1836.8", "train_num_updates": "10355", "train_lr": "0.000392108", "train_gnorm": "0.078", "train_clip": "1.1", "train_loss_scale": "5", "train_train_wall": "160839", "train_gb_free": "6.8", "train_wall": "0"}
+2022-06-29 04:17:53 | INFO | fairseq.data.iterators | grouped total_num_itrs = 11017
+2022-06-29 04:17:53 | INFO | fairseq.trainer | begin training epoch 15
+2022-06-29 04:17:53 | INFO | fairseq_cli.train | Start iterating over samples
+2022-06-29 04:26:30 | INFO | train_inner | {"epoch": 15, "update": 14.004, "loss": "1.487", "ppl": "2.8", "wps": "16098", "ups": "0.09", "wpb": "184691", "bsz": "406.8", "num_updates": "10400", "lr": "0.000392072", "gnorm": "0.048", "clip": "0.5", "loss_scale": "16", "train_wall": "2168", "gb_free": "6.7", "wall": "0"}
+2022-06-29 04:52:22 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-06-29 05:04:27 | INFO | train_inner | {"epoch": 15, "update": 14.022, "loss": "1.484", "ppl": "2.8", "wps": "16270.4", "ups": "0.09", "wpb": "185294", "bsz": "409.7", "num_updates": "10600", "lr": "0.000391912", "gnorm": "0.048", "clip": "0", "loss_scale": "16", "train_wall": "2183", "gb_free": "6.7", "wall": "0"}
+2022-06-29 05:28:02 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-06-29 05:42:22 | INFO | train_inner | {"epoch": 15, "update": 14.041, "loss": "1.484", "ppl": "2.8", "wps": "16273.8", "ups": "0.09", "wpb": "185120", "bsz": "409.8", "num_updates": "10800", "lr": "0.000391752", "gnorm": "0.048", "clip": "0", "loss_scale": "8", "train_wall": "2181", "gb_free": "6.7", "wall": "0"}
+2022-06-29 06:20:06 | INFO | train_inner | {"epoch": 15, "update": 14.059, "loss": "1.482", "ppl": "2.79", "wps": "16359.5", "ups": "0.09", "wpb": "185182", "bsz": "408.7", "num_updates": "11000", "lr": "0.000391592", "gnorm": "0.048", "clip": "0", "loss_scale": "16", "train_wall": "2171", "gb_free": "6.7", "wall": "0"}
+2022-06-29 06:41:15 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-06-29 06:43:54 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-06-29 06:58:14 | INFO | train_inner | {"epoch": 15, "update": 14.077, "loss": "1.481", "ppl": "2.79", "wps": "16198.8", "ups": "0.09", "wpb": "185277", "bsz": "408", "num_updates": "11200", "lr": "0.000391431", "gnorm": "0.048", "clip": "0", "loss_scale": "4", "train_wall": "2193", "gb_free": "6.7", "wall": "0"}
+2022-06-29 07:35:57 | INFO | train_inner | {"epoch": 15, "update": 14.095, "loss": "1.479", "ppl": "2.79", "wps": "16376.5", "ups": "0.09", "wpb": "185318", "bsz": "409", "num_updates": "11400", "lr": "0.000391271", "gnorm": "0.048", "clip": "0", "loss_scale": "8", "train_wall": "2169", "gb_free": "6.7", "wall": "0"}
+2022-06-29 07:56:09 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-06-29 08:13:54 | INFO | train_inner | {"epoch": 15, "update": 14.113, "loss": "1.478", "ppl": "2.79", "wps": "16277.7", "ups": "0.09", "wpb": "185326", "bsz": "408.1", "num_updates": "11600", "lr": "0.000391111", "gnorm": "0.048", "clip": "0", "loss_scale": "4", "train_wall": "2184", "gb_free": "6.7", "wall": "0"}
+2022-06-29 08:51:36 | INFO | train_inner | {"epoch": 15, "update": 14.132, "loss": "1.476", "ppl": "2.78", "wps": "16372.5", "ups": "0.09", "wpb": "185199", "bsz": "408.9", "num_updates": "11800", "lr": "0.000390951", "gnorm": "0.048", "clip": "0", "loss_scale": "8", "train_wall": "2169", "gb_free": "6.7", "wall": "0"}
+2022-06-29 08:55:00 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-06-29 09:29:29 | INFO | train_inner | {"epoch": 15, "update": 14.15, "loss": "1.475", "ppl": "2.78", "wps": "16288.9", "ups": "0.09", "wpb": "185117", "bsz": "408.8", "num_updates": "12000", "lr": "0.000390791", "gnorm": "0.048", "clip": "0", "loss_scale": "4", "train_wall": "2179", "gb_free": "6.7", "wall": "0"}
+2022-06-29 10:07:11 | INFO | train_inner | {"epoch": 15, "update": 14.168, "loss": "1.475", "ppl": "2.78", "wps": "16371.9", "ups": "0.09", "wpb": "185144", "bsz": "409.1", "num_updates": "12200", "lr": "0.000390631", "gnorm": "0.048", "clip": "0", "loss_scale": "8", "train_wall": "2169", "gb_free": "6.7", "wall": "0"}
+2022-06-29 10:44:55 | INFO | train_inner | {"epoch": 15, "update": 14.186, "loss": "1.473", "ppl": "2.78", "wps": "16371.1", "ups": "0.09", "wpb": "185342", "bsz": "408.4", "num_updates": "12400", "lr": "0.00039047", "gnorm": "0.048", "clip": "0", "loss_scale": "16", "train_wall": "2172", "gb_free": "6.7", "wall": "0"}
+2022-06-29 11:22:38 | INFO | train_inner | {"epoch": 15, "update": 14.204, "loss": "1.472", "ppl": "2.77", "wps": "16375.2", "ups": "0.09", "wpb": "185280", "bsz": "408.5", "num_updates": "12600", "lr": "0.00039031", "gnorm": "0.048", "clip": "0", "loss_scale": "32", "train_wall": "2170", "gb_free": "6.7", "wall": "0"}
+2022-06-29 12:00:28 | INFO | train_inner | {"epoch": 15, "update": 14.222, "loss": "1.472", "ppl": "2.77", "wps": "16334.5", "ups": "0.09", "wpb": "185335", "bsz": "409.8", "num_updates": "12800", "lr": "0.00039015", "gnorm": "0.047", "clip": "0", "loss_scale": "32", "train_wall": "2176", "gb_free": "6.7", "wall": "0"}
+2022-06-29 12:00:50 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-06-29 12:38:22 | INFO | train_inner | {"epoch": 15, "update": 14.241, "loss": "1.47", "ppl": "2.77", "wps": "16282.3", "ups": "0.09", "wpb": "185132", "bsz": "409.7", "num_updates": "13000", "lr": "0.00038999", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2180", "gb_free": "6.7", "wall": "0"}
+2022-06-29 13:16:09 | INFO | train_inner | {"epoch": 15, "update": 14.259, "loss": "1.471", "ppl": "2.77", "wps": "16338.6", "ups": "0.09", "wpb": "185238", "bsz": "408.7", "num_updates": "13200", "lr": "0.00038983", "gnorm": "0.047", "clip": "0", "loss_scale": "32", "train_wall": "2173", "gb_free": "6.7", "wall": "0"}
+2022-06-29 13:33:00 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-06-29 13:38:39 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-06-29 13:54:19 | INFO | train_inner | {"epoch": 15, "update": 14.277, "loss": "1.471", "ppl": "2.77", "wps": "16190.1", "ups": "0.09", "wpb": "185386", "bsz": "409.1", "num_updates": "13400", "lr": "0.00038967", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2195", "gb_free": "6.7", "wall": "0"}
+2022-06-29 14:32:08 | INFO | train_inner | {"epoch": 15, "update": 14.295, "loss": "1.468", "ppl": "2.77", "wps": "16336", "ups": "0.09", "wpb": "185302", "bsz": "408.8", "num_updates": "13600", "lr": "0.00038951", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2173", "gb_free": "6.7", "wall": "0"}
+2022-06-29 15:09:55 | INFO | train_inner | {"epoch": 15, "update": 14.314, "loss": "1.467", "ppl": "2.76", "wps": "16329.6", "ups": "0.09", "wpb": "185116", "bsz": "408", "num_updates": "13800", "lr": "0.000389349", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2172", "gb_free": "6.7", "wall": "0"}
+2022-06-29 15:47:41 | INFO | train_inner | {"epoch": 15, "update": 14.332, "loss": "1.468", "ppl": "2.77", "wps": "16351.2", "ups": "0.09", "wpb": "185289", "bsz": "408.1", "num_updates": "14000", "lr": "0.000389189", "gnorm": "0.047", "clip": "0", "loss_scale": "32", "train_wall": "2172", "gb_free": "6.7", "wall": "0"}
+2022-06-29 16:03:10 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-06-29 16:11:40 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-06-29 16:25:49 | INFO | train_inner | {"epoch": 15, "update": 14.35, "loss": "1.466", "ppl": "2.76", "wps": "16185.5", "ups": "0.09", "wpb": "185151", "bsz": "408.3", "num_updates": "14200", "lr": "0.000389029", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2193", "gb_free": "6.7", "wall": "0"}
+2022-06-29 17:03:35 | INFO | train_inner | {"epoch": 15, "update": 14.368, "loss": "1.467", "ppl": "2.76", "wps": "16356.4", "ups": "0.09", "wpb": "185311", "bsz": "408.2", "num_updates": "14400", "lr": "0.000388869", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2172", "gb_free": "6.7", "wall": "0"}
+2022-06-29 17:05:50 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-06-29 17:29:35 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-06-29 17:41:42 | INFO | train_inner | {"epoch": 15, "update": 14.386, "loss": "1.466", "ppl": "2.76", "wps": "16209.8", "ups": "0.09", "wpb": "185314", "bsz": "409.1", "num_updates": "14600", "lr": "0.000388709", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2192", "gb_free": "6.7", "wall": "0"}
+2022-06-29 18:19:26 | INFO | train_inner | {"epoch": 15, "update": 14.405, "loss": "1.464", "ppl": "2.76", "wps": "16370.6", "ups": "0.09", "wpb": "185326", "bsz": "409.5", "num_updates": "14800", "lr": "0.000388549", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2171", "gb_free": "6.7", "wall": "0"}
+2022-06-29 18:39:25 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-06-29 18:57:22 | INFO | train_inner | {"epoch": 15, "update": 14.423, "loss": "1.464", "ppl": "2.76", "wps": "16280.8", "ups": "0.09", "wpb": "185313", "bsz": "408.2", "num_updates": "15000", "lr": "0.000388388", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2183", "gb_free": "6.7", "wall": "0"}
+2022-06-29 19:21:55 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 2.0
+2022-06-29 19:22:06 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.0
+2022-06-29 19:35:29 | INFO | train_inner | {"epoch": 15, "update": 14.441, "loss": "1.462", "ppl": "2.76", "wps": "16213.1", "ups": "0.09", "wpb": "185375", "bsz": "408.9", "num_updates": "15200", "lr": "0.000388228", "gnorm": "0.049", "clip": "0.5", "loss_scale": "1", "train_wall": "2193", "gb_free": "6.7", "wall": "0"}
+2022-06-29 20:13:04 | INFO | train_inner | {"epoch": 15, "update": 14.459, "loss": "1.463", "ppl": "2.76", "wps": "16435", "ups": "0.09", "wpb": "185328", "bsz": "408.4", "num_updates": "15400", "lr": "0.000388068", "gnorm": "0.047", "clip": "0", "loss_scale": "2", "train_wall": "2165", "gb_free": "6.7", "wall": "0"}
+2022-06-29 20:50:41 | INFO | train_inner | {"epoch": 15, "update": 14.478, "loss": "1.461", "ppl": "2.75", "wps": "16413.1", "ups": "0.09", "wpb": "185216", "bsz": "408", "num_updates": "15600", "lr": "0.000387908", "gnorm": "0.047", "clip": "0", "loss_scale": "2", "train_wall": "2169", "gb_free": "6.7", "wall": "0"}
+2022-06-29 21:28:23 | INFO | train_inner | {"epoch": 15, "update": 14.496, "loss": "1.462", "ppl": "2.75", "wps": "16377", "ups": "0.09", "wpb": "185180", "bsz": "408.9", "num_updates": "15800", "lr": "0.000387748", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2169", "gb_free": "6.7", "wall": "0"}
+2022-06-29 21:31:46 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 2.0
+2022-06-29 22:06:14 | INFO | train_inner | {"epoch": 15, "update": 14.514, "loss": "1.462", "ppl": "2.76", "wps": "16316.1", "ups": "0.09", "wpb": "185311", "bsz": "408.8", "num_updates": "16000", "lr": "0.000387588", "gnorm": "0.047", "clip": "0", "loss_scale": "2", "train_wall": "2178", "gb_free": "6.7", "wall": "0"}
+2022-06-29 22:39:09 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 2.0
+2022-06-29 22:44:03 | INFO | train_inner | {"epoch": 15, "update": 14.532, "loss": "1.458", "ppl": "2.75", "wps": "16319.3", "ups": "0.09", "wpb": "185100", "bsz": "408.5", "num_updates": "16200", "lr": "0.000387427", "gnorm": "0.047", "clip": "0", "loss_scale": "2", "train_wall": "2175", "gb_free": "6.7", "wall": "0"}
+2022-06-29 23:21:43 | INFO | train_inner | {"epoch": 15, "update": 14.55, "loss": "1.459", "ppl": "2.75", "wps": "16389.5", "ups": "0.09", "wpb": "185224", "bsz": "409.2", "num_updates": "16400", "lr": "0.000387267", "gnorm": "0.047", "clip": "0", "loss_scale": "2", "train_wall": "2167", "gb_free": "6.7", "wall": "0"}
+2022-06-29 23:59:26 | INFO | train_inner | {"epoch": 15, "update": 14.568, "loss": "1.46", "ppl": "2.75", "wps": "16372.8", "ups": "0.09", "wpb": "185305", "bsz": "408.4", "num_updates": "16600", "lr": "0.000387107", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2170", "gb_free": "6.7", "wall": "0"}
+2022-06-30 00:37:09 | INFO | train_inner | {"epoch": 15, "update": 14.587, "loss": "1.461", "ppl": "2.75", "wps": "16377.9", "ups": "0.09", "wpb": "185316", "bsz": "409", "num_updates": "16800", "lr": "0.000386947", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2170", "gb_free": "6.7", "wall": "0"}
+2022-06-30 00:47:43 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-06-30 01:15:03 | INFO | train_inner | {"epoch": 15, "update": 14.605, "loss": "1.456", "ppl": "2.74", "wps": "16299.1", "ups": "0.09", "wpb": "185242", "bsz": "408.6", "num_updates": "17000", "lr": "0.000386787", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2179", "gb_free": "6.7", "wall": "0"}
+2022-06-30 01:52:45 | INFO | train_inner | {"epoch": 15, "update": 14.623, "loss": "1.458", "ppl": "2.75", "wps": "16381.1", "ups": "0.09", "wpb": "185282", "bsz": "409.5", "num_updates": "17200", "lr": "0.000386627", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2170", "gb_free": "6.7", "wall": "0"}
+2022-06-30 01:59:55 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-06-30 02:19:32 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 2.0
+2022-06-30 02:30:51 | INFO | train_inner | {"epoch": 15, "update": 14.641, "loss": "1.458", "ppl": "2.75", "wps": "16215.2", "ups": "0.09", "wpb": "185331", "bsz": "409.2", "num_updates": "17400", "lr": "0.000386466", "gnorm": "0.047", "clip": "0", "loss_scale": "2", "train_wall": "2192", "gb_free": "6.7", "wall": "0"}
+2022-06-30 03:08:30 | INFO | train_inner | {"epoch": 15, "update": 14.66, "loss": "1.459", "ppl": "2.75", "wps": "16380.9", "ups": "0.09", "wpb": "185096", "bsz": "408.2", "num_updates": "17600", "lr": "0.000386306", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2166", "gb_free": "6.7", "wall": "0"}
+2022-06-30 03:46:12 | INFO | train_inner | {"epoch": 15, "update": 14.678, "loss": "1.456", "ppl": "2.74", "wps": "16369.4", "ups": "0.09", "wpb": "185125", "bsz": "409.9", "num_updates": "17800", "lr": "0.000386146", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2168", "gb_free": "6.7", "wall": "0"}
+2022-06-30 04:23:57 | INFO | train_inner | {"epoch": 15, "update": 14.696, "loss": "1.454", "ppl": "2.74", "wps": "16363.1", "ups": "0.09", "wpb": "185260", "bsz": "409.4", "num_updates": "18000", "lr": "0.000385986", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2171", "gb_free": "6.8", "wall": "0"}
+2022-06-30 05:01:43 | INFO | train_inner | {"epoch": 15, "update": 14.714, "loss": "1.456", "ppl": "2.74", "wps": "16355.8", "ups": "0.09", "wpb": "185299", "bsz": "408.9", "num_updates": "18200", "lr": "0.000385826", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2172", "gb_free": "6.7", "wall": "0"}
+2022-06-30 05:36:14 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-06-30 05:39:38 | INFO | train_inner | {"epoch": 15, "update": 14.732, "loss": "1.455", "ppl": "2.74", "wps": "16280.1", "ups": "0.09", "wpb": "185184", "bsz": "409.3", "num_updates": "18400", "lr": "0.000385666", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2182", "gb_free": "6.7", "wall": "0"}
+2022-06-30 06:17:18 | INFO | train_inner | {"epoch": 15, "update": 14.75, "loss": "1.454", "ppl": "2.74", "wps": "16374.8", "ups": "0.09", "wpb": "185075", "bsz": "409.3", "num_updates": "18600", "lr": "0.000385506", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2167", "gb_free": "6.7", "wall": "0"}
+2022-06-30 06:44:29 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-06-30 06:55:14 | INFO | train_inner | {"epoch": 15, "update": 14.769, "loss": "1.455", "ppl": "2.74", "wps": "16288.2", "ups": "0.09", "wpb": "185330", "bsz": "408.1", "num_updates": "18800", "lr": "0.000385345", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2183", "gb_free": "6.7", "wall": "0"}
+2022-06-30 07:03:54 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-06-30 07:33:06 | INFO | train_inner | {"epoch": 15, "update": 14.787, "loss": "1.454", "ppl": "2.74", "wps": "16301.9", "ups": "0.09", "wpb": "185198", "bsz": "409.1", "num_updates": "19000", "lr": "0.000385185", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2179", "gb_free": "6.7", "wall": "0"}
+2022-06-30 07:41:46 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-06-30 08:11:02 | INFO | train_inner | {"epoch": 15, "update": 14.805, "loss": "1.454", "ppl": "2.74", "wps": "16282.6", "ups": "0.09", "wpb": "185300", "bsz": "408.6", "num_updates": "19200", "lr": "0.000385025", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2182", "gb_free": "6.7", "wall": "0"}
+2022-06-30 08:48:46 | INFO | train_inner | {"epoch": 15, "update": 14.823, "loss": "1.455", "ppl": "2.74", "wps": "16366.2", "ups": "0.09", "wpb": "185306", "bsz": "408.6", "num_updates": "19400", "lr": "0.000384865", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2171", "gb_free": "6.7", "wall": "0"}
+2022-06-30 09:26:27 | INFO | train_inner | {"epoch": 15, "update": 14.841, "loss": "1.454", "ppl": "2.74", "wps": "16383.1", "ups": "0.09", "wpb": "185210", "bsz": "409.3", "num_updates": "19600", "lr": "0.000384705", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2168", "gb_free": "6.7", "wall": "0"}
+2022-06-30 10:04:13 | INFO | train_inner | {"epoch": 15, "update": 14.86, "loss": "1.451", "ppl": "2.73", "wps": "16355.4", "ups": "0.09", "wpb": "185263", "bsz": "409.3", "num_updates": "19800", "lr": "0.000384545", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2172", "gb_free": "6.7", "wall": "0"}
+2022-06-30 10:42:01 | INFO | train_inner | {"epoch": 15, "update": 14.878, "loss": "1.453", "ppl": "2.74", "wps": "16339.8", "ups": "0.09", "wpb": "185274", "bsz": "408.2", "num_updates": "20000", "lr": "0.000384384", "gnorm": "0.047", "clip": "0", "loss_scale": "32", "train_wall": "2175", "gb_free": "6.7", "wall": "0"}
+2022-06-30 11:02:35 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 32.0
+2022-06-30 11:19:57 | INFO | train_inner | {"epoch": 15, "update": 14.896, "loss": "1.451", "ppl": "2.73", "wps": "16270.5", "ups": "0.09", "wpb": "185212", "bsz": "407.9", "num_updates": "20200", "lr": "0.000384224", "gnorm": "0.047", "clip": "0", "loss_scale": "32", "train_wall": "2183", "gb_free": "6.7", "wall": "0"}
+2022-06-30 11:29:36 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-06-30 11:39:36 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-06-30 11:58:06 | INFO | train_inner | {"epoch": 15, "update": 14.914, "loss": "1.451", "ppl": "2.73", "wps": "16192", "ups": "0.09", "wpb": "185275", "bsz": "408", "num_updates": "20400", "lr": "0.000384064", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2195", "gb_free": "6.7", "wall": "0"}
+2022-06-30 12:35:47 | INFO | train_inner | {"epoch": 15, "update": 14.932, "loss": "1.453", "ppl": "2.74", "wps": "16375.8", "ups": "0.09", "wpb": "185137", "bsz": "408.5", "num_updates": "20600", "lr": "0.000383904", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2169", "gb_free": "6.7", "wall": "0"}
+2022-06-30 13:04:39 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-06-30 13:13:41 | INFO | train_inner | {"epoch": 15, "update": 14.951, "loss": "1.454", "ppl": "2.74", "wps": "16293.8", "ups": "0.09", "wpb": "185298", "bsz": "408", "num_updates": "20800", "lr": "0.000383744", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2181", "gb_free": "6.7", "wall": "0"}
+2022-06-30 13:51:21 | INFO | train_inner | {"epoch": 15, "update": 14.969, "loss": "1.451", "ppl": "2.73", "wps": "16386.3", "ups": "0.09", "wpb": "185147", "bsz": "408.2", "num_updates": "21000", "lr": "0.000383584", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2166", "gb_free": "6.7", "wall": "0"}
+2022-06-30 14:08:09 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-06-30 14:29:15 | INFO | train_inner | {"epoch": 15, "update": 14.987, "loss": "1.45", "ppl": "2.73", "wps": "16303.1", "ups": "0.09", "wpb": "185377", "bsz": "408.8", "num_updates": "21200", "lr": "0.000383423", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2180", "gb_free": "6.7", "wall": "0"}
+2022-06-30 14:29:27 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-06-30 14:55:55 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-06-30 14:56:17 | INFO | valid | {"epoch": 15, "valid_loss": "1.414", "valid_ppl": "2.66", "valid_wps": "36322.7", "valid_wpb": "5748.7", "valid_bsz": "12.7", "valid_num_updates": "21341", "valid_best_loss": "0.85"}
+2022-06-30 14:56:17 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 15 @ 21341 updates
+2022-06-30 14:56:17 | INFO | fairseq.trainer | Saving checkpoint to /home/dahmanir/checkpoints/checkpoint15.pt
+2022-06-30 14:56:20 | INFO | fairseq.trainer | Finished saving checkpoint to /home/dahmanir/checkpoints/checkpoint15.pt
+2022-06-30 14:56:20 | INFO | fairseq.checkpoint_utils | Saved checkpoint checkpoints/checkpoint15.pt (epoch 15 @ 21341 updates, score 1.414) (writing took 3.052760501857847 seconds)
+2022-06-30 14:56:20 | INFO | fairseq_cli.train | end of epoch 15 (average epoch stats below)
+2022-06-30 14:56:20 | INFO | train | {"epoch": 15, "train_loss": "1.463", "train_ppl": "2.76", "train_wps": "16318.3", "train_ups": "0.09", "train_wpb": "185237", "train_bsz": "408.7", "train_num_updates": "21341", "train_lr": "0.000383311", "train_gnorm": "0.047", "train_clip": "0", "train_loss_scale": "4", "train_train_wall": "119543", "train_gb_free": "6.7", "train_wall": "0"}
+2022-06-30 14:56:21 | INFO | fairseq.data.iterators | grouped total_num_itrs = 11017
+2022-06-30 14:56:21 | INFO | fairseq.trainer | begin training epoch 16
+2022-06-30 14:56:21 | INFO | fairseq_cli.train | Start iterating over samples
+2022-06-30 15:06:38 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 2.0
+2022-06-30 15:07:46 | INFO | train_inner | {"epoch": 16, "update": 15.005, "loss": "1.45", "ppl": "2.73", "wps": "15977.3", "ups": "0.09", "wpb": "184586", "bsz": "406.7", "num_updates": "21400", "lr": "0.000383263", "gnorm": "0.047", "clip": "0.5", "loss_scale": "2", "train_wall": "2186", "gb_free": "6.7", "wall": "0"}
+2022-06-30 15:20:25 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 1.0
+2022-06-30 15:45:40 | INFO | train_inner | {"epoch": 16, "update": 15.024, "loss": "1.446", "ppl": "2.72", "wps": "16280.9", "ups": "0.09", "wpb": "185158", "bsz": "408.8", "num_updates": "21600", "lr": "0.000383103", "gnorm": "0.047", "clip": "0", "loss_scale": "1", "train_wall": "2179", "gb_free": "6.7", "wall": "0"}
+2022-06-30 16:23:22 | INFO | train_inner | {"epoch": 16, "update": 15.042, "loss": "1.445", "ppl": "2.72", "wps": "16376.8", "ups": "0.09", "wpb": "185200", "bsz": "408.2", "num_updates": "21800", "lr": "0.000382943", "gnorm": "0.047", "clip": "0", "loss_scale": "2", "train_wall": "2168", "gb_free": "6.7", "wall": "0"}
+2022-06-30 17:01:02 | INFO | train_inner | {"epoch": 16, "update": 15.06, "loss": "1.448", "ppl": "2.73", "wps": "16380.8", "ups": "0.09", "wpb": "185134", "bsz": "409.8", "num_updates": "22000", "lr": "0.000382783", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2167", "gb_free": "6.7", "wall": "0"}
+2022-06-30 17:38:45 | INFO | train_inner | {"epoch": 16, "update": 15.078, "loss": "1.449", "ppl": "2.73", "wps": "16374", "ups": "0.09", "wpb": "185270", "bsz": "408.4", "num_updates": "22200", "lr": "0.000382623", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2169", "gb_free": "6.7", "wall": "0"}
+2022-06-30 18:16:30 | INFO | train_inner | {"epoch": 16, "update": 15.096, "loss": "1.447", "ppl": "2.73", "wps": "16370.1", "ups": "0.09", "wpb": "185334", "bsz": "408.4", "num_updates": "22400", "lr": "0.000382462", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2170", "gb_free": "6.7", "wall": "0"}
+2022-06-30 18:48:47 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-06-30 18:54:27 | INFO | train_inner | {"epoch": 16, "update": 15.115, "loss": "1.448", "ppl": "2.73", "wps": "16272.1", "ups": "0.09", "wpb": "185257", "bsz": "409.4", "num_updates": "22600", "lr": "0.000382302", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2183", "gb_free": "6.7", "wall": "0"}
+2022-06-30 19:32:10 | INFO | train_inner | {"epoch": 16, "update": 15.133, "loss": "1.447", "ppl": "2.73", "wps": "16368.8", "ups": "0.09", "wpb": "185258", "bsz": "408.9", "num_updates": "22800", "lr": "0.000382142", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2170", "gb_free": "6.7", "wall": "0"}
+2022-06-30 20:09:54 | INFO | train_inner | {"epoch": 16, "update": 15.151, "loss": "1.446", "ppl": "2.72", "wps": "16361.8", "ups": "0.09", "wpb": "185186", "bsz": "409.2", "num_updates": "23000", "lr": "0.000381982", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2170", "gb_free": "6.7", "wall": "0"}
+2022-06-30 20:24:27 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-06-30 20:47:50 | INFO | train_inner | {"epoch": 16, "update": 15.169, "loss": "1.447", "ppl": "2.73", "wps": "16278.1", "ups": "0.09", "wpb": "185255", "bsz": "408.5", "num_updates": "23200", "lr": "0.000381822", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2182", "gb_free": "6.7", "wall": "0"}
+2022-06-30 21:00:06 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-06-30 21:25:46 | INFO | train_inner | {"epoch": 16, "update": 15.187, "loss": "1.449", "ppl": "2.73", "wps": "16274.8", "ups": "0.09", "wpb": "185229", "bsz": "408.7", "num_updates": "23400", "lr": "0.000381662", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2181", "gb_free": "6.7", "wall": "0"}
+2022-06-30 22:03:30 | INFO | train_inner | {"epoch": 16, "update": 15.206, "loss": "1.446", "ppl": "2.73", "wps": "16371.4", "ups": "0.09", "wpb": "185303", "bsz": "408.9", "num_updates": "23600", "lr": "0.000381502", "gnorm": "0.048", "clip": "0.5", "loss_scale": "8", "train_wall": "2169", "gb_free": "6.7", "wall": "0"}
+2022-06-30 22:41:12 | INFO | train_inner | {"epoch": 16, "update": 15.224, "loss": "1.449", "ppl": "2.73", "wps": "16373.7", "ups": "0.09", "wpb": "185165", "bsz": "409.6", "num_updates": "23800", "lr": "0.000381341", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2168", "gb_free": "6.8", "wall": "0"}
+2022-06-30 23:19:00 | INFO | train_inner | {"epoch": 16, "update": 15.242, "loss": "1.446", "ppl": "2.73", "wps": "16359.1", "ups": "0.09", "wpb": "185491", "bsz": "408.8", "num_updates": "24000", "lr": "0.000381181", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2173", "gb_free": "6.7", "wall": "0"}
+2022-06-30 23:37:31 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-06-30 23:50:10 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-06-30 23:57:09 | INFO | train_inner | {"epoch": 16, "update": 15.26, "loss": "1.447", "ppl": "2.73", "wps": "16185.9", "ups": "0.09", "wpb": "185242", "bsz": "408", "num_updates": "24200", "lr": "0.000381021", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2194", "gb_free": "6.7", "wall": "0"}
+2022-07-01 00:03:21 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-07-01 00:35:02 | INFO | train_inner | {"epoch": 16, "update": 15.278, "loss": "1.446", "ppl": "2.73", "wps": "16299", "ups": "0.09", "wpb": "185264", "bsz": "408.9", "num_updates": "24400", "lr": "0.000380861", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2179", "gb_free": "6.7", "wall": "0"}
+2022-07-01 01:12:45 | INFO | train_inner | {"epoch": 16, "update": 15.297, "loss": "1.446", "ppl": "2.73", "wps": "16372.3", "ups": "0.09", "wpb": "185237", "bsz": "408.7", "num_updates": "24600", "lr": "0.000380701", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2169", "gb_free": "6.6", "wall": "0"}
+2022-07-01 01:50:27 | INFO | train_inner | {"epoch": 16, "update": 15.315, "loss": "1.445", "ppl": "2.72", "wps": "16363.1", "ups": "0.09", "wpb": "185075", "bsz": "408.8", "num_updates": "24800", "lr": "0.000380541", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2167", "gb_free": "6.7", "wall": "0"}
+2022-07-01 01:58:11 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-07-01 02:28:19 | INFO | train_inner | {"epoch": 16, "update": 15.333, "loss": "1.445", "ppl": "2.72", "wps": "16298.7", "ups": "0.09", "wpb": "185179", "bsz": "408.2", "num_updates": "25000", "lr": "0.00038038", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2178", "gb_free": "6.7", "wall": "0"}
+2022-07-01 03:06:02 | INFO | train_inner | {"epoch": 16, "update": 15.351, "loss": "1.446", "ppl": "2.72", "wps": "16370.8", "ups": "0.09", "wpb": "185214", "bsz": "408.9", "num_updates": "25200", "lr": "0.00038022", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2169", "gb_free": "6.7", "wall": "0"}
+2022-07-01 03:36:46 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-07-01 03:43:56 | INFO | train_inner | {"epoch": 16, "update": 15.369, "loss": "1.444", "ppl": "2.72", "wps": "16285.4", "ups": "0.09", "wpb": "185159", "bsz": "408.1", "num_updates": "25400", "lr": "0.00038006", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2180", "gb_free": "6.8", "wall": "0"}
+2022-07-01 04:21:41 | INFO | train_inner | {"epoch": 16, "update": 15.387, "loss": "1.446", "ppl": "2.73", "wps": "16366.5", "ups": "0.09", "wpb": "185388", "bsz": "408.9", "num_updates": "25600", "lr": "0.0003799", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2171", "gb_free": "6.7", "wall": "0"}
+2022-07-01 04:59:26 | INFO | train_inner | {"epoch": 16, "update": 15.406, "loss": "1.445", "ppl": "2.72", "wps": "16347", "ups": "0.09", "wpb": "185133", "bsz": "409.2", "num_updates": "25800", "lr": "0.00037974", "gnorm": "0.047", "clip": "0", "loss_scale": "32", "train_wall": "2171", "gb_free": "6.7", "wall": "0"}
+2022-07-01 05:16:27 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 32.0
+2022-07-01 05:19:05 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-07-01 05:37:35 | INFO | train_inner | {"epoch": 16, "update": 15.424, "loss": "1.446", "ppl": "2.72", "wps": "16194", "ups": "0.09", "wpb": "185320", "bsz": "409", "num_updates": "26000", "lr": "0.00037958", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2194", "gb_free": "6.7", "wall": "0"}
+2022-07-01 06:15:19 | INFO | train_inner | {"epoch": 16, "update": 15.442, "loss": "1.443", "ppl": "2.72", "wps": "16352.8", "ups": "0.09", "wpb": "185132", "bsz": "408.8", "num_updates": "26200", "lr": "0.000379419", "gnorm": "0.047", "clip": "0", "loss_scale": "32", "train_wall": "2170", "gb_free": "6.7", "wall": "0"}
+2022-07-01 06:41:01 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-07-01 06:53:16 | INFO | train_inner | {"epoch": 16, "update": 15.46, "loss": "1.444", "ppl": "2.72", "wps": "16276.6", "ups": "0.09", "wpb": "185308", "bsz": "408.3", "num_updates": "26400", "lr": "0.000379259", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2183", "gb_free": "6.7", "wall": "0"}
+2022-07-01 07:30:59 | INFO | train_inner | {"epoch": 16, "update": 15.479, "loss": "1.446", "ppl": "2.72", "wps": "16359.8", "ups": "0.09", "wpb": "185095", "bsz": "408.5", "num_updates": "26600", "lr": "0.000379099", "gnorm": "0.047", "clip": "0", "loss_scale": "32", "train_wall": "2169", "gb_free": "6.6", "wall": "0"}
+2022-07-01 07:47:48 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-07-01 07:50:27 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-07-01 08:09:07 | INFO | train_inner | {"epoch": 16, "update": 15.497, "loss": "1.443", "ppl": "2.72", "wps": "16201.4", "ups": "0.09", "wpb": "185329", "bsz": "408.4", "num_updates": "26800", "lr": "0.000378939", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2193", "gb_free": "6.7", "wall": "0"}
+2022-07-01 08:36:05 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-07-01 08:47:01 | INFO | train_inner | {"epoch": 16, "update": 15.515, "loss": "1.444", "ppl": "2.72", "wps": "16285.1", "ups": "0.09", "wpb": "185200", "bsz": "408", "num_updates": "27000", "lr": "0.000378779", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2180", "gb_free": "6.7", "wall": "0"}
+2022-07-01 09:24:43 | INFO | train_inner | {"epoch": 16, "update": 15.533, "loss": "1.443", "ppl": "2.72", "wps": "16383.3", "ups": "0.09", "wpb": "185303", "bsz": "408.6", "num_updates": "27200", "lr": "0.000378619", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2168", "gb_free": "6.7", "wall": "0"}
+2022-07-01 09:38:18 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-07-01 10:02:39 | INFO | train_inner | {"epoch": 16, "update": 15.552, "loss": "1.446", "ppl": "2.72", "wps": "16280.1", "ups": "0.09", "wpb": "185263", "bsz": "409", "num_updates": "27400", "lr": "0.000378458", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2181", "gb_free": "6.7", "wall": "0"}
+2022-07-01 10:40:22 | INFO | train_inner | {"epoch": 16, "update": 15.57, "loss": "1.444", "ppl": "2.72", "wps": "16376.6", "ups": "0.09", "wpb": "185234", "bsz": "409.1", "num_updates": "27600", "lr": "0.000378298", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2168", "gb_free": "6.8", "wall": "0"}
+2022-07-01 11:16:58 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-07-01 11:18:17 | INFO | train_inner | {"epoch": 16, "update": 15.588, "loss": "1.441", "ppl": "2.72", "wps": "16283.3", "ups": "0.09", "wpb": "185282", "bsz": "408.3", "num_updates": "27800", "lr": "0.000378138", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2182", "gb_free": "6.7", "wall": "0"}
+2022-07-01 11:55:58 | INFO | train_inner | {"epoch": 16, "update": 15.606, "loss": "1.442", "ppl": "2.72", "wps": "16375.4", "ups": "0.09", "wpb": "185123", "bsz": "407.8", "num_updates": "28000", "lr": "0.000377978", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2167", "gb_free": "6.7", "wall": "0"}
+2022-07-01 12:33:44 | INFO | train_inner | {"epoch": 16, "update": 15.624, "loss": "1.443", "ppl": "2.72", "wps": "16369.1", "ups": "0.09", "wpb": "185464", "bsz": "410", "num_updates": "28200", "lr": "0.000377818", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2171", "gb_free": "6.7", "wall": "0"}
+2022-07-01 13:11:27 | INFO | train_inner | {"epoch": 16, "update": 15.642, "loss": "1.443", "ppl": "2.72", "wps": "16371.1", "ups": "0.09", "wpb": "185192", "bsz": "409", "num_updates": "28400", "lr": "0.000377658", "gnorm": "0.047", "clip": "0", "loss_scale": "32", "train_wall": "2168", "gb_free": "6.7", "wall": "0"}
+2022-07-01 13:19:12 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-07-01 13:49:22 | INFO | train_inner | {"epoch": 16, "update": 15.661, "loss": "1.445", "ppl": "2.72", "wps": "16293.7", "ups": "0.09", "wpb": "185336", "bsz": "408.6", "num_updates": "28600", "lr": "0.000377497", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2181", "gb_free": "6.7", "wall": "0"}
+2022-07-01 14:27:08 | INFO | train_inner | {"epoch": 16, "update": 15.679, "loss": "1.444", "ppl": "2.72", "wps": "16362.5", "ups": "0.09", "wpb": "185387", "bsz": "409.2", "num_updates": "28800", "lr": "0.000377337", "gnorm": "0.047", "clip": "0", "loss_scale": "32", "train_wall": "2173", "gb_free": "6.7", "wall": "0"}
+2022-07-01 14:52:38 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-07-01 15:03:24 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-07-01 15:05:18 | INFO | train_inner | {"epoch": 16, "update": 15.697, "loss": "1.444", "ppl": "2.72", "wps": "16183.6", "ups": "0.09", "wpb": "185316", "bsz": "408.3", "num_updates": "29000", "lr": "0.000377177", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2196", "gb_free": "6.7", "wall": "0"}
+2022-07-01 15:07:44 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-07-01 15:43:09 | INFO | train_inner | {"epoch": 16, "update": 15.715, "loss": "1.44", "ppl": "2.71", "wps": "16300.5", "ups": "0.09", "wpb": "185089", "bsz": "409.3", "num_updates": "29200", "lr": "0.000377017", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2176", "gb_free": "6.7", "wall": "0"}
+2022-07-01 15:48:26 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 2.0
+2022-07-01 16:21:01 | INFO | train_inner | {"epoch": 16, "update": 15.734, "loss": "1.44", "ppl": "2.71", "wps": "16300.6", "ups": "0.09", "wpb": "185187", "bsz": "408.1", "num_updates": "29400", "lr": "0.000376857", "gnorm": "0.047", "clip": "0", "loss_scale": "2", "train_wall": "2178", "gb_free": "6.7", "wall": "0"}
+2022-07-01 16:58:43 | INFO | train_inner | {"epoch": 16, "update": 15.752, "loss": "1.442", "ppl": "2.72", "wps": "16376.4", "ups": "0.09", "wpb": "185197", "bsz": "408.4", "num_updates": "29600", "lr": "0.000376697", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2168", "gb_free": "6.7", "wall": "0"}
+2022-07-01 17:32:05 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-07-01 17:36:36 | INFO | train_inner | {"epoch": 16, "update": 15.77, "loss": "1.442", "ppl": "2.72", "wps": "16305.1", "ups": "0.09", "wpb": "185349", "bsz": "408.9", "num_updates": "29800", "lr": "0.000376537", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2179", "gb_free": "6.7", "wall": "0"}
+2022-07-01 18:14:17 | INFO | train_inner | {"epoch": 16, "update": 15.788, "loss": "1.441", "ppl": "2.71", "wps": "16384.6", "ups": "0.09", "wpb": "185236", "bsz": "408.7", "num_updates": "30000", "lr": "0.000376376", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2168", "gb_free": "6.7", "wall": "0"}
+2022-07-01 18:52:01 | INFO | train_inner | {"epoch": 16, "update": 15.806, "loss": "1.442", "ppl": "2.72", "wps": "16368.9", "ups": "0.09", "wpb": "185246", "bsz": "408.5", "num_updates": "30200", "lr": "0.000376216", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2169", "gb_free": "6.7", "wall": "0"}
+2022-07-01 19:29:45 | INFO | train_inner | {"epoch": 16, "update": 15.824, "loss": "1.441", "ppl": "2.72", "wps": "16361.9", "ups": "0.09", "wpb": "185213", "bsz": "408.4", "num_updates": "30400", "lr": "0.000376056", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2170", "gb_free": "6.7", "wall": "0"}
+2022-07-01 19:44:40 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-07-01 20:07:42 | INFO | train_inner | {"epoch": 16, "update": 15.843, "loss": "1.441", "ppl": "2.72", "wps": "16271.1", "ups": "0.09", "wpb": "185291", "bsz": "408.4", "num_updates": "30600", "lr": "0.000375896", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2183", "gb_free": "6.7", "wall": "0"}
+2022-07-01 20:45:25 | INFO | train_inner | {"epoch": 16, "update": 15.861, "loss": "1.44", "ppl": "2.71", "wps": "16373.6", "ups": "0.09", "wpb": "185211", "bsz": "408.3", "num_updates": "30800", "lr": "0.000375736", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2169", "gb_free": "6.7", "wall": "0"}
+2022-07-01 21:23:08 | INFO | train_inner | {"epoch": 16, "update": 15.879, "loss": "1.444", "ppl": "2.72", "wps": "16373", "ups": "0.09", "wpb": "185305", "bsz": "409.2", "num_updates": "31000", "lr": "0.000375576", "gnorm": "0.047", "clip": "0", "loss_scale": "32", "train_wall": "2169", "gb_free": "6.7", "wall": "0"}
+2022-07-01 22:00:55 | INFO | train_inner | {"epoch": 16, "update": 15.897, "loss": "1.441", "ppl": "2.72", "wps": "16362.6", "ups": "0.09", "wpb": "185465", "bsz": "409.7", "num_updates": "31200", "lr": "0.000375415", "gnorm": "0.047", "clip": "0", "loss_scale": "32", "train_wall": "2173", "gb_free": "6.7", "wall": "0"}
+2022-07-01 22:22:26 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 32.0
+2022-07-01 22:38:54 | INFO | train_inner | {"epoch": 16, "update": 15.915, "loss": "1.443", "ppl": "2.72", "wps": "16258.8", "ups": "0.09", "wpb": "185256", "bsz": "408.6", "num_updates": "31400", "lr": "0.000375255", "gnorm": "0.047", "clip": "0", "loss_scale": "32", "train_wall": "2183", "gb_free": "6.7", "wall": "0"}
+2022-07-01 23:16:40 | INFO | train_inner | {"epoch": 16, "update": 15.934, "loss": "1.44", "ppl": "2.71", "wps": "16349.5", "ups": "0.09", "wpb": "185243", "bsz": "408.4", "num_updates": "31600", "lr": "0.000375095", "gnorm": "0.047", "clip": "0", "loss_scale": "64", "train_wall": "2173", "gb_free": "6.7", "wall": "0"}
+2022-07-01 23:28:44 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 32.0
+2022-07-01 23:32:18 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-07-01 23:36:28 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-07-01 23:54:57 | INFO | train_inner | {"epoch": 16, "update": 15.952, "loss": "1.44", "ppl": "2.71", "wps": "16124.8", "ups": "0.09", "wpb": "185177", "bsz": "409.2", "num_updates": "31800", "lr": "0.000374935", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2201", "gb_free": "6.7", "wall": "0"}
+2022-07-02 00:32:40 | INFO | train_inner | {"epoch": 16, "update": 15.97, "loss": "1.44", "ppl": "2.71", "wps": "16369.7", "ups": "0.09", "wpb": "185225", "bsz": "409", "num_updates": "32000", "lr": "0.000374775", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2168", "gb_free": "6.7", "wall": "0"}
+2022-07-02 00:59:17 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-07-02 01:10:36 | INFO | train_inner | {"epoch": 16, "update": 15.988, "loss": "1.437", "ppl": "2.71", "wps": "16284.1", "ups": "0.09", "wpb": "185318", "bsz": "408.6", "num_updates": "32200", "lr": "0.000374615", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2182", "gb_free": "6.7", "wall": "0"}
+2022-07-02 01:34:39 | INFO | fairseq_cli.train | begin validation on "valid" subset
+2022-07-02 01:35:01 | INFO | valid | {"epoch": 16, "valid_loss": "1.398", "valid_ppl": "2.64", "valid_wps": "36373.1", "valid_wpb": "5748.7", "valid_bsz": "12.7", "valid_num_updates": "32328", "valid_best_loss": "0.85"}
+2022-07-02 01:35:01 | INFO | fairseq.checkpoint_utils | Preparing to save checkpoint for epoch 16 @ 32328 updates
+2022-07-02 01:35:01 | INFO | fairseq.trainer | Saving checkpoint to /home/dahmanir/checkpoints/checkpoint16.pt
+2022-07-02 01:35:04 | INFO | fairseq.trainer | Finished saving checkpoint to /home/dahmanir/checkpoints/checkpoint16.pt
+2022-07-02 01:35:04 | INFO | fairseq.checkpoint_utils | Saved checkpoint checkpoints/checkpoint16.pt (epoch 16 @ 32328 updates, score 1.398) (writing took 3.0204548561014235 seconds)
+2022-07-02 01:35:04 | INFO | fairseq_cli.train | end of epoch 16 (average epoch stats below)
+2022-07-02 01:35:04 | INFO | train | {"epoch": 16, "train_loss": "1.444", "train_ppl": "2.72", "train_wps": "16317.6", "train_ups": "0.09", "train_wpb": "185236", "train_bsz": "408.7", "train_num_updates": "32328", "train_lr": "0.000374512", "train_gnorm": "0.047", "train_clip": "0", "train_loss_scale": "8", "train_train_wall": "119519", "train_gb_free": "6.7", "train_wall": "0"}
+2022-07-02 01:35:04 | INFO | fairseq.data.iterators | grouped total_num_itrs = 11017
+2022-07-02 01:35:04 | INFO | fairseq.trainer | begin training epoch 17
+2022-07-02 01:35:04 | INFO | fairseq_cli.train | Start iterating over samples
+2022-07-02 01:48:43 | INFO | train_inner | {"epoch": 17, "update": 16.007, "loss": "1.44", "ppl": "2.71", "wps": "16132.6", "ups": "0.09", "wpb": "184536", "bsz": "407.6", "num_updates": "32400", "lr": "0.000374454", "gnorm": "0.047", "clip": "0.5", "loss_scale": "16", "train_wall": "2163", "gb_free": "6.7", "wall": "0"}
+2022-07-02 01:54:56 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-07-02 02:06:37 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-07-02 02:26:48 | INFO | train_inner | {"epoch": 17, "update": 16.025, "loss": "1.439", "ppl": "2.71", "wps": "16213.6", "ups": "0.09", "wpb": "185211", "bsz": "408.2", "num_updates": "32600", "lr": "0.000374294", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2190", "gb_free": "6.7", "wall": "0"}
+2022-07-02 03:04:28 | INFO | train_inner | {"epoch": 17, "update": 16.043, "loss": "1.438", "ppl": "2.71", "wps": "16396.7", "ups": "0.09", "wpb": "185236", "bsz": "408.6", "num_updates": "32800", "lr": "0.000374134", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2166", "gb_free": "6.7", "wall": "0"}
+2022-07-02 03:42:09 | INFO | train_inner | {"epoch": 17, "update": 16.061, "loss": "1.438", "ppl": "2.71", "wps": "16381.1", "ups": "0.09", "wpb": "185219", "bsz": "409", "num_updates": "33000", "lr": "0.000373974", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2168", "gb_free": "6.7", "wall": "0"}
+2022-07-02 04:19:52 | INFO | train_inner | {"epoch": 17, "update": 16.079, "loss": "1.44", "ppl": "2.71", "wps": "16373.2", "ups": "0.09", "wpb": "185245", "bsz": "409.1", "num_updates": "33200", "lr": "0.000373814", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2169", "gb_free": "6.7", "wall": "0"}
+2022-07-02 04:57:34 | INFO | train_inner | {"epoch": 17, "update": 16.097, "loss": "1.438", "ppl": "2.71", "wps": "16372.3", "ups": "0.09", "wpb": "185189", "bsz": "408.5", "num_updates": "33400", "lr": "0.000373654", "gnorm": "0.047", "clip": "0", "loss_scale": "32", "train_wall": "2170", "gb_free": "6.7", "wall": "0"}
+2022-07-02 04:58:08 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-07-02 05:17:45 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-07-02 05:35:38 | INFO | train_inner | {"epoch": 17, "update": 16.116, "loss": "1.439", "ppl": "2.71", "wps": "16222.2", "ups": "0.09", "wpb": "185266", "bsz": "409.1", "num_updates": "33600", "lr": "0.000373493", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2191", "gb_free": "6.7", "wall": "0"}
+2022-07-02 06:13:22 | INFO | train_inner | {"epoch": 17, "update": 16.134, "loss": "1.44", "ppl": "2.71", "wps": "16364", "ups": "0.09", "wpb": "185244", "bsz": "408.7", "num_updates": "33800", "lr": "0.000373333", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2171", "gb_free": "6.7", "wall": "0"}
+2022-07-02 06:51:04 | INFO | train_inner | {"epoch": 17, "update": 16.152, "loss": "1.441", "ppl": "2.71", "wps": "16365.1", "ups": "0.09", "wpb": "185098", "bsz": "408.2", "num_updates": "34000", "lr": "0.000373173", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2169", "gb_free": "6.7", "wall": "0"}
+2022-07-02 07:11:29 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-07-02 07:29:01 | INFO | train_inner | {"epoch": 17, "update": 16.17, "loss": "1.438", "ppl": "2.71", "wps": "16286.4", "ups": "0.09", "wpb": "185404", "bsz": "408.8", "num_updates": "34200", "lr": "0.000373013", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2183", "gb_free": "6.7", "wall": "0"}
+2022-07-02 08:06:45 | INFO | train_inner | {"epoch": 17, "update": 16.189, "loss": "1.438", "ppl": "2.71", "wps": "16377.7", "ups": "0.09", "wpb": "185373", "bsz": "409.3", "num_updates": "34400", "lr": "0.000372853", "gnorm": "0.046", "clip": "0", "loss_scale": "32", "train_wall": "2170", "gb_free": "6.7", "wall": "0"}
+2022-07-02 08:44:31 | INFO | train_inner | {"epoch": 17, "update": 16.207, "loss": "1.438", "ppl": "2.71", "wps": "16357.1", "ups": "0.09", "wpb": "185354", "bsz": "409.1", "num_updates": "34600", "lr": "0.000372693", "gnorm": "0.047", "clip": "0", "loss_scale": "32", "train_wall": "2172", "gb_free": "6.7", "wall": "0"}
+2022-07-02 09:03:58 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 32.0
+2022-07-02 09:08:07 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-07-02 09:13:13 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-07-02 09:22:51 | INFO | train_inner | {"epoch": 17, "update": 16.225, "loss": "1.439", "ppl": "2.71", "wps": "16109.5", "ups": "0.09", "wpb": "185218", "bsz": "408.4", "num_updates": "34800", "lr": "0.000372533", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2205", "gb_free": "6.7", "wall": "0"}
+2022-07-02 09:30:23 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-07-02 10:00:45 | INFO | train_inner | {"epoch": 17, "update": 16.243, "loss": "1.436", "ppl": "2.71", "wps": "16286.5", "ups": "0.09", "wpb": "185230", "bsz": "408", "num_updates": "35000", "lr": "0.000372372", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2180", "gb_free": "6.7", "wall": "0"}
+2022-07-02 10:38:29 | INFO | train_inner | {"epoch": 17, "update": 16.262, "loss": "1.439", "ppl": "2.71", "wps": "16363", "ups": "0.09", "wpb": "185242", "bsz": "409", "num_updates": "35200", "lr": "0.000372212", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2171", "gb_free": "6.7", "wall": "0"}
+2022-07-02 11:11:07 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-07-02 11:16:24 | INFO | train_inner | {"epoch": 17, "update": 16.28, "loss": "1.439", "ppl": "2.71", "wps": "16296.1", "ups": "0.09", "wpb": "185345", "bsz": "408.4", "num_updates": "35400", "lr": "0.000372052", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2181", "gb_free": "6.7", "wall": "0"}
+2022-07-02 11:54:08 | INFO | train_inner | {"epoch": 17, "update": 16.298, "loss": "1.438", "ppl": "2.71", "wps": "16368.5", "ups": "0.09", "wpb": "185242", "bsz": "409.1", "num_updates": "35600", "lr": "0.000371892", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2169", "gb_free": "6.7", "wall": "0"}
+2022-07-02 12:16:22 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-07-02 12:32:01 | INFO | train_inner | {"epoch": 17, "update": 16.316, "loss": "1.44", "ppl": "2.71", "wps": "16291.9", "ups": "0.09", "wpb": "185160", "bsz": "409.5", "num_updates": "35800", "lr": "0.000371732", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2179", "gb_free": "6.7", "wall": "0"}
+2022-07-02 13:09:44 | INFO | train_inner | {"epoch": 17, "update": 16.334, "loss": "1.439", "ppl": "2.71", "wps": "16364.5", "ups": "0.09", "wpb": "185201", "bsz": "408.5", "num_updates": "36000", "lr": "0.000371572", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2170", "gb_free": "6.7", "wall": "0"}
+2022-07-02 13:22:21 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-07-02 13:47:37 | INFO | train_inner | {"epoch": 17, "update": 16.353, "loss": "1.439", "ppl": "2.71", "wps": "16301.1", "ups": "0.09", "wpb": "185252", "bsz": "408.5", "num_updates": "36200", "lr": "0.000371411", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2179", "gb_free": "6.7", "wall": "0"}
+2022-07-02 13:48:11 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+2022-07-02 14:25:30 | INFO | train_inner | {"epoch": 17, "update": 16.371, "loss": "1.438", "ppl": "2.71", "wps": "16299.4", "ups": "0.09", "wpb": "185226", "bsz": "408.8", "num_updates": "36400", "lr": "0.000371251", "gnorm": "0.047", "clip": "0", "loss_scale": "4", "train_wall": "2179", "gb_free": "6.7", "wall": "0"}
+2022-07-02 15:03:10 | INFO | train_inner | {"epoch": 17, "update": 16.389, "loss": "1.437", "ppl": "2.71", "wps": "16384", "ups": "0.09", "wpb": "185189", "bsz": "409.3", "num_updates": "36600", "lr": "0.000371091", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2168", "gb_free": "6.7", "wall": "0"}
+2022-07-02 15:40:52 | INFO | train_inner | {"epoch": 17, "update": 16.407, "loss": "1.437", "ppl": "2.71", "wps": "16375.2", "ups": "0.09", "wpb": "185174", "bsz": "408.3", "num_updates": "36800", "lr": "0.000370931", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2168", "gb_free": "6.7", "wall": "0"}
+2022-07-02 16:18:37 | INFO | train_inner | {"epoch": 17, "update": 16.425, "loss": "1.438", "ppl": "2.71", "wps": "16367.1", "ups": "0.09", "wpb": "185348", "bsz": "408.2", "num_updates": "37000", "lr": "0.000370771", "gnorm": "0.047", "clip": "0", "loss_scale": "32", "train_wall": "2172", "gb_free": "6.7", "wall": "0"}
+2022-07-02 16:38:15 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+2022-07-02 16:56:33 | INFO | train_inner | {"epoch": 17, "update": 16.443, "loss": "1.437", "ppl": "2.71", "wps": "16283.3", "ups": "0.09", "wpb": "185329", "bsz": "408.8", "num_updates": "37200", "lr": "0.000370611", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2182", "gb_free": "6.7", "wall": "0"}
+2022-07-02 17:13:20 | INFO | fairseq.trainer | NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+2022-07-02 17:34:28 | INFO | train_inner | {"epoch": 17, "update": 16.462, "loss": "1.437", "ppl": "2.71", "wps": "16296.5", "ups": "0.09", "wpb": "185369", "bsz": "408.5", "num_updates": "37400", "lr": "0.00037045", "gnorm": "0.047", "clip": "0", "loss_scale": "8", "train_wall": "2181", "gb_free": "6.7", "wall": "0"}
+2022-07-02 18:12:12 | INFO | train_inner | {"epoch": 17, "update": 16.48, "loss": "1.436", "ppl": "2.71", "wps": "16374.2", "ups": "0.09", "wpb": "185373", "bsz": "408.6", "num_updates": "37600", "lr": "0.00037029", "gnorm": "0.047", "clip": "0", "loss_scale": "16", "train_wall": "2171", "gb_free": "6.7", "wall": "0"}
+2022-07-02 18:49:55 | INFO | train_inner | {"epoch": 17, "update": 16.498, "loss": "1.437", "ppl": "2.71", "wps": "16370.1", "ups": "0.09", "wpb": "185209", "bsz": "409.6", "num_updates": "37800", "lr": "0.00037013", "gnorm": "0.047", "clip": "0", "loss_scale": "32", "train_wall": "2169", "gb_free": "6.7", "wall": "0"}
+2022-07-02 19:27:40 | INFO | train_inner | {"epoch": 17, "update": 16.516, "loss": "1.436", "ppl": "2.71", "wps": "16362.1", "ups": "0.09", "wpb": "185311", "bsz": "409.2", "num_updates": "38000", "lr": "0.00036997", "gnorm": "0.047", "clip": "0", "loss_scale": "32", "train_wall": "2171", "gb_free": "6.7", "wall": "0"}
+slurmstepd: error: *** JOB 9649325 ON r31n2 CANCELLED AT 2022-07-02T19:34:56 DUE TO TIME LIMIT ***

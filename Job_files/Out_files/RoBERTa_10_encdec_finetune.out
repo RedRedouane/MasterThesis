@@ -1,0 +1,1145 @@
+[2022-07-19 10:52:12,374][HYDRA] Launching 1 jobs locally
+[2022-07-19 10:52:12,374][HYDRA] 	#0 : 
+[2022-07-19 10:52:14,606][fairseq_cli.train][INFO] - {'_name': None, 'common': {'_name': None, 'no_progress_bar': False, 'log_interval': 200, 'log_format': 'json', 'log_file': None, 'tensorboard_logdir': None, 'wandb_project': 'RoBERTa_encdec', 'azureml_logging': False, 'seed': 1, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': True, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 128, 'fp16_scale_window': None, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': None, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': None, 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'_name': None, 'path': None, 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None}, 'distributed_training': {'_name': None, 'distributed_world_size': 1, 'distributed_num_procs': 1, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': None, 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': 'pytorch_ddp', 'ddp_comm_hook': 'none', 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': True, 'gradient_as_bucket_view': False, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_base_algorithm': 'localsgd', 'localsgd_frequency': 3, 'nprocs_per_node': 1, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': 'never', 'zero_sharding': 'none', 'fp16': True, 'memory_efficient_fp16': False, 'tpu': False, 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False, 'not_fsdp_flatten_parameters': False}, 'dataset': {'_name': None, 'num_workers': 1, 'skip_invalid_size_inputs_valid_test': True, 'max_tokens': None, 'batch_size': 4, 'required_batch_size_multiple': 1, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 1, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': None, 'batch_size_valid': 4, 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0, 'grouped_shuffling': False, 'update_epoch_batch_itr': False, 'update_ordered_indices_seed': False}, 'optimization': {'_name': None, 'max_epoch': 50, 'max_update': 20000, 'stop_time_hours': 0.0, 'clip_norm': 0.1, 'sentence_avg': False, 'update_freq': [64], 'lr': [1e-05], 'stop_min_lr': -1.0, 'use_bmuf': False, 'skip_remainder_batch': False}, 'checkpoint': {'_name': None, 'save_dir': 'checkpoints', 'restore_file': '/home/dahmanir/lisa/Models/RoBERTa_10_encdec_dec_only.pt', 'continue_once': None, 'finetune_from_model': None, 'reset_dataloader': True, 'reset_lr_scheduler': False, 'reset_meters': True, 'reset_optimizer': True, 'optimizer_overrides': '{}', 'save_interval': 1, 'save_interval_updates': 0, 'keep_interval_updates': -1, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': -1, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': True, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'loss', 'maximize_best_checkpoint_metric': False, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': 1}, 'bmuf': {'_name': None, 'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': 1}, 'generation': {'_name': None, 'beam': 5, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 1.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 0, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 1.0, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': None, 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False}, 'eval_lm': {'_name': None, 'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'_name': None, 'buffer_size': 0, 'input': '-'}, 'model': {'_name': 'roberta_enc_dec', 'activation_fn': relu, 'dropout': 0.1, 'attention_dropout': 0.1, 'activation_dropout': 0.0, 'adaptive_input': False, 'encoder': {'_name': None, 'embed_path': None, 'embed_dim': 768, 'ffn_embed_dim': 3072, 'layers': 12, 'attention_heads': 8, 'normalize_before': False, 'learned_pos': False, 'layerdrop': 0.0, 'layers_to_keep': None}, 'max_source_positions': 1024, 'decoder': {'_name': None, 'embed_path': None, 'embed_dim': 512, 'ffn_embed_dim': 2048, 'layers': 6, 'attention_heads': 8, 'normalize_before': False, 'learned_pos': False, 'layerdrop': 0.0, 'layers_to_keep': None, 'input_dim': 512, 'output_dim': 512}, 'max_target_positions': 1024, 'share_decoder_input_output_embed': True, 'share_all_embeddings': True, 'no_token_positional_embeddings': False, 'adaptive_softmax_cutoff': None, 'adaptive_softmax_dropout': 0.0, 'adaptive_softmax_factor': 4.0, 'layernorm_embedding': False, 'tie_adaptive_weights': False, 'tie_adaptive_proj': False, 'no_scale_embedding': False, 'checkpoint_activations': False, 'offload_activations': False, 'no_cross_attention': False, 'cross_self_attention': False, 'quant_noise': {'_name': None, 'pq': 0.0, 'pq_block_size': 8, 'scalar': 0.0}, 'min_params_to_wrap': 100000000, 'char_inputs': False, 'relu_dropout': 0.0, 'base_layers': 0, 'base_sublayers': 1, 'base_shuffle': 1, 'export': False, 'no_decoder_final_norm': False, 'max_positions': 512, 'encoder_embed_dim': 768, 'encoder_layers': 12, 'encoder_ffn_embed_dim': 3072, 'hack_layernorm_embedding': False, 'pretrained_mlm_checkpoint': None, 'load_pretrained_mlm_checkpoint': None}, 'task': {'_name': 'translation', 'data': '/home/dahmanir/lisa/Datasets/wiki_binarized', 'source_lang': 'source', 'target_lang': 'target', 'load_alignments': False, 'left_pad_source': True, 'left_pad_target': False, 'max_source_positions': 512, 'max_target_positions': 512, 'upsample_primary': -1, 'truncate_source': True, 'num_batch_buckets': 0, 'train_subset': 'train', 'dataset_impl': None, 'required_seq_len_multiple': 1, 'eval_bleu': False, 'eval_bleu_args': '{}', 'eval_bleu_detok': 'space', 'eval_bleu_detok_args': '{}', 'eval_tokenized_bleu': False, 'eval_bleu_remove_bpe': None, 'eval_bleu_print_samples': False}, 'criterion': {'_name': 'label_smoothed_cross_entropy', 'label_smoothing': 0.1, 'report_accuracy': False, 'ignore_prefix_size': 0, 'sentence_avg': False}, 'optimizer': {'_name': 'adam', 'adam_betas': '(0.9,0.999)', 'adam_eps': 1e-08, 'weight_decay': 0.01, 'use_old_adam': False, 'fp16_adam_stats': False, 'tpu': False, 'lr': [1e-05]}, 'lr_scheduler': {'_name': 'polynomial_decay', 'warmup_updates': 500, 'force_anneal': None, 'end_learning_rate': 0.0, 'power': 1.0, 'total_num_update': 20000.0, 'lr': [1e-05]}, 'scoring': None, 'bpe': None, 'tokenizer': None, 'ema': {'_name': None, 'store_ema': False, 'ema_decay': 0.9999, 'ema_start_update': 0, 'ema_seed_model': None, 'ema_update_freq': 1, 'ema_fp32': False}, 'job_logging_cfg': {'version': 1, 'formatters': {'simple': {'format': '[%(asctime)s][%(name)s][%(levelname)s] - %(message)s'}}, 'handlers': {'console': {'class': 'logging.StreamHandler', 'formatter': 'simple', 'stream': 'ext://sys.stdout'}, 'file': {'class': 'logging.FileHandler', 'formatter': 'simple', 'filename': 'hydra_train.log'}}, 'root': {'level': 'INFO', 'handlers': ['console', 'file']}, 'disable_existing_loggers': False}}
+[2022-07-19 10:52:14,777][fairseq.tasks.translation][INFO] - [source] dictionary: 39984 types
+[2022-07-19 10:52:14,777][fairseq.tasks.translation][INFO] - [target] dictionary: 39984 types
+[2022-07-19 10:52:22,045][fairseq_cli.train][INFO] - RobertaEncDecModel(
+  (encoder): TransformerEncoder(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(39984, 768, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerEncoderLayerBase(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerEncoderLayerBase(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerEncoderLayerBase(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerEncoderLayerBase(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (4): TransformerEncoderLayerBase(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): TransformerEncoderLayerBase(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (6): TransformerEncoderLayerBase(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (7): TransformerEncoderLayerBase(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (8): TransformerEncoderLayerBase(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (9): TransformerEncoderLayerBase(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (10): TransformerEncoderLayerBase(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (11): TransformerEncoderLayerBase(
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (dropout_module): FairseqDropout()
+        (activation_dropout_module): FairseqDropout()
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+  )
+  (decoder): TransformerDecoder(
+    (dropout_module): FairseqDropout()
+    (embed_tokens): Embedding(39984, 768, padding_idx=1)
+    (embed_positions): SinusoidalPositionalEmbedding()
+    (layers): ModuleList(
+      (0): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (1): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (2): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (3): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (4): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (5): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (6): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (7): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (8): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (9): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (10): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+      (11): TransformerDecoderLayerBase(
+        (dropout_module): FairseqDropout()
+        (self_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (activation_dropout_module): FairseqDropout()
+        (self_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (encoder_attn): MultiheadAttention(
+          (dropout_module): FairseqDropout()
+          (k_proj): Linear(in_features=768, out_features=768, bias=True)
+          (v_proj): Linear(in_features=768, out_features=768, bias=True)
+          (q_proj): Linear(in_features=768, out_features=768, bias=True)
+          (out_proj): Linear(in_features=768, out_features=768, bias=True)
+        )
+        (encoder_attn_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+        (fc1): Linear(in_features=768, out_features=3072, bias=True)
+        (fc2): Linear(in_features=3072, out_features=768, bias=True)
+        (final_layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+      )
+    )
+    (output_projection): RobertaLMHead(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (layer_norm): LayerNorm((768,), eps=1e-05, elementwise_affine=True)
+    )
+  )
+)
+[2022-07-19 10:52:22,053][fairseq_cli.train][INFO] - task: TranslationTask
+[2022-07-19 10:52:22,053][fairseq_cli.train][INFO] - model: RobertaEncDecModel
+[2022-07-19 10:52:22,053][fairseq_cli.train][INFO] - criterion: LabelSmoothedCrossEntropyCriterion
+[2022-07-19 10:52:22,057][fairseq_cli.train][INFO] - num. shared model params: 229,815,600 (num. trained: 229,815,600)
+[2022-07-19 10:52:22,060][fairseq_cli.train][INFO] - num. expert model params: 0 (num. trained: 0)
+[2022-07-19 10:52:22,073][fairseq.data.data_utils][INFO] - loaded 3,123 examples from: /home/dahmanir/lisa/Datasets/wiki_binarized/valid.source-target.source
+[2022-07-19 10:52:22,076][fairseq.data.data_utils][INFO] - loaded 3,123 examples from: /home/dahmanir/lisa/Datasets/wiki_binarized/valid.source-target.target
+[2022-07-19 10:52:22,077][fairseq.tasks.translation][INFO] - /home/dahmanir/lisa/Datasets/wiki_binarized valid source-target 3123 examples
+[2022-07-19 10:52:26,392][fairseq.trainer][INFO] - detected shared parameter: encoder.embed_tokens.weight <- decoder.embed_tokens.weight
+[2022-07-19 10:52:26,393][fairseq.trainer][INFO] - detected shared parameter: encoder.embed_tokens.weight <- decoder.output_projection.weight
+[2022-07-19 10:52:26,394][fairseq.utils][INFO] - ***********************CUDA enviroments for all 1 workers***********************
+[2022-07-19 10:52:26,394][fairseq.utils][INFO] - rank   0: capabilities =  6.1  ; total memory = 10.917 GB ; name = NVIDIA GeForce GTX 1080 Ti              
+[2022-07-19 10:52:26,395][fairseq.utils][INFO] - ***********************CUDA enviroments for all 1 workers***********************
+[2022-07-19 10:52:26,395][fairseq_cli.train][INFO] - training on 1 devices (GPUs/TPUs)
+[2022-07-19 10:52:26,395][fairseq_cli.train][INFO] - max tokens per device = None and max sentences per device = 4
+[2022-07-19 10:52:26,397][fairseq.trainer][INFO] - Preparing to load checkpoint /home/dahmanir/lisa/Models/RoBERTa_10_encdec_dec_only.pt
+[2022-07-19 10:52:28,600][fairseq.trainer][INFO] - NOTE: your device does NOT support faster training with --fp16 or --amp, please switch to FP32 which is likely to be faster
+[2022-07-19 10:52:28,629][fairseq.trainer][INFO] - Loaded checkpoint /home/dahmanir/lisa/Models/RoBERTa_10_encdec_dec_only.pt (epoch 51 @ 0 updates)
+[2022-07-19 10:52:28,630][fairseq.trainer][INFO] - loading train data for epoch 1
+[2022-07-19 10:52:28,652][fairseq.data.data_utils][INFO] - loaded 21,866 examples from: /home/dahmanir/lisa/Datasets/wiki_binarized/train.source-target.source
+[2022-07-19 10:52:28,658][fairseq.data.data_utils][INFO] - loaded 21,866 examples from: /home/dahmanir/lisa/Datasets/wiki_binarized/train.source-target.target
+[2022-07-19 10:52:28,658][fairseq.tasks.translation][INFO] - /home/dahmanir/lisa/Datasets/wiki_binarized train source-target 21866 examples
+[2022-07-19 10:52:28,667][fairseq.tasks.fairseq_task][WARNING] - 6 samples have invalid sizes and will be skipped, max_positions=(512, 512), first few sample ids=[4345, 8071, 5665, 126, 8210, 2220]
+[2022-07-19 10:52:28,717][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+wandb: Currently logged in as: redredouane. Use `wandb login --relogin` to force relogin
+wandb: wandb version 0.12.21 is available!  To upgrade, please run:
+wandb:  $ pip install wandb --upgrade
+wandb: Tracking run with wandb version 0.12.19
+wandb: Run data is saved locally in /home/dahmanir/multirun/2022-07-19/10-52-10/0/wandb/run-20220719_105233-2io5gynf
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run checkpoints
+wandb:  View project at https://wandb.ai/redredouane/RoBERTa_encdec
+wandb:  View run at https://wandb.ai/redredouane/RoBERTa_encdec/runs/2io5gynf
+[2022-07-19 10:52:38,284][fairseq.trainer][INFO] - begin training epoch 1
+[2022-07-19 10:52:38,286][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 10:52:56,539][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 64.0
+[2022-07-19 10:53:15,700][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 32.0
+[2022-07-19 10:53:34,464][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 16.0
+[2022-07-19 10:53:54,001][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+[2022-07-19 11:13:45,710][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 11:14:51,110][valid][INFO] - {"epoch": 1, "valid_loss": "7.06", "valid_nll_loss": "5.573", "valid_ppl": "47.61", "valid_wps": "2346.1", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "82"}
+[2022-07-19 11:14:51,116][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 1 @ 82 updates
+[2022-07-19 11:14:51,119][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 11:14:59,783][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 11:15:06,100][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 1 @ 82 updates, score 7.06) (writing took 14.984126853989437 seconds)
+[2022-07-19 11:15:06,101][fairseq_cli.train][INFO] - end of epoch 1 (average epoch stats below)
+[2022-07-19 11:15:06,108][train][INFO] - {"epoch": 1, "train_loss": "6.878", "train_nll_loss": "5.426", "train_ppl": "43", "train_wps": "804.6", "train_ups": "0.06", "train_wpb": "12462.4", "train_bsz": "254.1", "train_num_updates": "82", "train_lr": "1.64e-06", "train_gnorm": "4.105", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1243", "train_gb_free": "5.1", "train_wall": "1360"}
+[2022-07-19 11:15:06,121][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 11:15:06,154][fairseq.trainer][INFO] - begin training epoch 2
+[2022-07-19 11:15:06,155][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 11:35:50,250][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 11:36:55,984][valid][INFO] - {"epoch": 2, "valid_loss": "7.048", "valid_nll_loss": "5.561", "valid_ppl": "47.2", "valid_wps": "2329.3", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "168", "valid_best_loss": "7.048"}
+[2022-07-19 11:36:55,987][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 2 @ 168 updates
+[2022-07-19 11:36:55,989][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 11:37:05,147][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 11:37:12,184][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 2 @ 168 updates, score 7.048) (writing took 16.196153315017 seconds)
+[2022-07-19 11:37:12,185][fairseq_cli.train][INFO] - end of epoch 2 (average epoch stats below)
+[2022-07-19 11:37:12,190][train][INFO] - {"epoch": 2, "train_loss": "6.861", "train_nll_loss": "5.406", "train_ppl": "42.39", "train_wps": "809.6", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "168", "train_lr": "3.36e-06", "train_gnorm": "4.293", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1220", "train_gb_free": "5.2", "train_wall": "2686"}
+[2022-07-19 11:37:12,205][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 11:37:12,238][fairseq.trainer][INFO] - begin training epoch 3
+[2022-07-19 11:37:12,239][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 11:43:16,309][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+[2022-07-19 11:45:15,361][train_inner][INFO] - {"epoch": 3, "update": 2.384, "loss": "6.864", "nll_loss": "5.409", "ppl": "42.5", "wps": "812.3", "ups": "0.06", "wpb": "12505.9", "bsz": "254.4", "num_updates": "200", "lr": "4e-06", "gnorm": "4.262", "clip": "100", "loss_scale": "4", "train_wall": "2937", "gb_free": "4.8", "wall": "3169"}
+[2022-07-19 11:57:58,726][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 11:59:04,255][valid][INFO] - {"epoch": 3, "valid_loss": "7.031", "valid_nll_loss": "5.538", "valid_ppl": "46.48", "valid_wps": "2336.6", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "253", "valid_best_loss": "7.031"}
+[2022-07-19 11:59:04,258][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 3 @ 253 updates
+[2022-07-19 11:59:04,262][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 11:59:13,467][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 11:59:20,586][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 3 @ 253 updates, score 7.031) (writing took 16.32801046804525 seconds)
+[2022-07-19 11:59:20,587][fairseq_cli.train][INFO] - end of epoch 3 (average epoch stats below)
+[2022-07-19 11:59:20,593][train][INFO] - {"epoch": 3, "train_loss": "6.842", "train_nll_loss": "5.384", "train_ppl": "41.77", "train_wps": "797.5", "train_ups": "0.06", "train_wpb": "12462.8", "train_bsz": "254.2", "train_num_updates": "253", "train_lr": "5.06e-06", "train_gnorm": "5.241", "train_clip": "100", "train_loss_scale": "4", "train_train_wall": "1223", "train_gb_free": "4.9", "train_wall": "4014"}
+[2022-07-19 11:59:20,609][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 11:59:20,644][fairseq.trainer][INFO] - begin training epoch 4
+[2022-07-19 11:59:20,646][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 12:20:08,231][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 12:21:13,580][valid][INFO] - {"epoch": 4, "valid_loss": "7.016", "valid_nll_loss": "5.515", "valid_ppl": "45.71", "valid_wps": "2343.3", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "339", "valid_best_loss": "7.016"}
+[2022-07-19 12:21:13,584][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 4 @ 339 updates
+[2022-07-19 12:21:13,587][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 12:21:22,885][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 12:21:29,874][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 4 @ 339 updates, score 7.016) (writing took 16.28954505303409 seconds)
+[2022-07-19 12:21:29,877][fairseq_cli.train][INFO] - end of epoch 4 (average epoch stats below)
+[2022-07-19 12:21:29,886][train][INFO] - {"epoch": 4, "train_loss": "6.823", "train_nll_loss": "5.363", "train_ppl": "41.14", "train_wps": "807.7", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "339", "train_lr": "6.78e-06", "train_gnorm": "5.405", "train_clip": "100", "train_loss_scale": "4", "train_train_wall": "1224", "train_gb_free": "5.3", "train_wall": "5343"}
+[2022-07-19 12:21:29,902][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 12:21:29,941][fairseq.trainer][INFO] - begin training epoch 5
+[2022-07-19 12:21:29,943][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 12:36:19,273][train_inner][INFO] - {"epoch": 5, "update": 4.709, "loss": "6.822", "nll_loss": "5.361", "ppl": "41.1", "wps": "813.3", "ups": "0.07", "wpb": "12459.5", "bsz": "254.4", "num_updates": "400", "lr": "8e-06", "gnorm": "5.613", "clip": "100", "loss_scale": "4", "train_wall": "2845", "gb_free": "4.1", "wall": "6233"}
+[2022-07-19 12:42:15,753][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 12:43:21,242][valid][INFO] - {"epoch": 5, "valid_loss": "6.985", "valid_nll_loss": "5.496", "valid_ppl": "45.14", "valid_wps": "2338.5", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "425", "valid_best_loss": "6.985"}
+[2022-07-19 12:43:21,246][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 5 @ 425 updates
+[2022-07-19 12:43:21,248][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 12:43:30,356][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 12:43:36,177][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 5 @ 425 updates, score 6.985) (writing took 14.931264493032359 seconds)
+[2022-07-19 12:43:36,178][fairseq_cli.train][INFO] - end of epoch 5 (average epoch stats below)
+[2022-07-19 12:43:36,184][train][INFO] - {"epoch": 5, "train_loss": "6.798", "train_nll_loss": "5.334", "train_ppl": "40.35", "train_wps": "809.5", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "425", "train_lr": "8.5e-06", "train_gnorm": "5.912", "train_clip": "100", "train_loss_scale": "4", "train_train_wall": "1222", "train_gb_free": "4.3", "train_wall": "6670"}
+[2022-07-19 12:43:36,200][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 12:43:36,237][fairseq.trainer][INFO] - begin training epoch 6
+[2022-07-19 12:43:36,238][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 12:51:07,499][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+[2022-07-19 13:04:20,977][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 13:05:26,837][valid][INFO] - {"epoch": 6, "valid_loss": "6.988", "valid_nll_loss": "5.483", "valid_ppl": "44.71", "valid_wps": "2324.7", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "510", "valid_best_loss": "6.985"}
+[2022-07-19 13:05:26,840][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 6 @ 510 updates
+[2022-07-19 13:05:26,842][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-19 13:05:36,290][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-19 13:05:36,314][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 6 @ 510 updates, score 6.988) (writing took 9.474568397039548 seconds)
+[2022-07-19 13:05:36,315][fairseq_cli.train][INFO] - end of epoch 6 (average epoch stats below)
+[2022-07-19 13:05:36,318][train][INFO] - {"epoch": 6, "train_loss": "6.776", "train_nll_loss": "5.31", "train_ppl": "39.67", "train_wps": "803.8", "train_ups": "0.06", "train_wpb": "12483.6", "train_bsz": "254.2", "train_num_updates": "510", "train_lr": "9.99487e-06", "train_gnorm": "5.834", "train_clip": "100", "train_loss_scale": "4", "train_train_wall": "1222", "train_gb_free": "5.1", "train_wall": "7990"}
+[2022-07-19 13:05:36,331][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 13:05:36,370][fairseq.trainer][INFO] - begin training epoch 7
+[2022-07-19 13:05:36,371][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 13:26:22,740][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 13:27:28,400][valid][INFO] - {"epoch": 7, "valid_loss": "6.947", "valid_nll_loss": "5.449", "valid_ppl": "43.67", "valid_wps": "2330.4", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "596", "valid_best_loss": "6.947"}
+[2022-07-19 13:27:28,403][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 7 @ 596 updates
+[2022-07-19 13:27:28,406][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 13:27:38,772][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 13:27:44,499][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 7 @ 596 updates, score 6.947) (writing took 16.09544778696727 seconds)
+[2022-07-19 13:27:44,500][fairseq_cli.train][INFO] - end of epoch 7 (average epoch stats below)
+[2022-07-19 13:27:44,504][train][INFO] - {"epoch": 7, "train_loss": "6.741", "train_nll_loss": "5.27", "train_ppl": "38.6", "train_wps": "808.3", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "596", "train_lr": "9.95077e-06", "train_gnorm": "5.674", "train_clip": "100", "train_loss_scale": "4", "train_train_wall": "1223", "train_gb_free": "5.2", "train_wall": "9318"}
+[2022-07-19 13:27:44,518][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 13:27:44,557][fairseq.trainer][INFO] - begin training epoch 8
+[2022-07-19 13:27:44,558][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 13:28:42,295][train_inner][INFO] - {"epoch": 8, "update": 7.047, "loss": "6.759", "nll_loss": "5.29", "ppl": "39.13", "wps": "794.2", "ups": "0.06", "wpb": "12480.2", "bsz": "253.7", "num_updates": "600", "lr": "9.94872e-06", "gnorm": "5.785", "clip": "100", "loss_scale": "4", "train_wall": "2851", "gb_free": "5", "wall": "9376"}
+[2022-07-19 13:48:31,472][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 13:49:36,702][valid][INFO] - {"epoch": 8, "valid_loss": "6.915", "valid_nll_loss": "5.408", "valid_ppl": "42.47", "valid_wps": "2345.9", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "682", "valid_best_loss": "6.915"}
+[2022-07-19 13:49:36,705][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 8 @ 682 updates
+[2022-07-19 13:49:36,707][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 13:49:45,751][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 13:49:51,483][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 8 @ 682 updates, score 6.915) (writing took 14.778560033999383 seconds)
+[2022-07-19 13:49:51,485][fairseq_cli.train][INFO] - end of epoch 8 (average epoch stats below)
+[2022-07-19 13:49:51,490][train][INFO] - {"epoch": 8, "train_loss": "6.705", "train_nll_loss": "5.23", "train_ppl": "37.54", "train_wps": "809.1", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "682", "train_lr": "9.90667e-06", "train_gnorm": "5.548", "train_clip": "100", "train_loss_scale": "4", "train_train_wall": "1224", "train_gb_free": "5", "train_wall": "10645"}
+[2022-07-19 13:49:51,510][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 13:49:51,566][fairseq.trainer][INFO] - begin training epoch 9
+[2022-07-19 13:49:51,568][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 14:10:35,704][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 14:11:41,412][valid][INFO] - {"epoch": 9, "valid_loss": "6.896", "valid_nll_loss": "5.381", "valid_ppl": "41.68", "valid_wps": "2330", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "768", "valid_best_loss": "6.896"}
+[2022-07-19 14:11:41,415][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 9 @ 768 updates
+[2022-07-19 14:11:41,417][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 14:11:51,517][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 14:11:57,365][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 9 @ 768 updates, score 6.896) (writing took 15.950496949022636 seconds)
+[2022-07-19 14:11:57,366][fairseq_cli.train][INFO] - end of epoch 9 (average epoch stats below)
+[2022-07-19 14:11:57,372][train][INFO] - {"epoch": 9, "train_loss": "6.673", "train_nll_loss": "5.195", "train_ppl": "36.63", "train_wps": "809.8", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "768", "train_lr": "9.86256e-06", "train_gnorm": "5.136", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1221", "train_gb_free": "5.1", "train_wall": "11971"}
+[2022-07-19 14:11:57,384][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 14:11:57,421][fairseq.trainer][INFO] - begin training epoch 10
+[2022-07-19 14:11:57,422][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 14:12:12,784][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+[2022-07-19 14:19:55,439][train_inner][INFO] - {"epoch": 10, "update": 9.384, "loss": "6.687", "nll_loss": "5.21", "ppl": "37.01", "wps": "814.4", "ups": "0.07", "wpb": "12513.2", "bsz": "254.4", "num_updates": "800", "lr": "9.84615e-06", "gnorm": "5.312", "clip": "100", "loss_scale": "4", "train_wall": "2857", "gb_free": "4.8", "wall": "12449"}
+[2022-07-19 14:32:41,856][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 14:33:47,159][valid][INFO] - {"epoch": 10, "valid_loss": "6.859", "valid_nll_loss": "5.359", "valid_ppl": "41.04", "valid_wps": "2343", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "853", "valid_best_loss": "6.859"}
+[2022-07-19 14:33:47,162][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 10 @ 853 updates
+[2022-07-19 14:33:47,164][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 14:33:56,261][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 14:34:03,154][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 10 @ 853 updates, score 6.859) (writing took 15.991224042023532 seconds)
+[2022-07-19 14:34:03,157][fairseq_cli.train][INFO] - end of epoch 10 (average epoch stats below)
+[2022-07-19 14:34:03,165][train][INFO] - {"epoch": 10, "train_loss": "6.646", "train_nll_loss": "5.164", "train_ppl": "35.86", "train_wps": "799.5", "train_ups": "0.06", "train_wpb": "12470.7", "train_bsz": "254.2", "train_num_updates": "853", "train_lr": "9.81897e-06", "train_gnorm": "4.936", "train_clip": "100", "train_loss_scale": "4", "train_train_wall": "1221", "train_gb_free": "5.1", "train_wall": "13297"}
+[2022-07-19 14:34:03,181][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 14:34:03,223][fairseq.trainer][INFO] - begin training epoch 11
+[2022-07-19 14:34:03,225][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 14:54:51,509][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 14:55:58,652][valid][INFO] - {"epoch": 11, "valid_loss": "6.836", "valid_nll_loss": "5.327", "valid_ppl": "40.15", "valid_wps": "2278.7", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "939", "valid_best_loss": "6.836"}
+[2022-07-19 14:55:58,656][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 11 @ 939 updates
+[2022-07-19 14:55:58,658][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 14:56:08,047][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 14:56:14,902][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 11 @ 939 updates, score 6.836) (writing took 16.245582561939955 seconds)
+[2022-07-19 14:56:14,905][fairseq_cli.train][INFO] - end of epoch 11 (average epoch stats below)
+[2022-07-19 14:56:14,913][train][INFO] - {"epoch": 11, "train_loss": "6.613", "train_nll_loss": "5.128", "train_ppl": "34.97", "train_wps": "806.2", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "939", "train_lr": "9.77487e-06", "train_gnorm": "4.935", "train_clip": "100", "train_loss_scale": "4", "train_train_wall": "1224", "train_gb_free": "5.2", "train_wall": "14629"}
+[2022-07-19 14:56:14,929][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 14:56:14,981][fairseq.trainer][INFO] - begin training epoch 12
+[2022-07-19 14:56:14,983][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 15:11:04,225][train_inner][INFO] - {"epoch": 12, "update": 11.709, "loss": "6.611", "nll_loss": "5.125", "ppl": "34.9", "wps": "812", "ups": "0.07", "wpb": "12459.6", "bsz": "254.4", "num_updates": "1000", "lr": "9.74359e-06", "gnorm": "4.821", "clip": "100", "loss_scale": "4", "train_wall": "2848", "gb_free": "5.1", "wall": "15518"}
+wandb: Network error (ReadTimeout), entering retry loop.
+[2022-07-19 15:17:01,895][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 15:18:08,760][valid][INFO] - {"epoch": 12, "valid_loss": "6.834", "valid_nll_loss": "5.307", "valid_ppl": "39.59", "valid_wps": "2288.7", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "1025", "valid_best_loss": "6.834"}
+[2022-07-19 15:18:08,766][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 12 @ 1025 updates
+[2022-07-19 15:18:08,769][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 15:18:18,316][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 15:18:24,051][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 12 @ 1025 updates, score 6.834) (writing took 15.284830478020012 seconds)
+[2022-07-19 15:18:24,054][fairseq_cli.train][INFO] - end of epoch 12 (average epoch stats below)
+[2022-07-19 15:18:24,064][train][INFO] - {"epoch": 12, "train_loss": "6.582", "train_nll_loss": "5.092", "train_ppl": "34.12", "train_wps": "807.8", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "1025", "train_lr": "9.73077e-06", "train_gnorm": "4.661", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1223", "train_gb_free": "5", "train_wall": "15958"}
+[2022-07-19 15:18:24,079][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 15:18:24,122][fairseq.trainer][INFO] - begin training epoch 13
+[2022-07-19 15:18:24,123][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 15:39:10,975][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 15:40:16,816][valid][INFO] - {"epoch": 13, "valid_loss": "6.822", "valid_nll_loss": "5.292", "valid_ppl": "39.17", "valid_wps": "2324.1", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "1111", "valid_best_loss": "6.822"}
+[2022-07-19 15:40:16,819][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 13 @ 1111 updates
+[2022-07-19 15:40:16,821][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 15:40:26,048][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 15:40:32,627][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 13 @ 1111 updates, score 6.822) (writing took 15.807851153076626 seconds)
+[2022-07-19 15:40:32,630][fairseq_cli.train][INFO] - end of epoch 13 (average epoch stats below)
+[2022-07-19 15:40:32,638][train][INFO] - {"epoch": 13, "train_loss": "6.547", "train_nll_loss": "5.052", "train_ppl": "33.18", "train_wps": "808.1", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "1111", "train_lr": "9.68667e-06", "train_gnorm": "4.664", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1222", "train_gb_free": "4.8", "train_wall": "17286"}
+[2022-07-19 15:40:32,655][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 15:40:32,704][fairseq.trainer][INFO] - begin training epoch 14
+[2022-07-19 15:40:32,706][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 16:01:18,498][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 16:02:25,585][valid][INFO] - {"epoch": 14, "valid_loss": "6.784", "valid_nll_loss": "5.265", "valid_ppl": "38.44", "valid_wps": "2285", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "1197", "valid_best_loss": "6.784"}
+[2022-07-19 16:02:25,589][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 14 @ 1197 updates
+[2022-07-19 16:02:25,590][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 16:02:35,872][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 16:02:42,866][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 14 @ 1197 updates, score 6.784) (writing took 17.27688789309468 seconds)
+[2022-07-19 16:02:42,869][fairseq_cli.train][INFO] - end of epoch 14 (average epoch stats below)
+[2022-07-19 16:02:42,879][train][INFO] - {"epoch": 14, "train_loss": "6.518", "train_nll_loss": "5.019", "train_ppl": "32.42", "train_wps": "807.1", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "1197", "train_lr": "9.64256e-06", "train_gnorm": "4.583", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1222", "train_gb_free": "5.2", "train_wall": "18616"}
+[2022-07-19 16:02:42,895][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 16:02:42,939][fairseq.trainer][INFO] - begin training epoch 15
+[2022-07-19 16:02:42,941][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 16:03:26,207][train_inner][INFO] - {"epoch": 15, "update": 14.035, "loss": "6.537", "nll_loss": "5.041", "ppl": "32.93", "wps": "793.6", "ups": "0.06", "wpb": "12466.7", "bsz": "253.7", "num_updates": "1200", "lr": "9.64103e-06", "gnorm": "4.606", "clip": "100", "loss_scale": "8", "train_wall": "2837", "gb_free": "4.8", "wall": "18660"}
+[2022-07-19 16:11:38,558][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+[2022-07-19 16:23:28,772][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 16:24:34,500][valid][INFO] - {"epoch": 15, "valid_loss": "6.766", "valid_nll_loss": "5.248", "valid_ppl": "37.99", "valid_wps": "2328.5", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "1282", "valid_best_loss": "6.766"}
+[2022-07-19 16:24:34,504][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 15 @ 1282 updates
+[2022-07-19 16:24:34,505][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 16:24:44,094][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 16:24:51,261][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 15 @ 1282 updates, score 6.766) (writing took 16.757613347028382 seconds)
+[2022-07-19 16:24:51,262][fairseq_cli.train][INFO] - end of epoch 15 (average epoch stats below)
+[2022-07-19 16:24:51,271][train][INFO] - {"epoch": 15, "train_loss": "6.494", "train_nll_loss": "4.992", "train_ppl": "31.82", "train_wps": "798.3", "train_ups": "0.06", "train_wpb": "12475.6", "train_bsz": "254.2", "train_num_updates": "1282", "train_lr": "9.59897e-06", "train_gnorm": "4.632", "train_clip": "100", "train_loss_scale": "4", "train_train_wall": "1221", "train_gb_free": "4.9", "train_wall": "19945"}
+[2022-07-19 16:24:51,284][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 16:24:51,327][fairseq.trainer][INFO] - begin training epoch 16
+[2022-07-19 16:24:51,328][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 16:45:37,862][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 16:46:44,920][valid][INFO] - {"epoch": 16, "valid_loss": "6.758", "valid_nll_loss": "5.242", "valid_ppl": "37.86", "valid_wps": "2282.6", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "1368", "valid_best_loss": "6.758"}
+[2022-07-19 16:46:44,923][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 16 @ 1368 updates
+[2022-07-19 16:46:44,924][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 16:46:55,532][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 16:47:01,458][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 16 @ 1368 updates, score 6.758) (writing took 16.535405795904808 seconds)
+[2022-07-19 16:47:01,460][fairseq_cli.train][INFO] - end of epoch 16 (average epoch stats below)
+[2022-07-19 16:47:01,466][train][INFO] - {"epoch": 16, "train_loss": "6.47", "train_nll_loss": "4.965", "train_ppl": "31.23", "train_wps": "807.1", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "1368", "train_lr": "9.55487e-06", "train_gnorm": "4.395", "train_clip": "100", "train_loss_scale": "4", "train_train_wall": "1222", "train_gb_free": "5.2", "train_wall": "21275"}
+[2022-07-19 16:47:01,483][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 16:47:01,529][fairseq.trainer][INFO] - begin training epoch 17
+[2022-07-19 16:47:01,530][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 16:54:49,128][train_inner][INFO] - {"epoch": 17, "update": 16.372, "loss": "6.474", "nll_loss": "4.97", "ppl": "31.34", "wps": "810.8", "ups": "0.06", "wpb": "12498.5", "bsz": "254.4", "num_updates": "1400", "lr": "9.53846e-06", "gnorm": "4.498", "clip": "100", "loss_scale": "4", "train_wall": "2860", "gb_free": "5", "wall": "21743"}
+[2022-07-19 17:07:48,559][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 17:08:54,103][valid][INFO] - {"epoch": 17, "valid_loss": "6.739", "valid_nll_loss": "5.21", "valid_ppl": "37.01", "valid_wps": "2335", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "1454", "valid_best_loss": "6.739"}
+[2022-07-19 17:08:54,106][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 17 @ 1454 updates
+[2022-07-19 17:08:54,108][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 17:09:04,445][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 17:09:11,310][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 17 @ 1454 updates, score 6.739) (writing took 17.204057384980842 seconds)
+[2022-07-19 17:09:11,311][fairseq_cli.train][INFO] - end of epoch 17 (average epoch stats below)
+[2022-07-19 17:09:11,320][train][INFO] - {"epoch": 17, "train_loss": "6.444", "train_nll_loss": "4.935", "train_ppl": "30.6", "train_wps": "807.3", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "1454", "train_lr": "9.51077e-06", "train_gnorm": "4.261", "train_clip": "100", "train_loss_scale": "4", "train_train_wall": "1222", "train_gb_free": "4.7", "train_wall": "22605"}
+[2022-07-19 17:09:11,335][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 17:09:11,376][fairseq.trainer][INFO] - begin training epoch 18
+[2022-07-19 17:09:11,377][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 17:29:57,695][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 17:31:02,988][valid][INFO] - {"epoch": 18, "valid_loss": "6.718", "valid_nll_loss": "5.184", "valid_ppl": "36.34", "valid_wps": "2343.9", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "1540", "valid_best_loss": "6.718"}
+[2022-07-19 17:31:02,991][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 18 @ 1540 updates
+[2022-07-19 17:31:02,993][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 17:31:12,987][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 17:31:19,686][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 18 @ 1540 updates, score 6.718) (writing took 16.695228371070698 seconds)
+[2022-07-19 17:31:19,687][fairseq_cli.train][INFO] - end of epoch 18 (average epoch stats below)
+[2022-07-19 17:31:19,696][train][INFO] - {"epoch": 18, "train_loss": "6.417", "train_nll_loss": "4.904", "train_ppl": "29.95", "train_wps": "808.2", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "1540", "train_lr": "9.46667e-06", "train_gnorm": "4.316", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1222", "train_gb_free": "5.1", "train_wall": "23933"}
+[2022-07-19 17:31:19,711][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 17:31:19,761][fairseq.trainer][INFO] - begin training epoch 19
+[2022-07-19 17:31:19,763][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 17:45:57,289][train_inner][INFO] - {"epoch": 19, "update": 18.698, "loss": "6.416", "nll_loss": "4.903", "ppl": "29.92", "wps": "815.7", "ups": "0.07", "wpb": "12513.6", "bsz": "254.4", "num_updates": "1600", "lr": "9.4359e-06", "gnorm": "4.257", "clip": "100", "loss_scale": "8", "train_wall": "2847", "gb_free": "5.1", "wall": "24811"}
+[2022-07-19 17:52:05,537][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 17:53:11,097][valid][INFO] - {"epoch": 19, "valid_loss": "6.709", "valid_nll_loss": "5.178", "valid_ppl": "36.2", "valid_wps": "2335.1", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "1626", "valid_best_loss": "6.709"}
+[2022-07-19 17:53:11,101][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 19 @ 1626 updates
+[2022-07-19 17:53:11,103][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 17:53:20,191][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 17:53:26,095][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 19 @ 1626 updates, score 6.709) (writing took 14.993361057015136 seconds)
+[2022-07-19 17:53:26,096][fairseq_cli.train][INFO] - end of epoch 19 (average epoch stats below)
+[2022-07-19 17:53:26,102][train][INFO] - {"epoch": 19, "train_loss": "6.383", "train_nll_loss": "4.865", "train_ppl": "29.14", "train_wps": "809.4", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "1626", "train_lr": "9.42256e-06", "train_gnorm": "4.222", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1222", "train_gb_free": "5.1", "train_wall": "25260"}
+[2022-07-19 17:53:26,117][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 17:53:26,164][fairseq.trainer][INFO] - begin training epoch 20
+[2022-07-19 17:53:26,166][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 18:04:53,009][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+[2022-07-19 18:14:13,063][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 18:15:19,017][valid][INFO] - {"epoch": 20, "valid_loss": "6.683", "valid_nll_loss": "5.154", "valid_ppl": "35.61", "valid_wps": "2320.8", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "1711", "valid_best_loss": "6.683"}
+[2022-07-19 18:15:19,020][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 20 @ 1711 updates
+[2022-07-19 18:15:19,022][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 18:15:29,344][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 18:15:35,423][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 20 @ 1711 updates, score 6.683) (writing took 16.402277620043606 seconds)
+[2022-07-19 18:15:35,426][fairseq_cli.train][INFO] - end of epoch 20 (average epoch stats below)
+[2022-07-19 18:15:35,433][train][INFO] - {"epoch": 20, "train_loss": "6.36", "train_nll_loss": "4.839", "train_ppl": "28.62", "train_wps": "797.9", "train_ups": "0.06", "train_wpb": "12478.2", "train_bsz": "254.2", "train_num_updates": "1711", "train_lr": "9.37897e-06", "train_gnorm": "4.212", "train_clip": "100", "train_loss_scale": "4", "train_train_wall": "1223", "train_gb_free": "5.1", "train_wall": "26589"}
+[2022-07-19 18:15:35,449][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 18:15:35,989][fairseq.trainer][INFO] - begin training epoch 21
+[2022-07-19 18:15:35,991][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 18:36:21,956][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 18:37:27,563][valid][INFO] - {"epoch": 21, "valid_loss": "6.687", "valid_nll_loss": "5.143", "valid_ppl": "35.33", "valid_wps": "2333.3", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "1797", "valid_best_loss": "6.683"}
+[2022-07-19 18:37:27,567][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 21 @ 1797 updates
+[2022-07-19 18:37:27,569][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-19 18:37:38,023][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-19 18:37:38,048][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 21 @ 1797 updates, score 6.687) (writing took 10.480197494965978 seconds)
+[2022-07-19 18:37:38,048][fairseq_cli.train][INFO] - end of epoch 21 (average epoch stats below)
+[2022-07-19 18:37:38,051][train][INFO] - {"epoch": 21, "train_loss": "6.336", "train_nll_loss": "4.812", "train_ppl": "28.08", "train_wps": "811.8", "train_ups": "0.07", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "1797", "train_lr": "9.33487e-06", "train_gnorm": "4.068", "train_clip": "100", "train_loss_scale": "4", "train_train_wall": "1222", "train_gb_free": "5", "train_wall": "27912"}
+[2022-07-19 18:37:38,065][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 18:37:38,117][fairseq.trainer][INFO] - begin training epoch 22
+[2022-07-19 18:37:38,118][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 18:38:22,471][train_inner][INFO] - {"epoch": 22, "update": 21.035, "loss": "6.351", "nll_loss": "4.828", "ppl": "28.41", "wps": "790.1", "ups": "0.06", "wpb": "12424.7", "bsz": "253.7", "num_updates": "1800", "lr": "9.33333e-06", "gnorm": "4.146", "clip": "100", "loss_scale": "4", "train_wall": "2849", "gb_free": "4.8", "wall": "27956"}
+[2022-07-19 18:58:24,886][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 18:59:30,422][valid][INFO] - {"epoch": 22, "valid_loss": "6.676", "valid_nll_loss": "5.131", "valid_ppl": "35.05", "valid_wps": "2335.6", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "1883", "valid_best_loss": "6.676"}
+[2022-07-19 18:59:30,425][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 22 @ 1883 updates
+[2022-07-19 18:59:30,427][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 18:59:42,262][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 18:59:49,466][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 22 @ 1883 updates, score 6.676) (writing took 19.039670243975706 seconds)
+[2022-07-19 18:59:49,469][fairseq_cli.train][INFO] - end of epoch 22 (average epoch stats below)
+[2022-07-19 18:59:49,487][train][INFO] - {"epoch": 22, "train_loss": "6.313", "train_nll_loss": "4.784", "train_ppl": "27.56", "train_wps": "806.4", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "1883", "train_lr": "9.29077e-06", "train_gnorm": "4.095", "train_clip": "100", "train_loss_scale": "4", "train_train_wall": "1222", "train_gb_free": "5.1", "train_wall": "29243"}
+[2022-07-19 18:59:49,503][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 18:59:49,551][fairseq.trainer][INFO] - begin training epoch 23
+[2022-07-19 18:59:49,553][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 19:20:35,599][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 19:21:41,584][valid][INFO] - {"epoch": 23, "valid_loss": "6.655", "valid_nll_loss": "5.117", "valid_ppl": "34.7", "valid_wps": "2318.9", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "1969", "valid_best_loss": "6.655"}
+[2022-07-19 19:21:41,588][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 23 @ 1969 updates
+[2022-07-19 19:21:41,591][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 19:21:51,874][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 19:21:58,756][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 23 @ 1969 updates, score 6.655) (writing took 17.168760479078628 seconds)
+[2022-07-19 19:21:58,757][fairseq_cli.train][INFO] - end of epoch 23 (average epoch stats below)
+[2022-07-19 19:21:58,765][train][INFO] - {"epoch": 23, "train_loss": "6.289", "train_nll_loss": "4.757", "train_ppl": "27.04", "train_wps": "807.7", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "1969", "train_lr": "9.24667e-06", "train_gnorm": "4.029", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1222", "train_gb_free": "4.9", "train_wall": "30572"}
+[2022-07-19 19:21:58,779][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 19:21:58,831][fairseq.trainer][INFO] - begin training epoch 24
+[2022-07-19 19:21:58,833][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 19:25:51,156][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+[2022-07-19 19:29:43,613][train_inner][INFO] - {"epoch": 24, "update": 23.372, "loss": "6.295", "nll_loss": "4.764", "ppl": "27.17", "wps": "812.8", "ups": "0.06", "wpb": "12521", "bsz": "254.4", "num_updates": "2000", "lr": "9.23077e-06", "gnorm": "4.08", "clip": "100", "loss_scale": "4", "train_wall": "2856", "gb_free": "5", "wall": "31037"}
+[2022-07-19 19:42:45,354][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 19:43:50,733][valid][INFO] - {"epoch": 24, "valid_loss": "6.653", "valid_nll_loss": "5.107", "valid_ppl": "34.48", "valid_wps": "2341.9", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "2054", "valid_best_loss": "6.653"}
+[2022-07-19 19:43:50,737][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 24 @ 2054 updates
+[2022-07-19 19:43:50,738][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 19:44:00,981][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 19:44:07,294][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 24 @ 2054 updates, score 6.653) (writing took 16.556630020961165 seconds)
+[2022-07-19 19:44:07,297][fairseq_cli.train][INFO] - end of epoch 24 (average epoch stats below)
+[2022-07-19 19:44:07,306][train][INFO] - {"epoch": 24, "train_loss": "6.273", "train_nll_loss": "4.739", "train_ppl": "26.7", "train_wps": "798.5", "train_ups": "0.06", "train_wpb": "12481.1", "train_bsz": "254.2", "train_num_updates": "2054", "train_lr": "9.20308e-06", "train_gnorm": "4.134", "train_clip": "100", "train_loss_scale": "4", "train_train_wall": "1222", "train_gb_free": "5.2", "train_wall": "31901"}
+[2022-07-19 19:44:07,322][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 19:44:07,373][fairseq.trainer][INFO] - begin training epoch 25
+[2022-07-19 19:44:07,374][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 20:04:54,405][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 20:06:00,215][valid][INFO] - {"epoch": 25, "valid_loss": "6.64", "valid_nll_loss": "5.101", "valid_ppl": "34.32", "valid_wps": "2325.3", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "2140", "valid_best_loss": "6.64"}
+[2022-07-19 20:06:00,219][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 25 @ 2140 updates
+[2022-07-19 20:06:00,220][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 20:06:09,594][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 20:06:15,457][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 25 @ 2140 updates, score 6.64) (writing took 15.238345885067247 seconds)
+[2022-07-19 20:06:15,458][fairseq_cli.train][INFO] - end of epoch 25 (average epoch stats below)
+[2022-07-19 20:06:15,465][train][INFO] - {"epoch": 25, "train_loss": "6.254", "train_nll_loss": "4.717", "train_ppl": "26.31", "train_wps": "808.4", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "2140", "train_lr": "9.15897e-06", "train_gnorm": "3.838", "train_clip": "100", "train_loss_scale": "4", "train_train_wall": "1222", "train_gb_free": "4.8", "train_wall": "33229"}
+[2022-07-19 20:06:15,478][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 20:06:15,526][fairseq.trainer][INFO] - begin training epoch 26
+[2022-07-19 20:06:15,528][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 20:20:53,202][train_inner][INFO] - {"epoch": 26, "update": 25.698, "loss": "6.247", "nll_loss": "4.709", "ppl": "26.16", "wps": "814.5", "ups": "0.07", "wpb": "12500.2", "bsz": "254.4", "num_updates": "2200", "lr": "9.12821e-06", "gnorm": "3.914", "clip": "100", "loss_scale": "4", "train_wall": "2850", "gb_free": "5.2", "wall": "34107"}
+[2022-07-19 20:27:01,481][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 20:28:06,914][valid][INFO] - {"epoch": 26, "valid_loss": "6.629", "valid_nll_loss": "5.083", "valid_ppl": "33.89", "valid_wps": "2339.7", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "2226", "valid_best_loss": "6.629"}
+[2022-07-19 20:28:06,918][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 26 @ 2226 updates
+[2022-07-19 20:28:06,919][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 20:28:19,514][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 20:28:25,338][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 26 @ 2226 updates, score 6.629) (writing took 18.419903501984663 seconds)
+[2022-07-19 20:28:25,341][fairseq_cli.train][INFO] - end of epoch 26 (average epoch stats below)
+[2022-07-19 20:28:25,350][train][INFO] - {"epoch": 26, "train_loss": "6.228", "train_nll_loss": "4.686", "train_ppl": "25.75", "train_wps": "807.3", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "2226", "train_lr": "9.11487e-06", "train_gnorm": "3.872", "train_clip": "100", "train_loss_scale": "4", "train_train_wall": "1222", "train_gb_free": "5", "train_wall": "34559"}
+[2022-07-19 20:28:25,367][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 20:28:25,420][fairseq.trainer][INFO] - begin training epoch 27
+[2022-07-19 20:28:25,421][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 20:49:12,813][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 20:50:18,410][valid][INFO] - {"epoch": 27, "valid_loss": "6.627", "valid_nll_loss": "5.077", "valid_ppl": "33.76", "valid_wps": "2342.3", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "2312", "valid_best_loss": "6.627"}
+[2022-07-19 20:50:18,416][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 27 @ 2312 updates
+[2022-07-19 20:50:18,419][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 20:50:28,806][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 20:50:35,898][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 27 @ 2312 updates, score 6.627) (writing took 17.48144081805367 seconds)
+[2022-07-19 20:50:35,901][fairseq_cli.train][INFO] - end of epoch 27 (average epoch stats below)
+[2022-07-19 20:50:35,911][train][INFO] - {"epoch": 27, "train_loss": "6.203", "train_nll_loss": "4.658", "train_ppl": "25.25", "train_wps": "806.9", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "2312", "train_lr": "9.07077e-06", "train_gnorm": "3.822", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1223", "train_gb_free": "5", "train_wall": "35890"}
+[2022-07-19 20:50:35,927][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 20:50:35,979][fairseq.trainer][INFO] - begin training epoch 28
+[2022-07-19 20:50:35,980][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 21:11:26,303][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 21:12:31,989][valid][INFO] - {"epoch": 28, "valid_loss": "6.602", "valid_nll_loss": "5.061", "valid_ppl": "33.38", "valid_wps": "2329.6", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "2398", "valid_best_loss": "6.602"}
+[2022-07-19 21:12:31,993][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 28 @ 2398 updates
+[2022-07-19 21:12:31,994][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 21:12:41,182][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 21:12:47,042][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 28 @ 2398 updates, score 6.602) (writing took 15.04954377701506 seconds)
+[2022-07-19 21:12:47,043][fairseq_cli.train][INFO] - end of epoch 28 (average epoch stats below)
+[2022-07-19 21:12:47,050][train][INFO] - {"epoch": 28, "train_loss": "6.182", "train_nll_loss": "4.633", "train_ppl": "24.81", "train_wps": "806.6", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "2398", "train_lr": "9.02667e-06", "train_gnorm": "3.837", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1226", "train_gb_free": "5.3", "train_wall": "37221"}
+[2022-07-19 21:12:47,065][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 21:12:47,129][fairseq.trainer][INFO] - begin training epoch 29
+[2022-07-19 21:12:47,130][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 21:13:16,655][train_inner][INFO] - {"epoch": 29, "update": 28.023, "loss": "6.203", "nll_loss": "4.657", "ppl": "25.24", "wps": "791.3", "ups": "0.06", "wpb": "12437.7", "bsz": "253.7", "num_updates": "2400", "lr": "9.02564e-06", "gnorm": "3.843", "clip": "100", "loss_scale": "8", "train_wall": "2839", "gb_free": "5.1", "wall": "37250"}
+[2022-07-19 21:33:39,763][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 21:34:45,752][valid][INFO] - {"epoch": 29, "valid_loss": "6.608", "valid_nll_loss": "5.054", "valid_ppl": "33.22", "valid_wps": "2319.6", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "2484", "valid_best_loss": "6.602"}
+[2022-07-19 21:34:45,755][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 29 @ 2484 updates
+[2022-07-19 21:34:45,757][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-19 21:34:54,914][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-19 21:34:54,942][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 29 @ 2484 updates, score 6.608) (writing took 9.186436299001798 seconds)
+[2022-07-19 21:34:54,943][fairseq_cli.train][INFO] - end of epoch 29 (average epoch stats below)
+[2022-07-19 21:34:54,946][train][INFO] - {"epoch": 29, "train_loss": "6.168", "train_nll_loss": "4.617", "train_ppl": "24.54", "train_wps": "808.5", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "2484", "train_lr": "8.98256e-06", "train_gnorm": "3.778", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1228", "train_gb_free": "4.8", "train_wall": "38549"}
+[2022-07-19 21:34:54,963][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 21:34:55,017][fairseq.trainer][INFO] - begin training epoch 30
+[2022-07-19 21:34:55,018][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 21:44:28,093][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+[2022-07-19 21:55:47,090][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 21:56:53,448][valid][INFO] - {"epoch": 30, "valid_loss": "6.589", "valid_nll_loss": "5.038", "valid_ppl": "32.86", "valid_wps": "2307.9", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "2569", "valid_best_loss": "6.589"}
+[2022-07-19 21:56:53,451][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 30 @ 2569 updates
+[2022-07-19 21:56:53,452][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 21:57:02,826][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 21:57:08,594][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 30 @ 2569 updates, score 6.589) (writing took 15.1432007990079 seconds)
+[2022-07-19 21:57:08,595][fairseq_cli.train][INFO] - end of epoch 30 (average epoch stats below)
+[2022-07-19 21:57:08,598][train][INFO] - {"epoch": 30, "train_loss": "6.152", "train_nll_loss": "4.599", "train_ppl": "24.24", "train_wps": "796", "train_ups": "0.06", "train_wpb": "12490", "train_bsz": "254.2", "train_num_updates": "2569", "train_lr": "8.93897e-06", "train_gnorm": "3.748", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1228", "train_gb_free": "5.1", "train_wall": "39882"}
+[2022-07-19 21:57:08,611][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 21:57:08,668][fairseq.trainer][INFO] - begin training epoch 31
+[2022-07-19 21:57:08,674][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 22:04:45,079][train_inner][INFO] - {"epoch": 31, "update": 30.36, "loss": "6.155", "nll_loss": "4.602", "ppl": "24.29", "wps": "809.3", "ups": "0.06", "wpb": "12497.8", "bsz": "254.4", "num_updates": "2600", "lr": "8.92308e-06", "gnorm": "3.758", "clip": "100", "loss_scale": "8", "train_wall": "2875", "gb_free": "4.1", "wall": "40339"}
+[2022-07-19 22:17:57,964][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 22:19:03,598][valid][INFO] - {"epoch": 31, "valid_loss": "6.581", "valid_nll_loss": "5.027", "valid_ppl": "32.61", "valid_wps": "2333.9", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "2655", "valid_best_loss": "6.581"}
+[2022-07-19 22:19:03,602][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 31 @ 2655 updates
+[2022-07-19 22:19:03,603][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 22:19:38,440][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 22:19:44,384][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 31 @ 2655 updates, score 6.581) (writing took 40.78245069703553 seconds)
+[2022-07-19 22:19:44,385][fairseq_cli.train][INFO] - end of epoch 31 (average epoch stats below)
+[2022-07-19 22:19:44,409][train][INFO] - {"epoch": 31, "train_loss": "6.131", "train_nll_loss": "4.575", "train_ppl": "23.84", "train_wps": "791.9", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "2655", "train_lr": "8.89487e-06", "train_gnorm": "3.698", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1225", "train_gb_free": "5", "train_wall": "41238"}
+[2022-07-19 22:19:44,422][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 22:19:44,475][fairseq.trainer][INFO] - begin training epoch 32
+[2022-07-19 22:19:44,477][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 22:40:25,700][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 22:41:31,005][valid][INFO] - {"epoch": 32, "valid_loss": "6.574", "valid_nll_loss": "5.019", "valid_ppl": "32.42", "valid_wps": "2345.9", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "2741", "valid_best_loss": "6.574"}
+[2022-07-19 22:41:31,009][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 32 @ 2741 updates
+[2022-07-19 22:41:31,010][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 22:42:37,665][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 22:42:44,924][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 32 @ 2741 updates, score 6.574) (writing took 73.91486504999921 seconds)
+[2022-07-19 22:42:44,928][fairseq_cli.train][INFO] - end of epoch 32 (average epoch stats below)
+[2022-07-19 22:42:44,952][train][INFO] - {"epoch": 32, "train_loss": "6.112", "train_nll_loss": "4.552", "train_ppl": "23.46", "train_wps": "777.7", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "2741", "train_lr": "8.85077e-06", "train_gnorm": "3.74", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1216", "train_gb_free": "4.4", "train_wall": "42619"}
+[2022-07-19 22:42:44,968][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 22:42:45,047][fairseq.trainer][INFO] - begin training epoch 33
+[2022-07-19 22:42:45,049][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 22:53:53,680][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+[2022-07-19 22:57:16,894][train_inner][INFO] - {"epoch": 33, "update": 32.698, "loss": "6.114", "nll_loss": "4.555", "ppl": "23.51", "wps": "792.1", "ups": "0.06", "wpb": "12483.2", "bsz": "254.4", "num_updates": "2800", "lr": "8.82051e-06", "gnorm": "3.698", "clip": "100", "loss_scale": "8", "train_wall": "2849", "gb_free": "4.6", "wall": "43490"}
+[2022-07-19 23:03:25,169][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 23:04:30,067][valid][INFO] - {"epoch": 33, "valid_loss": "6.577", "valid_nll_loss": "5.016", "valid_ppl": "32.37", "valid_wps": "2360.2", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "2826", "valid_best_loss": "6.574"}
+[2022-07-19 23:04:30,070][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 33 @ 2826 updates
+[2022-07-19 23:04:30,076][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-19 23:05:00,326][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-19 23:05:00,353][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 33 @ 2826 updates, score 6.577) (writing took 30.28248709894251 seconds)
+[2022-07-19 23:05:00,354][fairseq_cli.train][INFO] - end of epoch 33 (average epoch stats below)
+[2022-07-19 23:05:00,376][train][INFO] - {"epoch": 33, "train_loss": "6.095", "train_nll_loss": "4.533", "train_ppl": "23.15", "train_wps": "792.3", "train_ups": "0.06", "train_wpb": "12447", "train_bsz": "254.2", "train_num_updates": "2826", "train_lr": "8.80718e-06", "train_gnorm": "3.725", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1216", "train_gb_free": "5.2", "train_wall": "43954"}
+[2022-07-19 23:05:00,391][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 23:05:00,448][fairseq.trainer][INFO] - begin training epoch 34
+[2022-07-19 23:05:00,450][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 23:20:31,036][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 4.0
+[2022-07-19 23:25:40,710][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 23:26:46,003][valid][INFO] - {"epoch": 34, "valid_loss": "6.567", "valid_nll_loss": "5.007", "valid_ppl": "32.15", "valid_wps": "2345.8", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "2911", "valid_best_loss": "6.567"}
+[2022-07-19 23:26:46,006][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 34 @ 2911 updates
+[2022-07-19 23:26:46,008][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 23:27:44,361][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 23:28:04,230][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 34 @ 2911 updates, score 6.567) (writing took 78.22287790593691 seconds)
+[2022-07-19 23:28:04,233][fairseq_cli.train][INFO] - end of epoch 34 (average epoch stats below)
+[2022-07-19 23:28:04,259][train][INFO] - {"epoch": 34, "train_loss": "6.07", "train_nll_loss": "4.503", "train_ppl": "22.68", "train_wps": "766.4", "train_ups": "0.06", "train_wpb": "12477.3", "train_bsz": "254.2", "train_num_updates": "2911", "train_lr": "8.76359e-06", "train_gnorm": "3.577", "train_clip": "100", "train_loss_scale": "4", "train_train_wall": "1216", "train_gb_free": "5.1", "train_wall": "45338"}
+[2022-07-19 23:28:04,275][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 23:28:04,355][fairseq.trainer][INFO] - begin training epoch 35
+[2022-07-19 23:28:04,356][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 23:48:49,413][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-19 23:49:55,318][valid][INFO] - {"epoch": 35, "valid_loss": "6.563", "valid_nll_loss": "4.993", "valid_ppl": "31.84", "valid_wps": "2324.5", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "2997", "valid_best_loss": "6.563"}
+[2022-07-19 23:49:55,321][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 35 @ 2997 updates
+[2022-07-19 23:49:55,322][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 23:50:20,538][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-19 23:50:30,928][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 35 @ 2997 updates, score 6.563) (writing took 35.60618374310434 seconds)
+[2022-07-19 23:50:30,931][fairseq_cli.train][INFO] - end of epoch 35 (average epoch stats below)
+[2022-07-19 23:50:30,955][train][INFO] - {"epoch": 35, "train_loss": "6.056", "train_nll_loss": "4.488", "train_ppl": "22.43", "train_wps": "797.2", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "2997", "train_lr": "8.71949e-06", "train_gnorm": "3.666", "train_clip": "100", "train_loss_scale": "4", "train_train_wall": "1221", "train_gb_free": "5", "train_wall": "46685"}
+[2022-07-19 23:50:30,971][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-19 23:50:31,039][fairseq.trainer][INFO] - begin training epoch 36
+[2022-07-19 23:50:31,041][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-19 23:51:14,715][train_inner][INFO] - {"epoch": 36, "update": 35.035, "loss": "6.063", "nll_loss": "4.495", "ppl": "22.55", "wps": "770.2", "ups": "0.06", "wpb": "12468.6", "bsz": "253.7", "num_updates": "3000", "lr": "8.71795e-06", "gnorm": "3.651", "clip": "100", "loss_scale": "4", "train_wall": "2841", "gb_free": "4.5", "wall": "46728"}
+[2022-07-20 00:11:15,264][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-20 00:12:21,907][valid][INFO] - {"epoch": 36, "valid_loss": "6.55", "valid_nll_loss": "4.99", "valid_ppl": "31.77", "valid_wps": "2298.5", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "3083", "valid_best_loss": "6.55"}
+[2022-07-20 00:12:21,911][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 36 @ 3083 updates
+[2022-07-20 00:12:21,913][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-20 00:12:42,220][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-20 00:13:23,094][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 36 @ 3083 updates, score 6.55) (writing took 61.182257991982624 seconds)
+[2022-07-20 00:13:23,097][fairseq_cli.train][INFO] - end of epoch 36 (average epoch stats below)
+[2022-07-20 00:13:23,123][train][INFO] - {"epoch": 36, "train_loss": "6.03", "train_nll_loss": "4.456", "train_ppl": "21.95", "train_wps": "782.4", "train_ups": "0.06", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "3083", "train_lr": "8.67538e-06", "train_gnorm": "3.491", "train_clip": "100", "train_loss_scale": "4", "train_train_wall": "1220", "train_gb_free": "5.2", "train_wall": "48057"}
+[2022-07-20 00:13:23,140][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-20 00:13:23,227][fairseq.trainer][INFO] - begin training epoch 37
+[2022-07-20 00:13:23,228][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-20 00:34:07,297][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-20 00:35:12,593][valid][INFO] - {"epoch": 37, "valid_loss": "6.561", "valid_nll_loss": "4.994", "valid_ppl": "31.86", "valid_wps": "2345.9", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "3169", "valid_best_loss": "6.55"}
+[2022-07-20 00:35:12,597][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 37 @ 3169 updates
+[2022-07-20 00:35:12,598][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-20 00:35:21,717][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-20 00:35:21,741][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 37 @ 3169 updates, score 6.561) (writing took 9.144685453968123 seconds)
+[2022-07-20 00:35:21,742][fairseq_cli.train][INFO] - end of epoch 37 (average epoch stats below)
+[2022-07-20 00:35:21,745][train][INFO] - {"epoch": 37, "train_loss": "6.011", "train_nll_loss": "4.435", "train_ppl": "21.63", "train_wps": "814.2", "train_ups": "0.07", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "3169", "train_lr": "8.63128e-06", "train_gnorm": "3.451", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1220", "train_gb_free": "4.9", "train_wall": "49375"}
+[2022-07-20 00:35:21,757][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-20 00:35:21,824][fairseq.trainer][INFO] - begin training epoch 38
+[2022-07-20 00:35:21,825][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-20 00:42:53,427][train_inner][INFO] - {"epoch": 38, "update": 37.36, "loss": "6.02", "nll_loss": "4.445", "ppl": "21.79", "wps": "807.3", "ups": "0.06", "wpb": "12508.6", "bsz": "254.4", "num_updates": "3200", "lr": "8.61538e-06", "gnorm": "3.461", "clip": "100", "loss_scale": "8", "train_wall": "2840", "gb_free": "4.3", "wall": "49827"}
+[2022-07-20 00:56:01,384][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-20 00:57:06,543][valid][INFO] - {"epoch": 38, "valid_loss": "6.542", "valid_nll_loss": "4.97", "valid_ppl": "31.34", "valid_wps": "2351.4", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "3255", "valid_best_loss": "6.542"}
+[2022-07-20 00:57:06,546][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 38 @ 3255 updates
+[2022-07-20 00:57:06,549][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-20 00:57:15,855][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-20 00:57:21,615][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 38 @ 3255 updates, score 6.542) (writing took 15.068494519917294 seconds)
+[2022-07-20 00:57:21,616][fairseq_cli.train][INFO] - end of epoch 38 (average epoch stats below)
+[2022-07-20 00:57:21,621][train][INFO] - {"epoch": 38, "train_loss": "5.998", "train_nll_loss": "4.419", "train_ppl": "21.4", "train_wps": "813.4", "train_ups": "0.07", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "3255", "train_lr": "8.58718e-06", "train_gnorm": "3.476", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1216", "train_gb_free": "5.2", "train_wall": "50695"}
+[2022-07-20 00:57:21,637][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-20 00:57:21,725][fairseq.trainer][INFO] - begin training epoch 39
+[2022-07-20 00:57:21,726][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-20 01:18:01,271][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-20 01:19:06,402][valid][INFO] - {"epoch": 39, "valid_loss": "6.544", "valid_nll_loss": "4.969", "valid_ppl": "31.33", "valid_wps": "2351", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "3341", "valid_best_loss": "6.542"}
+[2022-07-20 01:19:06,405][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 39 @ 3341 updates
+[2022-07-20 01:19:06,407][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-20 01:19:16,267][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-20 01:19:16,289][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 39 @ 3341 updates, score 6.544) (writing took 9.883691018912941 seconds)
+[2022-07-20 01:19:16,290][fairseq_cli.train][INFO] - end of epoch 39 (average epoch stats below)
+[2022-07-20 01:19:16,293][train][INFO] - {"epoch": 39, "train_loss": "5.987", "train_nll_loss": "4.407", "train_ppl": "21.22", "train_wps": "816.7", "train_ups": "0.07", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "3341", "train_lr": "8.54308e-06", "train_gnorm": "3.451", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1216", "train_gb_free": "4.8", "train_wall": "52010"}
+[2022-07-20 01:19:16,305][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-20 01:19:16,361][fairseq.trainer][INFO] - begin training epoch 40
+[2022-07-20 01:19:16,362][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-20 01:33:35,163][train_inner][INFO] - {"epoch": 40, "update": 39.686, "loss": "5.981", "nll_loss": "4.4", "ppl": "21.12", "wps": "820.3", "ups": "0.07", "wpb": "12476.1", "bsz": "254.4", "num_updates": "3400", "lr": "8.51282e-06", "gnorm": "3.43", "clip": "100", "loss_scale": "8", "train_wall": "2832", "gb_free": "4.8", "wall": "52869"}
+[2022-07-20 01:39:55,642][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-20 01:41:00,556][valid][INFO] - {"epoch": 40, "valid_loss": "6.523", "valid_nll_loss": "4.963", "valid_ppl": "31.19", "valid_wps": "2357.8", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "3427", "valid_best_loss": "6.523"}
+[2022-07-20 01:41:00,559][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 40 @ 3427 updates
+[2022-07-20 01:41:00,561][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-20 01:41:09,484][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-20 01:41:16,527][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 40 @ 3427 updates, score 6.523) (writing took 15.96746172499843 seconds)
+[2022-07-20 01:41:16,528][fairseq_cli.train][INFO] - end of epoch 40 (average epoch stats below)
+[2022-07-20 01:41:16,534][train][INFO] - {"epoch": 40, "train_loss": "5.972", "train_nll_loss": "4.389", "train_ppl": "20.95", "train_wps": "813.2", "train_ups": "0.07", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "3427", "train_lr": "8.49897e-06", "train_gnorm": "3.369", "train_clip": "100", "train_loss_scale": "16", "train_train_wall": "1216", "train_gb_free": "5.1", "train_wall": "53330"}
+[2022-07-20 01:41:16,547][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-20 01:41:16,619][fairseq.trainer][INFO] - begin training epoch 41
+[2022-07-20 01:41:16,620][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-20 01:48:27,579][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+[2022-07-20 02:01:55,804][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-20 02:03:00,848][valid][INFO] - {"epoch": 41, "valid_loss": "6.523", "valid_nll_loss": "4.956", "valid_ppl": "31.04", "valid_wps": "2353", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "3512", "valid_best_loss": "6.523"}
+[2022-07-20 02:03:00,851][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 41 @ 3512 updates
+[2022-07-20 02:03:00,853][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-20 02:03:11,821][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-20 02:03:17,682][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 41 @ 3512 updates, score 6.523) (writing took 16.830369131988846 seconds)
+[2022-07-20 02:03:17,683][fairseq_cli.train][INFO] - end of epoch 41 (average epoch stats below)
+[2022-07-20 02:03:17,692][train][INFO] - {"epoch": 41, "train_loss": "5.947", "train_nll_loss": "4.36", "train_ppl": "20.54", "train_wps": "803.1", "train_ups": "0.06", "train_wpb": "12483", "train_bsz": "254.2", "train_num_updates": "3512", "train_lr": "8.45538e-06", "train_gnorm": "3.437", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1216", "train_gb_free": "5", "train_wall": "54651"}
+[2022-07-20 02:03:17,705][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-20 02:03:17,762][fairseq.trainer][INFO] - begin training epoch 42
+[2022-07-20 02:03:17,764][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-20 02:23:57,053][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-20 02:25:01,834][valid][INFO] - {"epoch": 42, "valid_loss": "6.527", "valid_nll_loss": "4.951", "valid_ppl": "30.93", "valid_wps": "2362.9", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "3598", "valid_best_loss": "6.523"}
+[2022-07-20 02:25:01,837][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 42 @ 3598 updates
+[2022-07-20 02:25:01,840][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-20 02:25:10,894][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-20 02:25:10,923][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 42 @ 3598 updates, score 6.527) (writing took 9.085926125058904 seconds)
+[2022-07-20 02:25:10,924][fairseq_cli.train][INFO] - end of epoch 42 (average epoch stats below)
+[2022-07-20 02:25:10,927][train][INFO] - {"epoch": 42, "train_loss": "5.937", "train_nll_loss": "4.348", "train_ppl": "20.37", "train_wps": "817.6", "train_ups": "0.07", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "3598", "train_lr": "8.41128e-06", "train_gnorm": "3.382", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1216", "train_gb_free": "5.1", "train_wall": "55965"}
+[2022-07-20 02:25:10,940][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-20 02:25:11,240][fairseq.trainer][INFO] - begin training epoch 43
+[2022-07-20 02:25:11,241][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-20 02:25:40,682][train_inner][INFO] - {"epoch": 43, "update": 42.023, "loss": "5.948", "nll_loss": "4.362", "ppl": "20.56", "wps": "796.9", "ups": "0.06", "wpb": "12453.2", "bsz": "253.7", "num_updates": "3600", "lr": "8.41026e-06", "gnorm": "3.417", "clip": "100", "loss_scale": "8", "train_wall": "2834", "gb_free": "4.1", "wall": "55994"}
+[2022-07-20 02:45:51,566][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-20 02:46:56,883][valid][INFO] - {"epoch": 43, "valid_loss": "6.522", "valid_nll_loss": "4.942", "valid_ppl": "30.74", "valid_wps": "2343.7", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "3684", "valid_best_loss": "6.522"}
+[2022-07-20 02:46:56,887][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 43 @ 3684 updates
+[2022-07-20 02:46:56,889][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-20 02:47:06,444][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-20 02:47:12,432][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 43 @ 3684 updates, score 6.522) (writing took 15.545509199961089 seconds)
+[2022-07-20 02:47:12,433][fairseq_cli.train][INFO] - end of epoch 43 (average epoch stats below)
+[2022-07-20 02:47:12,439][train][INFO] - {"epoch": 43, "train_loss": "5.918", "train_nll_loss": "4.327", "train_ppl": "20.07", "train_wps": "812.4", "train_ups": "0.07", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "3684", "train_lr": "8.36718e-06", "train_gnorm": "3.281", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1217", "train_gb_free": "4.8", "train_wall": "57286"}
+[2022-07-20 02:47:12,454][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-20 02:47:12,510][fairseq.trainer][INFO] - begin training epoch 44
+[2022-07-20 02:47:12,511][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-20 02:54:27,561][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+[2022-07-20 03:07:51,938][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-20 03:08:57,012][valid][INFO] - {"epoch": 44, "valid_loss": "6.528", "valid_nll_loss": "4.945", "valid_ppl": "30.81", "valid_wps": "2351.7", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "3769", "valid_best_loss": "6.522"}
+[2022-07-20 03:08:57,017][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 44 @ 3769 updates
+[2022-07-20 03:08:57,018][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-20 03:09:06,069][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-20 03:09:06,092][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 44 @ 3769 updates, score 6.528) (writing took 9.07505682297051 seconds)
+[2022-07-20 03:09:06,093][fairseq_cli.train][INFO] - end of epoch 44 (average epoch stats below)
+[2022-07-20 03:09:06,096][train][INFO] - {"epoch": 44, "train_loss": "5.901", "train_nll_loss": "4.306", "train_ppl": "19.79", "train_wps": "808", "train_ups": "0.06", "train_wpb": "12487.2", "train_bsz": "254.2", "train_num_updates": "3769", "train_lr": "8.32359e-06", "train_gnorm": "3.252", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1216", "train_gb_free": "4.9", "train_wall": "58600"}
+[2022-07-20 03:09:06,108][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-20 03:09:06,184][fairseq.trainer][INFO] - begin training epoch 45
+[2022-07-20 03:09:06,185][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-20 03:16:38,888][train_inner][INFO] - {"epoch": 45, "update": 44.36, "loss": "5.903", "nll_loss": "4.308", "ppl": "19.81", "wps": "819.3", "ups": "0.07", "wpb": "12528", "bsz": "254.4", "num_updates": "3800", "lr": "8.30769e-06", "gnorm": "3.273", "clip": "100", "loss_scale": "8", "train_wall": "2849", "gb_free": "5.1", "wall": "59052"}
+[2022-07-20 03:29:46,508][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-20 03:30:51,542][valid][INFO] - {"epoch": 45, "valid_loss": "6.518", "valid_nll_loss": "4.935", "valid_ppl": "30.6", "valid_wps": "2353.7", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "3855", "valid_best_loss": "6.518"}
+[2022-07-20 03:30:51,546][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 45 @ 3855 updates
+[2022-07-20 03:30:51,547][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-20 03:31:00,697][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-20 03:31:06,883][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 45 @ 3855 updates, score 6.518) (writing took 15.336897265049629 seconds)
+[2022-07-20 03:31:06,884][fairseq_cli.train][INFO] - end of epoch 45 (average epoch stats below)
+[2022-07-20 03:31:06,890][train][INFO] - {"epoch": 45, "train_loss": "5.885", "train_nll_loss": "4.288", "train_ppl": "19.53", "train_wps": "812.9", "train_ups": "0.07", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "3855", "train_lr": "8.27949e-06", "train_gnorm": "3.306", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1217", "train_gb_free": "4.9", "train_wall": "59920"}
+[2022-07-20 03:31:06,902][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-20 03:31:06,961][fairseq.trainer][INFO] - begin training epoch 46
+[2022-07-20 03:31:06,962][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-20 03:51:47,468][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-20 03:52:52,649][valid][INFO] - {"epoch": 46, "valid_loss": "6.517", "valid_nll_loss": "4.934", "valid_ppl": "30.57", "valid_wps": "2348.9", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "3941", "valid_best_loss": "6.517"}
+[2022-07-20 03:52:52,652][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 46 @ 3941 updates
+[2022-07-20 03:52:52,654][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-20 03:53:02,317][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-20 03:53:08,282][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 46 @ 3941 updates, score 6.517) (writing took 15.62967582209967 seconds)
+[2022-07-20 03:53:08,283][fairseq_cli.train][INFO] - end of epoch 46 (average epoch stats below)
+[2022-07-20 03:53:08,289][train][INFO] - {"epoch": 46, "train_loss": "5.869", "train_nll_loss": "4.269", "train_ppl": "19.28", "train_wps": "812.5", "train_ups": "0.07", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "3941", "train_lr": "8.23538e-06", "train_gnorm": "3.242", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1216", "train_gb_free": "4.9", "train_wall": "61242"}
+[2022-07-20 03:53:08,300][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-20 03:53:08,372][fairseq.trainer][INFO] - begin training epoch 47
+[2022-07-20 03:53:08,373][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-20 04:07:24,031][train_inner][INFO] - {"epoch": 47, "update": 46.686, "loss": "5.872", "nll_loss": "4.273", "ppl": "19.33", "wps": "821.3", "ups": "0.07", "wpb": "12505", "bsz": "254.4", "num_updates": "4000", "lr": "8.20513e-06", "gnorm": "3.228", "clip": "100", "loss_scale": "16", "train_wall": "2829", "gb_free": "4.6", "wall": "62098"}
+[2022-07-20 04:11:57,036][fairseq.trainer][INFO] - NOTE: gradient overflow detected, ignoring gradient, setting loss scale to: 8.0
+[2022-07-20 04:13:44,115][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-20 04:14:49,070][valid][INFO] - {"epoch": 47, "valid_loss": "6.53", "valid_nll_loss": "4.939", "valid_ppl": "30.68", "valid_wps": "2357.4", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "4026", "valid_best_loss": "6.517"}
+[2022-07-20 04:14:49,073][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 47 @ 4026 updates
+[2022-07-20 04:14:49,075][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-20 04:14:58,141][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-20 04:14:58,165][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 47 @ 4026 updates, score 6.53) (writing took 9.09143991896417 seconds)
+[2022-07-20 04:14:58,165][fairseq_cli.train][INFO] - end of epoch 47 (average epoch stats below)
+[2022-07-20 04:14:58,168][train][INFO] - {"epoch": 47, "train_loss": "5.851", "train_nll_loss": "4.248", "train_ppl": "19", "train_wps": "810.6", "train_ups": "0.06", "train_wpb": "12491.8", "train_bsz": "254.2", "train_num_updates": "4026", "train_lr": "8.19179e-06", "train_gnorm": "3.187", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1213", "train_gb_free": "5.1", "train_wall": "62552"}
+[2022-07-20 04:14:58,180][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-20 04:14:58,257][fairseq.trainer][INFO] - begin training epoch 48
+[2022-07-20 04:14:58,258][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-20 04:35:34,748][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-20 04:36:39,994][valid][INFO] - {"epoch": 48, "valid_loss": "6.516", "valid_nll_loss": "4.928", "valid_ppl": "30.44", "valid_wps": "2346.4", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "4112", "valid_best_loss": "6.516"}
+[2022-07-20 04:36:39,998][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 48 @ 4112 updates
+[2022-07-20 04:36:40,000][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-20 04:36:49,461][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_best.pt
+[2022-07-20 04:36:56,819][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_best.pt (epoch 48 @ 4112 updates, score 6.516) (writing took 16.82108241401147 seconds)
+[2022-07-20 04:36:56,820][fairseq_cli.train][INFO] - end of epoch 48 (average epoch stats below)
+[2022-07-20 04:36:56,826][train][INFO] - {"epoch": 48, "train_loss": "5.836", "train_nll_loss": "4.23", "train_ppl": "18.77", "train_wps": "814.2", "train_ups": "0.07", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "4112", "train_lr": "8.14769e-06", "train_gnorm": "3.111", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1213", "train_gb_free": "5.1", "train_wall": "63870"}
+[2022-07-20 04:36:56,842][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-20 04:36:56,905][fairseq.trainer][INFO] - begin training epoch 49
+[2022-07-20 04:36:56,906][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-20 04:57:32,397][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-20 04:58:37,499][valid][INFO] - {"epoch": 49, "valid_loss": "6.527", "valid_nll_loss": "4.932", "valid_ppl": "30.53", "valid_wps": "2351.6", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "4198", "valid_best_loss": "6.516"}
+[2022-07-20 04:58:37,504][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 49 @ 4198 updates
+[2022-07-20 04:58:37,506][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-20 04:58:46,780][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-20 04:58:46,811][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 49 @ 4198 updates, score 6.527) (writing took 9.306294530979358 seconds)
+[2022-07-20 04:58:46,812][fairseq_cli.train][INFO] - end of epoch 49 (average epoch stats below)
+[2022-07-20 04:58:46,816][train][INFO] - {"epoch": 49, "train_loss": "5.821", "train_nll_loss": "4.212", "train_ppl": "18.53", "train_wps": "819.6", "train_ups": "0.07", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "4198", "train_lr": "8.10359e-06", "train_gnorm": "3.115", "train_clip": "100", "train_loss_scale": "8", "train_train_wall": "1212", "train_gb_free": "5.1", "train_wall": "65180"}
+[2022-07-20 04:58:46,830][fairseq.data.iterators][INFO] - grouped total_num_itrs = 86
+[2022-07-20 04:58:46,904][fairseq.trainer][INFO] - begin training epoch 50
+[2022-07-20 04:58:46,906][fairseq_cli.train][INFO] - Start iterating over samples
+[2022-07-20 04:59:15,985][train_inner][INFO] - {"epoch": 50, "update": 49.023, "loss": "5.831", "nll_loss": "4.225", "ppl": "18.7", "wps": "798.5", "ups": "0.06", "wpb": "12424.6", "bsz": "253.7", "num_updates": "4200", "lr": "8.10256e-06", "gnorm": "3.138", "clip": "100", "loss_scale": "8", "train_wall": "2827", "gb_free": "4.8", "wall": "65210"}
+[2022-07-20 05:19:22,848][fairseq_cli.train][INFO] - begin validation on "valid" subset
+[2022-07-20 05:20:27,913][valid][INFO] - {"epoch": 50, "valid_loss": "6.523", "valid_nll_loss": "4.924", "valid_ppl": "30.36", "valid_wps": "2352.8", "valid_wpb": "195.7", "valid_bsz": "4", "valid_num_updates": "4284", "valid_best_loss": "6.516"}
+[2022-07-20 05:20:27,916][fairseq.checkpoint_utils][INFO] - Preparing to save checkpoint for epoch 50 @ 4284 updates
+[2022-07-20 05:20:27,918][fairseq.trainer][INFO] - Saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-20 05:20:37,356][fairseq.trainer][INFO] - Finished saving checkpoint to /home/dahmanir/multirun/2022-07-19/10-52-10/0/checkpoints/checkpoint_last.pt
+[2022-07-20 05:20:37,382][fairseq.checkpoint_utils][INFO] - Saved checkpoint checkpoints/checkpoint_last.pt (epoch 50 @ 4284 updates, score 6.523) (writing took 9.46606885700021 seconds)
+[2022-07-20 05:20:37,383][fairseq_cli.train][INFO] - end of epoch 50 (average epoch stats below)
+[2022-07-20 05:20:37,386][train][INFO] - {"epoch": 50, "train_loss": "5.805", "train_nll_loss": "4.194", "train_ppl": "18.3", "train_wps": "819.2", "train_ups": "0.07", "train_wpb": "12484.1", "train_bsz": "254.2", "train_num_updates": "4284", "train_lr": "8.05949e-06", "train_gnorm": "3.064", "train_clip": "100", "train_loss_scale": "16", "train_train_wall": "1212", "train_gb_free": "5.3", "train_wall": "66491"}
+[2022-07-20 05:20:37,392][fairseq_cli.train][INFO] - done training in 66488.7 seconds
+wandb: Waiting for W&B process to finish... (success).
+wandb: - 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: \ 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: | 0.001 MB of 0.001 MB uploaded (0.000 MB deduped)wandb: / 0.001 MB of 0.013 MB uploaded (0.000 MB deduped)wandb: - 0.001 MB of 0.100 MB uploaded (0.000 MB deduped)wandb: \ 0.097 MB of 0.100 MB uploaded (0.000 MB deduped)wandb: | 0.100 MB of 0.100 MB uploaded (0.000 MB deduped)wandb: / 0.100 MB of 0.100 MB uploaded (0.000 MB deduped)wandb: - 0.100 MB of 0.100 MB uploaded (0.000 MB deduped)wandb: \ 0.100 MB of 0.100 MB uploaded (0.000 MB deduped)wandb: | 0.100 MB of 0.100 MB uploaded (0.000 MB deduped)wandb: / 0.100 MB of 0.100 MB uploaded (0.000 MB deduped)wandb: - 0.100 MB of 0.100 MB uploaded (0.000 MB deduped)wandb: \ 0.100 MB of 0.100 MB uploaded (0.000 MB deduped)wandb:                                                                                
+wandb: 
+wandb: Run summary:
+wandb:              train/bsz 254.2
+wandb:             train/clip 100.0
+wandb:          train/gb_free 5.3
+wandb:            train/gnorm 3.064
+wandb:             train/loss 5.805
+wandb:       train/loss_scale 16.0
+wandb:               train/lr 1e-05
+wandb:         train/nll_loss 4.194
+wandb:              train/ppl 18.3
+wandb:       train/train_wall 1212.0
+wandb:              train/ups 0.07
+wandb:             train/wall 66491.0
+wandb:              train/wpb 12484.1
+wandb:              train/wps 819.2
+wandb:        train_inner/bsz 253.7
+wandb:       train_inner/clip 100.0
+wandb:    train_inner/gb_free 4.8
+wandb:      train_inner/gnorm 3.138
+wandb:       train_inner/loss 5.831
+wandb: train_inner/loss_scale 8.0
+wandb:         train_inner/lr 1e-05
+wandb:   train_inner/nll_loss 4.225
+wandb:        train_inner/ppl 18.7
+wandb: train_inner/train_wall 2827.0
+wandb:        train_inner/ups 0.06
+wandb:       train_inner/wall 65210.0
+wandb:        train_inner/wpb 12424.6
+wandb:        train_inner/wps 798.5
+wandb:        valid/best_loss 6.516
+wandb:              valid/bsz 4.0
+wandb:             valid/loss 6.523
+wandb:         valid/nll_loss 4.924
+wandb:              valid/ppl 30.36
+wandb:              valid/wpb 195.7
+wandb:              valid/wps 2352.8
+wandb: 
+wandb: Synced checkpoints: https://wandb.ai/redredouane/RoBERTa_encdec/runs/2io5gynf
+wandb: Synced 6 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./multirun/2022-07-19/10-52-10/0/wandb/run-20220719_105233-2io5gynf/logs

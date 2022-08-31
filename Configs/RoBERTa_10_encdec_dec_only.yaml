@@ -1,0 +1,64 @@
+# @package _group_
+common:
+  fp16: true
+  log_format: json
+  log_interval: 200
+  wandb_project: "RoBERTa_encdec"
+
+checkpoint:
+  no_epoch_checkpoints: true
+  reset_optimizer: true
+  reset_dataloader: true
+  reset_meters: true
+
+task:
+  _name: translation
+  data: "/home/dahmanir/lisa/Datasets/wiki_binarized"
+  source_lang: "source"
+  target_lang: "target"
+  max_source_positions: 512
+  max_target_positions: 512
+  truncate_source: true
+  left_pad_source: true
+
+criterion:
+  _name: label_smoothed_cross_entropy
+  label_smoothing: 0.1
+
+dataset:
+  batch_size: 4
+  required_batch_size_multiple: 1
+  skip_invalid_size_inputs_valid_test: true
+
+optimizer:
+  _name: adam
+  weight_decay: 0.01
+  adam_betas: (0.9,0.999)
+  adam_eps: 1e-08
+
+lr_scheduler:
+  _name: polynomial_decay
+  warmup_updates: 500
+
+optimization:
+  max_epoch: 50
+  lr: [0.00001]
+  max_update: 20000
+  update_freq: [64]
+  clip_norm: 0.1
+
+model:
+  _name: roberta_enc_dec
+  pretrained_mlm_checkpoint: "/home/dahmanir/lisa/Models/RoBERTa_10_finetune_maskless.pt"
+  encoder_layers: 12
+  max_positions: 512
+  dropout: 0.1
+  share_all_embeddings: true
+  share_decoder_input_output_embed: true
+  attention_dropout: 0.1
+  encoder_embed_dim: 768
+  encoder_ffn_embed_dim: 3072
+
+
+distributed_training:
+  find_unused_parameters: true
